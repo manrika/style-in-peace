@@ -5,6 +5,10 @@
 <% @brands.each do |brand| %>
     <%=brand.splash_image%>
     <h2><%=brand.name%></h2>
+    <p><%=brand.price_category%></p>
+    <p><%#=brand.average_rating %></p>
+    <p> <%#= '⭐️' * @brand.average_rating %></p>
+
 <% end %>
 
 <h2>News</h2>
