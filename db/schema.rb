@@ -67,7 +67,7 @@ ActiveRecord::Schema.define(version: 2021_11_23_154234) do
     t.integer "brands_shared"
     t.integer "brands_referred"
     t.integer "friends_referred"
-    t.string "preference_price"
+    t.integer "preference_price"
     t.string "preference_style"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
