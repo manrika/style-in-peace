@@ -10,7 +10,9 @@
     <div>
       <% @new_brands.each do |brand| %>
         <h3><%= brand.name %></h3>
-        <p><%= brand.average_rating %></p>
+        <p> <%= '🌎' * brand.average_rating %></p>
+        <p> <%= '£' * brand.price_category %></p>
+        <p> <em><%= brand.style %></em></p>
       <% end %>
     </div>
   </div>
@@ -20,7 +22,9 @@
     <div>
       <% @recommended_brands.each do |brand| %>
         <h3><%= brand.name %></h3>
-        <p><%= brand.average_rating %></p>
+        <p><%= '🌎' * brand.average_rating %></p>
+        <p> <%= '£' * brand.price_category %></p>
+        <p> <em><%= brand.style %></em></p>
       <% end %>
     </div>
   </div>
