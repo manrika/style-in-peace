@@ -1,5 +1,18 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+
+  resources :brands, only: [] do
+    collection do
+      get 'explore'
+      get 'saved'
+      get 'local'
+      get 'new'
+      post 'explore'
+    end
+  end
+
+  get 'brands/naughty/:id', to: 'brands#naughty'
+  get 'brands/ecofriendly/:id', to: 'brands#ecofriendly'
+  get 'my_impact', to: 'users#my_impact'
 end
