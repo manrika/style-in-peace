@@ -1,14 +1,18 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: 'brands#home'
+  root to: 'pages#home'
 
-  get 'naughty/:id', to: 'brands#naughty'
-  get 'ecofriendly/:id', to: 'brands#ecofriendly'
-  get 'explore', to: 'brands#explore'
-  get 'saved', to: 'brands#saved'
-  get 'local', to: 'brands#local'
+  resources :brands, only: [] do
+    collection do
+      get 'explore'
+      get 'saved'
+      get 'local'
+      get 'new'
+      post 'explore'
+    end
+  end
+
+  get 'brands/naughty/:id', to: 'brands#naughty'
+  get 'brands/ecofriendly/:id', to: 'brands#ecofriendly'
   get 'my_impact', to: 'users#my_impact'
-
-  get 'explore/new', to: 'brands#new'
-  post 'explore', to: 'brands#create'
 end
