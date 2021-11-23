@@ -1,0 +1,2 @@
+class SavedBrand < ApplicationRecord
+end
