@@ -18,11 +18,17 @@ class Brand < ApplicationRecord
   end
 
   def self.eco
-    Brand.where(average_rating >= 3)
+    brands = Brand.all
+    brands.select do |brand|
+      brand.average_rating >= 3
+    end
   end
 
   def self.naughty
-    Brand.where(average_rating <= 2)
+    brands = Brand.all
+    brands.select do |brand|
+      brand.average_rating <= 2
+    end
   end
 
   def eco?
