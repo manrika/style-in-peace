@@ -7,4 +7,7 @@ class User < ApplicationRecord
 
   validates :first_name, presence: true
   validates :last_name, presence: true
+  validates :preference_price, presence: true, numericality: { only_integer: true }, inclusion: { in: 1..5 }
+  validates :preference_style, presence: true, inclusion: { in: %w[modern outdoor minimalist retro boujie arty
+                                                                   scandinavian grunge formal lounge boho] }
 end
