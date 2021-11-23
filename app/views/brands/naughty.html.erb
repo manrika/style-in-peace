@@ -1,0 +1,22 @@
+<h1><%= @brand.name %></h1>
+<h2><%= @brand.price_category %></h2>
+<h2><%= @brand.rating_earth %></h2>
+<p><%= @brand.rating_people %></p>
+<p><%= @brand.rating_animals %></p>
+<p><%= @brand.rating_materials %></p>
+
+<p><%= @news.forEach(
+
+) %></p>
+
+
+
+  create_table "news_articles", force: :cascade do |t|
+    t.string "title"
+    t.string "url"
+    t.text "blurb"
+    t.string "image"
+    t.date "date"
+
+
+<%# NEEDED THINGS -  %>

@@ -1,2 +1,3 @@
 class NewsArticle < ApplicationRecord
+
 end
