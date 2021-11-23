@@ -1,5 +1,4 @@
 class Brand < ApplicationRecord
-
   has_many :saved_brands
 
   validates :name, presence: true, uniqueness: true
@@ -15,6 +14,6 @@ class Brand < ApplicationRecord
 
   def average_rating
     total_rating = rating_animals + rating_earth + rating_materials + rating_people
-    (total_rating / 4)
+    total_rating / 4
   end
 end
