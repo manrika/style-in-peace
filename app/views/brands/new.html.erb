@@ -1,11 +1,6 @@
  <%= simple_form_for(@brand) do |f| %>
   <%= f.input :name %>
-  <%= f.input :about%>
   <%= f.input :style%>
-  <%= f.input :why_we_love_them %>
   <%= f.input :website_url %>
-  <%= f.input :insta_url %>
-  <%= f.input :address %>
-  <%= f.input :splash_image, as: :file, label: 'Add photo'%>
   <%= f.submit "Create outfit", class: "btn" %>
  <% end %>
