@@ -15,11 +15,21 @@
     <%= f.input :password_confirmation,
                 required: true,
                 input_html: { autocomplete: "new-password" } %>
-    <%= f.input :first_name %>
-    <%= f.input :last_name %>
-    <%= f.input :preference_price %>
-    <%= f.input :preference_style, collection: %w[modern outdoor minimalist retro boujie arty
-                                                  scandinavian grunge formal lounge boho] %>
+    <%= f.input :first_name,
+                required: true,
+                autofocus: true %>
+
+    <%= f.input :last_name,
+                required: true,
+                autofocus: true %>
+    <%= f.input :preference_price,
+                required: true,
+                autofocus: true %>
+    <%= f.input :preference_style,
+                collection: %w[modern outdoor minimalist retro boujie arty
+                              scandinavian grunge formal lounge boho],
+                required: true,
+                autofocus: true %>
   </div>
 
   <div class="form-actions">
