@@ -24,13 +24,6 @@ class Brand < ApplicationRecord
     end
   end
 
-  def self.naughty
-    brands = Brand.all
-    brands.select do |brand|
-      brand.average_rating <= 2
-    end
-  end
-
   def eco?
     average_rating >= 3
   end
