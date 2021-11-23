@@ -5,18 +5,16 @@
 <p><%= @brand.rating_animals %></p>
 <p><%= @brand.rating_materials %></p>
 
-<p><%= @news.forEach(
+<p><% @topnews.each do |story| %></p>
+  <p><%= story.title %></p>
+  <p><%= story.url %></p>
+  <p><%= story.blurb %></p>
+  <p><%= story.image %></p>
+  <p><%= story.date %></p>
+<p><% end %></p>
 
-) %></p>
-
-
-
-  create_table "news_articles", force: :cascade do |t|
-    t.string "title"
-    t.string "url"
-    t.text "blurb"
-    t.string "image"
-    t.date "date"
-
-
-<%# NEEDED THINGS -  %>
+<h1><%= 'Similar eco-brands to you' %></h1>
+<p><% @similarbrands.each do |newbrand| %></p>
+  <p><%= newbrand.title %></p>
+  <p><%= newbrand.splash_image %></p>
+<p><% end %></p>
