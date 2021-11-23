@@ -11,7 +11,4 @@ Rails.application.routes.draw do
 
   get 'explore/new', to: 'brands#new'
   post 'explore', to: 'brands#create'
-
-
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
