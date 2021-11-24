@@ -15,4 +15,5 @@ Rails.application.routes.draw do
   get 'brands/naughty/:id', to: 'brands#naughty'
   get 'brands/ecofriendly/:id', to: 'brands#ecofriendly'
   get 'my_impact', to: 'users#my_impact'
+  post 'brands/:id/saved', to: 'brands#save', as: 'save'
 end
