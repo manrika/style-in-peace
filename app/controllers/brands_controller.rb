@@ -34,7 +34,7 @@ class BrandsController < ApplicationController
 
   def local
     # all brands within 10 miles of user, change number to change distance
-    @local_brands = Brand.near(current_user.address, 100)
+    @local_brands = Brand.near(current_user.address, 10)
 
     @eco_local_brands = @local_brands.select do |brand|
       brand.eco? && brand.geocoded?
@@ -53,5 +53,4 @@ class BrandsController < ApplicationController
   def brand_params
     params.require(:brand).permit(:name, :webiste_url, :insta_url, :price_category, :rating_earth, :rating_people, :rating_animals,:rating_materials, :about, :why_we_love_them, :address, :splash_image, :style)
   end
-
 end
