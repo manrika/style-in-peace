@@ -128,6 +128,8 @@ cards.take(2).each do |card|
   puts article.errors.messages
 end
 
+puts NewsArticle.count
+
 
 
 
