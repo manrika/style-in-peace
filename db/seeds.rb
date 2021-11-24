@@ -18,7 +18,7 @@ def rating_material_calc(materials_desc)
   end
 end
 
-# CREATING BRAND INSTANCES BY SCRAPING FROM GOODONYOU => creates approx. 119 eco-brands
+# CREATING ECO-BRAND INSTANCES BY SCRAPING FROM GOODONYOU => creates approx. 119 random eco-brands
 
 url = "https://directory.goodonyou.eco/"
 html_file = URI.open(url).read
@@ -60,7 +60,7 @@ html_doc.search('h1 a').each do |category|
 
     style = %w[modern outdoor minimalist retro boujie arty scandinavian grunge formal lounge boho].sample # test passed
 
-    Brand.create(
+    brand = Brand.create(
       name: name,
       website_url: website_url,
       price_category: price_category,
@@ -72,16 +72,65 @@ html_doc.search('h1 a').each do |category|
       why_we_love_them: why_we_love_them,
       splash_image: splash_image,
       style: style,
-      approved: true
+      approved: true,
+      address: Faker::Address.unique.full_address
     )
   end
 end
 
 puts "Number eco-brand:#{Brand.count}"
 
+# CREATING SPECIFIC BRAND INSTANCES BY SCRAPING FROM GOODONYOU (mixture of naughty brands and brands we want to be within style in peace) => creates approx. 119 specified
+
+specified_brands = ["zara", "h-and-m", "shein", "prettylittlething", "mango", "boohoo", "forever-21", "victorias-secret", "wawwa", "tala", "ecoalf"]
+
+specified_brands.each do |path|
+  url = "https://directory.goodonyou.eco/brand/#{path}"
+  doc = Nokogiri::HTML(URI.open(url).read)
+
+  name = doc.search('h1').text.strip
+  website_url = doc.search('a.sc-cSHVUG.eBknKp')[0].attribute('href').value
+
+  rating_earth = doc.search('.ijKIAP')[0].text.strip[0].to_i
+  rating_earth = 1 if rating_earth < 1
+
+  rating_people = doc.search('.ijKIAP')[1].text.strip[0].to_i
+  rating_people = 1 if rating_people < 1
+
+  rating_animals = doc.search('.ijKIAP')[2].text.strip[0].to_i
+  rating_animals = 1 if rating_animals < 1
+
+  why_we_love_them = doc.search('h4').text.strip
+
+  about = doc.search('p')[0].text.strip
+
+  splash_image = doc.search('img')[0].attribute('src').value
+  price_category = doc.search('.kkXGYR')[1].text.length - 8
+
+  materials_desc = doc.search('.kkXGYR')[0].text.split(" ")[1]
+  rating_materials = rating_material_calc(materials_desc)
+
+  style = %w[modern outdoor minimalist retro boujie arty scandinavian grunge formal lounge boho].sample # test passed
+
+  brand = Brand.create(
+    name: name,
+    website_url: website_url,
+    price_category: price_category,
+    rating_earth: rating_earth,
+    rating_people: rating_people,
+    rating_animals: rating_animals,
+    rating_materials: rating_materials,
+    about: about,
+    why_we_love_them: why_we_love_them,
+    splash_image: splash_image,
+    style: style,
+    approved: true,
+    address: Faker::Address.unique.full_address
+  )
+end
 
 
-
+puts "Number brands:#{Brand.count}"
 
 
 # For now only taking first para, what would be best way to take all paras and make it easy for us to format this
