@@ -1,4 +1,7 @@
 class Brand < ApplicationRecord
+  geocoded_by :address
+  before_update :ensure_valid_approval
+
   has_many :saved_brands
 
   validates :name, presence: true, uniqueness: true
@@ -25,5 +28,19 @@ class Brand < ApplicationRecord
 
   def eco?
     average_rating >= 3
+  end
+
+  def ensure_valid_approval
+    # self.approved = true
+    # if will_save_change_to_address?
+    #   geocode
+    # end
+    if self.approve
+      if will_save_change_to_address?
+        geocode
+      else
+        self.approve = false
+      end
+    end
   end
 end
