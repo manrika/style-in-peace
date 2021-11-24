@@ -1,0 +1,20 @@
+<h1><%= @brand.name %></h1>
+<h2><%= @brand.price_category %></h2>
+<h2><%= @brand.rating_earth %></h2>
+<p><%= @brand.rating_people %></p>
+<p><%= @brand.rating_animals %></p>
+<p><%= @brand.rating_materials %></p>
+
+<p><% @topnews.each do |story| %></p>
+  <p><%= story.title %></p>
+  <p><%= story.url %></p>
+  <p><%= story.blurb %></p>
+  <p><%= story.image %></p>
+  <p><%= story.date %></p>
+<p><% end %></p>
+
+<h1><%= 'Similar eco-brands to you' %></h1>
+<p><% @similarbrands.each do |newbrand| %></p>
+  <p><%= newbrand.title %></p>
+  <p><%= newbrand.splash_image %></p>
+<p><% end %></p>

@@ -1,4 +1,5 @@
 class NewsArticle < ApplicationRecord
+
   validates :title, presence: true
   validates :url, presence: true
   validates :blurb, presence: true, length: { in: 100..200 }
