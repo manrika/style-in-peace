@@ -1,10 +1,14 @@
+<%= link_to 'Back', 'javascript:history.go(-1);', class: "mx-3" %>
+
 <div class="container">
   <div class="d-flex">
+
     <div class="w-50 mt-3">
     <%# TODO carousel for product images. %>
     <%# **************placeholder ONLY********************* %>
       <img class="img-thumbnail" src="<%= @brand.splash_image %>" alt="splash">
     </div>
+
     <div class="brand-content px-3 mt-3">
       <div >
         <h2><%= @brand.name %></h2>
@@ -24,9 +28,11 @@
         <p><%= @brand.why_we_love_them %></p>
       </div>
       <div class="about">
+        <h3>About</h3>
         <p><%= @brand.about %></p>
       </div>
       <div class="location">
+        <h3>Location</h3>
         <p><%= @brand.address %></p>
         <%# TODO : Map %>
       </div>
