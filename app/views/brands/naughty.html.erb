@@ -18,3 +18,9 @@
   <p><%= newbrand.name %></p>
   <p><%= newbrand.splash_image %></p>
 <p><% end %></p>
+
+
+<%= simple_form_for @brand, url: save_path, method: :post do |f| %>
+  <%= f.hidden_field :brand_id, value: @brand.id %>
+  <%= f.submit "Save", class: "btn" %>
+ <% end %>
