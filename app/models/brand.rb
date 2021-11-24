@@ -36,8 +36,8 @@ class Brand < ApplicationRecord
     #   geocode
     # end
     if self.approve
-      if will_save_change_to_address?
-        geocode
+      if self.will_save_change_to_address?
+        self.geocode
       else
         self.approve = false
       end
