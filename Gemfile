@@ -63,3 +63,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Faker data
 gem 'faker'
+
+# geocoder gem for map in local page
+gem "geocoder"
+
