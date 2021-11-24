@@ -6,7 +6,7 @@ class Brand < ApplicationRecord
 
   validates :name, presence: true, uniqueness: true
   validates :website_url, presence: true
-  validates :price_category, numericality: { only_integer: true }, inclusion: { in: 1..5 }, allow_blank: true
+  validates :price_category, numericality: { only_integer: true }, inclusion: { in: 1..3 }, allow_blank: true
   validates :rating_earth, numericality: { only_integer: true }, inclusion: { in: 1..5 }, allow_blank: true
   validates :rating_people, numericality: { only_integer: true }, inclusion: { in: 1..5 }, allow_blank: true
   validates :rating_animals, numericality: { only_integer: true }, inclusion: { in: 1..5 }, allow_blank: true
