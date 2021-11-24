@@ -1,0 +1,69 @@
+<%= link_to 'Back', 'javascript:history.go(-1);', class: "mx-3" %>
+
+<div class="container">
+  <div class="d-flex">
+
+    <div class="w-50 mt-3">
+    <%# TODO carousel for product images. %>
+    <%# **************placeholder ONLY********************* %>
+      <img class="img-thumbnail" src="<%= @brand.splash_image %>" alt="splash">
+    </div>
+
+    <div class="brand-content px-3 mt-3">
+      <div >
+        <h2><%= @brand.name %></h2>
+      </div>
+      <div class="rating">
+        <p><%= '🌎' * @brand.average_rating %></p>
+      </div>
+      <div class="impact">
+        <h3>Impact</h3>
+        <%# emojis are placeholders for now%>
+        <p><strong>Earth:</strong> <%= '🌎' * @brand.rating_earth %></p>
+        <p><strong>People:</strong> <%= '💁‍♀️' * @brand.rating_earth %></p>
+        <p><strong>Animals:</strong> <%= '🐼' * @brand.rating_earth %></p>
+        <p><strong>Materials:</strong> <%= '♺' * @brand.rating_earth %></p>
+      </div>
+      <div class="why-we-love-them">
+        <h3>Why we love them</h3>
+        <p><%= @brand.why_we_love_them %></p>
+      </div>
+      <div class="about">
+        <h3>About</h3>
+        <p><%= @brand.about %></p>
+      </div>
+      <div class="location">
+        <h3>Location</h3>
+        <p><%= @brand.address %></p>
+        <%# TODO : Map %>
+      </div>
+      <div>
+        <a class="btn" href="<%= @brand.website_url %>">Visit <%= @brand.name %></a>
+      </div>
+      <div>
+        <%# TODO : Save link %>
+        <a class="btn" href="#">❤️ Save - button bellow works - need to connect them</a>
+        <%= simple_form_for @brand, url: save_path, method: :post do |f| %>
+        <%= f.hidden_field :brand_id, value: @brand.id %>
+        <%= f.submit "Save", class: "btn" %>
+        <% end %>
+
+        <%# TODO : Share link %>
+        <a class="btn" href="#">❤️ Share</a>
+      </div>
+    </div>
+  </div>
+
+  <%# TODO: Card component scss %>
+  <div class="similar-brands">
+    <h3>Similar eco-brands brands for you</h3>
+    <div class="card-container d-flex flex-wrap justify-content-center">
+      <% @suggested_brands.first(10).each do |brand| %>
+        <div class="card w-25 m-2">
+          <img src="<%= brand.splash_image %>" alt="splash" class="img-thumbnail">
+          <%= link_to "#{brand.name}", ecofriendly_brand_path(brand)%>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
