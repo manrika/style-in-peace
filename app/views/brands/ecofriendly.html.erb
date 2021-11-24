@@ -18,6 +18,7 @@
       </div>
       <div class="impact">
         <h3>Impact</h3>
+        <%# emojis are placeholders for now%>
         <p><strong>Earth:</strong> <%= '🌎' * @brand.rating_earth %></p>
         <p><strong>People:</strong> <%= '💁‍♀️' * @brand.rating_earth %></p>
         <p><strong>Animals:</strong> <%= '🐼' * @brand.rating_earth %></p>
@@ -50,9 +51,9 @@
 
   <div class="similar-brands">
     <h3>Similar eco-brands brands for you</h3>
-    <div class="card-container d-flex flex-wrap">
+    <div class="card-container d-flex flex-wrap justify-content-center">
       <% @suggested_brands.first(10).each do |brand| %>
-        <div class="card w-25">
+        <div class="card w-25 m-2">
           <img src="<%= brand.splash_image %>" alt="splash" class="img-thumbnail">
           <%= link_to "#{brand.name}", ecofriendly_brand_path(brand)%>
         </div>
