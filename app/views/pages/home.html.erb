@@ -8,7 +8,7 @@
   <div>
     <h2>New eco-brands on the block</h2>
     <div>
-      <% @new_brands.each do |brand| %>
+      <% @new_brands.first(10).each do |brand| %>
         <h3><%= brand.name %></h3>
         <p> <%= '🌎' * brand.average_rating %></p>
         <p> <%= '£' * brand.price_category %></p>
@@ -20,11 +20,13 @@
   <div>
     <h2>Eco-brands for you</h2>
     <div>
-      <% @recommended_brands.each do |brand| %>
-        <h3><%= brand.name %></h3>
-        <p><%= '🌎' * brand.average_rating %></p>
-        <p> <%= '£' * brand.price_category %></p>
-        <p> <em><%= brand.style %></em></p>
+      <% if current_user %>
+        <% @recommended_brands.first(10).each do |brand| %>
+          <h3><%= brand.name %></h3>
+          <p><%= '🌎' * brand.average_rating %></p>
+          <p> <%= '£' * brand.price_category %></p>
+          <p> <em><%= brand.style %></em></p>
+        <% end %>
       <% end %>
     </div>
   </div>
