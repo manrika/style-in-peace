@@ -18,7 +18,7 @@ def rating_material_calc(materials_desc)
   end
 end
 
-# CREATING BRAND INSTANCES BY SCRAPING FROM GOODONYOU
+# CREATING BRAND INSTANCES BY SCRAPING FROM GOODONYOU => creates approx. 85 eco-brands
 
 url = "https://directory.goodonyou.eco/"
 html_file = URI.open(url).read
@@ -31,30 +31,33 @@ html_doc.search('h1 a').take(11).each do |category|
 
   brands = doc.search('.evVEkx a')
 
-  brands.take(1).map do |brand| # remember to change to 1 to 10
+  brands.take(10).map do |brand|
     path = brand.attribute('href').value
     url = "https://directory.goodonyou.eco#{path}"
     doc = Nokogiri::HTML(URI.open(url).read)
 
-    name = doc.search('h1').text.strip # test passed
-    website_url = doc.search('a.sc-cSHVUG.eBknKp')[0].attribute('href').value # test passed
+    name = doc.search('h1').text.strip
+    website_url = doc.search('a.sc-cSHVUG.eBknKp')[0].attribute('href').value
 
-    rating_earth = doc.search('.ijKIAP')[0].text.strip[0].to_i # test passed
+    rating_earth = doc.search('.ijKIAP')[0].text.strip[0].to_i
     rating_earth = 1 if rating_earth < 1
 
-    rating_people = doc.search('.ijKIAP')[1].text.strip[0].to_i # test passed
+    rating_people = doc.search('.ijKIAP')[1].text.strip[0].to_i
     rating_people = 1 if rating_people < 1
 
-    rating_animals = doc.search('.ijKIAP')[2].text.strip[0].to_i # test passed
+    rating_animals = doc.search('.ijKIAP')[2].text.strip[0].to_i
     rating_animals = 1 if rating_animals < 1
 
-    why_we_love_them = doc.search('h4').text.strip # test passed
-    about = doc.search('.igGybB p')[0].text.strip # test passed
-    splash_image = doc.search('img')[0].attribute('src').value # test passed
-    price_category = doc.search('.kkXGYR')[1].text.length - 8 # test passed
+    why_we_love_them = doc.search('h4').text.strip
 
-    materials_desc = doc.search('.kkXGYR')[0].text.split(" ")[1] # test passed
-    rating_materials = rating_material_calc(materials_desc) # test passed
+    # about = doc.search('.igGybB p')[0].text.strip
+    # about = "Nothing to see heeere" if about. = nil
+
+    splash_image = doc.search('img')[0].attribute('src').value
+    price_category = doc.search('.kkXGYR')[1].text.length - 8
+
+    materials_desc = doc.search('.kkXGYR')[0].text.split(" ")[1]
+    rating_materials = rating_material_calc(materials_desc)
 
     style = %w[modern outdoor minimalist retro boujie arty scandinavian grunge formal lounge boho].sample # test passed
 
@@ -66,19 +69,15 @@ html_doc.search('h1 a').take(11).each do |category|
       rating_people: rating_people,
       rating_animals: rating_animals,
       rating_materials: rating_materials,
-      about: about,
+      # about: about,
       why_we_love_them: why_we_love_them,
       splash_image: splash_image,
       style: style
     )
-
-    puts brand.name
-    puts brand.rating_animals
-    puts brand.errors.messages
-    puts "-------------------------------------"
   end
 end
 
+# puts Brand.count
 
 
 
