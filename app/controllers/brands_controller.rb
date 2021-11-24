@@ -13,8 +13,12 @@ class BrandsController < ApplicationController
   end
 
   def explore
-    @brands = Brand.all
+    @brands = Brand.eco
     @newsarticles = NewsArticle.all
+  end
+
+  def local
+    @brands = Brand.eco
   end
 
   private
