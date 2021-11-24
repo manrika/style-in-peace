@@ -18,13 +18,13 @@ def rating_material_calc(materials_desc)
   end
 end
 
-# CREATING BRAND INSTANCES BY SCRAPING FROM GOODONYOU => creates approx. 85 eco-brands
+# CREATING BRAND INSTANCES BY SCRAPING FROM GOODONYOU => creates approx. 119 eco-brands
 
 url = "https://directory.goodonyou.eco/"
 html_file = URI.open(url).read
 html_doc = Nokogiri::HTML(html_file)
 
-html_doc.search('h1 a').take(11).each do |category|
+html_doc.search('h1 a').each do |category|
   path = category.attribute('href').value
   url = "https://directory.goodonyou.eco#{path}"
   doc = Nokogiri::HTML(URI.open(url).read)
@@ -50,8 +50,7 @@ html_doc.search('h1 a').take(11).each do |category|
 
     why_we_love_them = doc.search('h4').text.strip
 
-    # about = doc.search('.igGybB p')[0].text.strip
-    # about = "Nothing to see heeere" if about. = nil
+    about = doc.search('p')[0].text.strip
 
     splash_image = doc.search('img')[0].attribute('src').value
     price_category = doc.search('.kkXGYR')[1].text.length - 8
@@ -61,7 +60,7 @@ html_doc.search('h1 a').take(11).each do |category|
 
     style = %w[modern outdoor minimalist retro boujie arty scandinavian grunge formal lounge boho].sample # test passed
 
-    brand = Brand.create(
+    Brand.create(
       name: name,
       website_url: website_url,
       price_category: price_category,
@@ -69,15 +68,16 @@ html_doc.search('h1 a').take(11).each do |category|
       rating_people: rating_people,
       rating_animals: rating_animals,
       rating_materials: rating_materials,
-      # about: about,
+      about: about,
       why_we_love_them: why_we_love_them,
       splash_image: splash_image,
-      style: style
+      style: style,
+      approved: true
     )
   end
 end
 
-# puts Brand.count
+puts "Number eco-brand:#{Brand.count}"
 
 
 
