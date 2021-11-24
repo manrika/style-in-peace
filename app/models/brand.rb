@@ -12,7 +12,7 @@ class Brand < ApplicationRecord
   validates :rating_animals, numericality: { only_integer: true }, inclusion: { in: 1..5 }, allow_blank: true
   validates :rating_materials, numericality: { only_integer: true }, inclusion: { in: 1..5 }, allow_blank: true
   validates :style, presence: true, inclusion: { in: %w[modern outdoor minimalist retro boujie arty scandinavian grunge
-                                                        # formal lounge boho] }
+                                                        formal lounge boho] }
 
   def average_rating
     total_rating = rating_animals + rating_earth + rating_materials + rating_people
