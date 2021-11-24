@@ -1,15 +1,24 @@
 class BrandsController < ApplicationController
   skip_before_action :authenticate_user!, only: [ :naughty ]
 
+  def ecofriendly
+    @brand = Brand.find(params[:id])
+    # TODO brand photos - cloudinary
+    @brands = Brand.eco
+    @suggested_brands = @brands.select do |brand|
+      brand.price_category == @brand.price_category && brand.style == @brand.style unless brand == @brand
+    end
+  end
+
   def naughty
   #also create a view - for its own page
     @brand = Brand.find(params[:id])
     @newsarticles = NewsArticle.all
     @news = @newsarticles.order(created_at: :desc)
     @topnews = @news.first(3)
-    @allbrands = Brand.all
+    @allbrands = Brand.eco
     @similarbrands = @allbrands.select do |newbrand|
-      newbrand.price_category = @brand.price_category && newbrand.style = @brand.style
+      newbrand.price_category == @brand.price_category && newbrand.style == @brand.style
     end
     # price and style overlap
   end
