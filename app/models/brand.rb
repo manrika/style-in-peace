@@ -15,4 +15,15 @@ class Brand < ApplicationRecord
     total_rating = rating_animals + rating_earth + rating_materials + rating_people
     total_rating / 4
   end
+
+  def self.eco
+    brands = Brand.all
+    brands.select do |brand|
+      brand.average_rating >= 3
+    end
+  end
+
+  def eco?
+    average_rating >= 3
+  end
 end

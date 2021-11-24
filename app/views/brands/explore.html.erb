@@ -1,0 +1,27 @@
+<h1>Explore eco-brands</h1>
+
+<h2>Brands</h2>
+<p>(waiting for seed)</p>
+<% @brands.each do |brand| %>
+    <%=brand.splash_image%>
+    <h2><%=brand.name%></h2>
+    <p><%=brand.price_category%></p>
+    <p><%#=brand.average_rating %></p>
+    <p> <%#= '⭐️' * @brand.average_rating %></p>
+
+<% end %>
+
+<h2>News</h2>
+<p>(waiting for seed)</p>
+
+<%@newsarticles.each do |news|%>
+  <%=news.image%>
+  <h2><%=news.title%></h2>
+  <p><%=news.blurb%></p>
+  <p><%=news.url%></p>
+  <p><%=news.date%></p>
+<% end %>
+
+<h2>(+ Add a brand that is not listed)</h2>
+<%= link_to "Back", root_path%>
+<%= link_to "Add", brands_path%>
