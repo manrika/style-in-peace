@@ -1,6 +1,6 @@
 class Brand < ApplicationRecord
   geocoded_by :address
-  before_update :ensure_valid_approval
+  after_validation :geocode, if: :will_save_change_to_address?
 
   has_many :saved_brands
 
@@ -12,7 +12,7 @@ class Brand < ApplicationRecord
   validates :rating_animals, numericality: { only_integer: true }, inclusion: { in: 1..5 }, allow_blank: true
   validates :rating_materials, numericality: { only_integer: true }, inclusion: { in: 1..5 }, allow_blank: true
   validates :style, presence: true, inclusion: { in: %w[modern outdoor minimalist retro boujie arty scandinavian grunge
-                                                        formal lounge boho] }
+                                                        # formal lounge boho] }
 
   def average_rating
     total_rating = rating_animals + rating_earth + rating_materials + rating_people
@@ -28,19 +28,5 @@ class Brand < ApplicationRecord
 
   def eco?
     average_rating >= 3
-  end
-
-  def ensure_valid_approval
-    # self.approved = true
-    # if will_save_change_to_address?
-    #   geocode
-    # end
-    if self.approve
-      if self.will_save_change_to_address?
-        self.geocode
-      else
-        self.approve = false
-      end
-    end
   end
 end
