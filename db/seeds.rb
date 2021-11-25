@@ -118,7 +118,7 @@ end
 
 cards = html_doc.search('.MuiGrid-grid-lg-3')
 
-cards.take(2).each do |card|
+cards.each do |card|
   title = card.search('h2').text.strip
   url_path = card.search('a').attribute('href').value
   blurb = card.search('p')[0].text.strip[0, 200]
