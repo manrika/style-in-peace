@@ -38,7 +38,7 @@ class BrandsController < ApplicationController
 
   def explore
     if params[:query].present?
-      @brands = Brand.where(name: params[:query])
+      @brands = Brand.where("name ILIKE ?", "%#{params[:query]}%")
     else
       @brands = Brand.eco
     end
