@@ -44,7 +44,6 @@ class BrandsController < ApplicationController
   def local
     # all brands within 10 miles of user, change number to change distance
     @local_brands = Brand.near(current_user.address, 10)
-
     @eco_local_brands = @local_brands.select do |brand|
       brand.eco? && brand.geocoded?
     end
