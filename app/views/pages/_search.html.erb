@@ -1,8 +1,17 @@
-<%= form_tag explore_brands_path, method: :get do %>
-  <%= text_field_tag :query,
-    params[:query],
-    class: "form-control",
-    placeholder: "Search brand"
-  %>
-  <%= submit_tag "Search", class: "btn btn-primary" %>
-<% end %>
+<div class="dropdown">
+  <%= form_tag(explore_brands_path, method: 'get', class: "form-inline") do %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "Search brand"
+    %>
+    <%= submit_tag "Search", class: "btn btn-primary" %>
+  <% end %>
+
+<%# BELOW IS WORK IN PROGRESS FOR ENHANCED SEARCH FUNCTIONALITY %>
+  <%# <div class="d"> %>
+  <%# @brands.each do |brand| %>
+    <%#= link_to "#{brand.name}", ecofriendly_brand_path(brand), class: "dropdown-item" %>
+  <%# end %>
+  <%# </div>
+</div> %>
