@@ -15,8 +15,8 @@ class Brand < ApplicationRecord
                                                         formal lounge boho] }
 
   def average_rating
-    total_rating = rating_animals + rating_earth + rating_materials + rating_people
-    total_rating / 4
+    total_rating = rating_animals.to_f + rating_earth.to_f + rating_materials.to_f + rating_people.to_f
+    (total_rating / 4).round
   end
 
   def self.eco
