@@ -65,12 +65,12 @@ class BrandsController < ApplicationController
   def save
     @saved_brand = SavedBrand.new(saved_brand_params)
     @saved_brand.user = current_user
-      if @saved_brand.save!
+    if @saved_brand.save!
       redirect_to saved_brands_path
     #  else
     #    render :new
     # else flash?
-     end
+    end
   end
 
   private
