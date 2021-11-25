@@ -129,3 +129,18 @@ cards.each do |card|
 end
 
 puts "Number articles created: #{NewsArticle.count}" # Test
+
+# BRAND PHOTOS (used as the brand's product images, this is different to the splash image)
+
+brands = Brand.all
+
+brands.take(1).each do |brand|
+  counter = 0
+  4.times do
+    image_url = URI.open("https://source.unsplash.com/1600x900/?fashion")
+    brand.photos.attach(io: image_url, filename: "#{brand.name}.jpg")
+    counter += 1
+    brand.save!
+  end
+  puts brand.photos
+end

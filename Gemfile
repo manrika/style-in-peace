@@ -67,3 +67,5 @@ gem 'faker'
 # geocoder gem for map in local page
 gem "geocoder"
 
+# cloudinary gem for product images
+gem 'cloudinary', '~> 1.16.0'
