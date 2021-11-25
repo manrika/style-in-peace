@@ -66,9 +66,9 @@ class BrandsController < ApplicationController
     @saved_brand.user = current_user
     if @saved_brand.save!
       redirect_to saved_brands_path
-    #  else
-    #    render :new
-    # else flash?
+      flash[:notice] = 'Brand saved successfully'
+    else
+      flash[:alert] = 'Brand was not saved.'
     end
   end
 
