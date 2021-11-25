@@ -1,7 +1,5 @@
 <h1>🌎 Style in Peace 🌎</h1>
 
-<p>TODO: Navbar</p>
-
 <p>TODO: Search</p>
 
 <div class='container'>
@@ -13,6 +11,7 @@
         <p> <%= '🌎' * brand.average_rating %></p>
         <p> <%= '£' * brand.price_category %></p>
         <p> <em><%= brand.style %></em></p>
+        <%= link_to 'view', ecofriendly_brand_path(brand) %>
       <% end %>
     </div>
   </div>
@@ -26,6 +25,7 @@
           <p><%= '🌎' * brand.average_rating %></p>
           <p> <%= '£' * brand.price_category %></p>
           <p> <em><%= brand.style %></em></p>
+          <%= link_to 'view', ecofriendly_brand_path(brand) %>
         <% end %>
       </div>
     </div>
