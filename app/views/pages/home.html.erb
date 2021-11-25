@@ -5,13 +5,16 @@
 <div class='container'>
   <div>
     <h2>New eco-brands on the block</h2>
-    <div>
+    <div class='d-flex flex-wrap'>
       <% @new_brands.first(10).each do |brand| %>
-        <h3><%= brand.name %></h3>
-        <p> <%= '🌎' * brand.average_rating %></p>
-        <p> <%= '£' * brand.price_category %></p>
-        <p> <em><%= brand.style %></em></p>
-        <%= link_to 'view', ecofriendly_brand_path(brand) %>
+        <div class="TODO-CARDS-scss w-25">
+          <img src="<%= brand.splash_image %>" alt="">
+          <p><strong><%= brand.name %></strong></p>
+          <p> <%= '🌎' * brand.average_rating %></p>
+          <p> <%= '£' * brand.price_category %></p>
+          <p> <em><%= brand.style %></em></p>
+          <%= link_to 'view', ecofriendly_brand_path(brand) %>
+        </div>
       <% end %>
     </div>
   </div>
