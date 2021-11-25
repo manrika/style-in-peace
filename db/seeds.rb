@@ -81,7 +81,7 @@ html_doc.search('h1 a').each do |category|
 
   brands = doc.search('.evVEkx a')
 
-  brands.take(10).map do |brand|
+  brands.take(2).map do |brand| # Change to 10!
     path = brand.attribute('href').value
     url = "https://directory.goodonyou.eco#{path}"
     seed_brand(url)
@@ -130,17 +130,17 @@ end
 
 puts "Number articles created: #{NewsArticle.count}" # Test
 
-# BRAND PHOTOS (used as the brand's product images, this is different to the splash image)
+# ATTACH PHOTOS (fashion product images) TO EACH BRAND
 
 brands = Brand.all
 
-brands.take(1).each do |brand|
+brands.each do |brand|
   counter = 0
-  4.times do
+  2.times do # Change to 3 or 4!
     image_url = URI.open("https://source.unsplash.com/1600x900/?fashion")
-    brand.photos.attach(io: image_url, filename: "#{brand.name}.jpg")
+    brand.photos.attach(io: image_url, filename: "#{brand.name}#{counter}.jpg", content_type: 'image/jpeg')
     counter += 1
     brand.save!
   end
-  puts brand.photos
+  puts "2 images attached to #{brand.name}: #{brand.photos.attached?} "
 end
