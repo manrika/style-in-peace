@@ -1,10 +1,11 @@
 require 'open-uri'
 require 'nokogiri'
 
+puts "Seed is starting, time to relax for some minutes ☕️🍪"
+
 # Destroy all data
 NewsArticle.destroy_all
 Brand.destroy_all
-
 
 def rating_material_calc(materials_desc)
   case materials_desc
@@ -48,7 +49,7 @@ def seed_brand(url)
   materials_desc = doc.search('.kkXGYR')[0].text.split(" ")[1]
   rating_materials = rating_material_calc(materials_desc)
 
-  style = %w[modern outdoor minimalist retro boujie arty scandinavian grunge formal lounge boho].sample # test passed
+  style = %w[modern outdoor minimalist retro boujie arty scandinavian grunge formal lounge boho].sample
 
   Brand.create(
     name: name,
@@ -81,7 +82,7 @@ html_doc.search('h1 a').each do |category|
 
   brands = doc.search('.evVEkx a')
 
-  brands.take(10).map do |brand|
+  brands.take(2).map do |brand| # Change to 10!
     path = brand.attribute('href').value
     url = "https://directory.goodonyou.eco#{path}"
     seed_brand(url)
@@ -98,9 +99,7 @@ specified_brands.each do |path|
   seed_brand(url)
 end
 
-puts "Number brands created: #{Brand.count}" # Test
-
-# CREATING NEWS ARTICLES BY SCRAPING FASHIONUNITED.UK => creates  articles
+# CREATING NEWS ARTICLES BY SCRAPING FASHIONUNITED.UK => creates articles
 
 url = "https://fashionunited.uk/tags/sustainable-fashion"
 html_file = URI.open(url).read
@@ -128,4 +127,18 @@ cards.each do |card|
   article = create_article(title, url_path, blurb, image_path, date)
 end
 
-puts "Number articles created: #{NewsArticle.count}" # Test
+# ATTACH PHOTOS (fashion product images) TO EACH BRAND
+
+brands = Brand.all
+
+brands.each do |brand|
+  counter = 0
+  2.times do # Change to 3 or 4!
+    image_url = URI.open("https://source.unsplash.com/1600x900/?fashion")
+    brand.photos.attach(io: image_url, filename: "#{brand.name}#{counter}.jpg", content_type: 'image/jpeg')
+    counter += 1
+    brand.save!
+  end
+end
+
+puts "Finished creating #{Brand.count} brands (with images) and #{NewsArticle.count} articles 🥳🥳🥳"

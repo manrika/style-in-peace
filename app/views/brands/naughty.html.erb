@@ -17,4 +17,5 @@
 <p><% @similarbrands.each do |newbrand| %></p>
   <p><%= newbrand.name %></p>
   <p><%= newbrand.splash_image %></p>
+  <%= link_to 'view', ecofriendly_brand_path(newbrand) %>
 <p><% end %></p>

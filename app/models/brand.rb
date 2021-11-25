@@ -4,6 +4,8 @@ class Brand < ApplicationRecord
 
   has_many :saved_brands
   has_many :users, through: :saved_brands
+  has_many_attached :photos
+
 
   validates :name, presence: true, uniqueness: true
   validates :website_url, presence: true
@@ -23,7 +25,7 @@ class Brand < ApplicationRecord
   def self.eco
     brands = Brand.all
     brands.select do |brand|
-      brand.average_rating >= 3
+      brand.average_rating >= 3 && brand.approved == true
     end
   end
 
