@@ -5,7 +5,6 @@ require 'nokogiri'
 NewsArticle.destroy_all
 Brand.destroy_all
 
-
 def rating_material_calc(materials_desc)
   case materials_desc
   when "Great"
@@ -48,7 +47,7 @@ def seed_brand(url)
   materials_desc = doc.search('.kkXGYR')[0].text.split(" ")[1]
   rating_materials = rating_material_calc(materials_desc)
 
-  style = %w[modern outdoor minimalist retro boujie arty scandinavian grunge formal lounge boho].sample # test passed
+  style = %w[modern outdoor minimalist retro boujie arty scandinavian grunge formal lounge boho].sample
 
   Brand.create(
     name: name,
@@ -98,9 +97,7 @@ specified_brands.each do |path|
   seed_brand(url)
 end
 
-puts "Number brands created: #{Brand.count}" # Test
-
-# CREATING NEWS ARTICLES BY SCRAPING FASHIONUNITED.UK => creates  articles
+# CREATING NEWS ARTICLES BY SCRAPING FASHIONUNITED.UK => creates articles
 
 url = "https://fashionunited.uk/tags/sustainable-fashion"
 html_file = URI.open(url).read
@@ -128,8 +125,6 @@ cards.each do |card|
   article = create_article(title, url_path, blurb, image_path, date)
 end
 
-puts "Number articles created: #{NewsArticle.count}" # Test
-
 # ATTACH PHOTOS (fashion product images) TO EACH BRAND
 
 brands = Brand.all
@@ -142,5 +137,6 @@ brands.each do |brand|
     counter += 1
     brand.save!
   end
-  puts "2 images attached to #{brand.name}: #{brand.photos.attached?} "
 end
+
+puts "Finished creating #{Brand.count} brands (with images) and #{NewsArticle.count} articles 🥳🥳🥳"
