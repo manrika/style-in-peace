@@ -31,4 +31,8 @@
 .actions {
   display: flex;
   justify-content: space-between;
+  margin-left: 100px;
+  .a {
+    color: black;
+  }
 }
