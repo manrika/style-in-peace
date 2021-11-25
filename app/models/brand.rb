@@ -5,7 +5,7 @@ class Brand < ApplicationRecord
   has_many :saved_brands
   has_many_attached :photos
 
-  validates :name, presence: true, uniqueness: true
+  validates :name, presence: true, :uniqueness => {:case_sensitive => false}
   validates :website_url, presence: true
   validates :price_category, numericality: { only_integer: true }, inclusion: { in: 1..3 }, allow_blank: true
   validates :rating_earth, numericality: { only_integer: true }, inclusion: { in: 1..5 }, allow_blank: true
