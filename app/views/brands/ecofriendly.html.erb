@@ -1,13 +1,12 @@
 <%= link_to 'Back', 'javascript:history.go(-1);', class: "mx-3" %>
 
 <div class="container">
+
   <div class="d-flex">
 
-    <div class="w-50 mt-3">
-    <%# TODO carousel for product images. %>
-    <%# **************placeholder ONLY********************* %>
-      <img class="img-thumbnail" src="<%= @brand.splash_image %>" alt="splash">
-    </div>
+  <div class= "w-75">
+    <%= render 'slideshow', locals: { brand: @brand } %>
+  </div>
 
     <div class="brand-content px-3 mt-3">
       <div >
