@@ -1,6 +1,11 @@
 require 'open-uri'
 require 'nokogiri'
 
+# Destroy all data
+NewsArticle.destroy_all
+Brand.destroy_all
+
+
 def rating_material_calc(materials_desc)
   case materials_desc
   when "Great"
@@ -63,7 +68,7 @@ def seed_brand(url)
   )
 end
 
-# CREATING RANDOM ECO-BRANDS BY SCRAPING FROM GOODONYOU => creates 120 random eco-brands
+# CREATING RANDOM ECO-BRANDS BY SCRAPING GOODONYOU => creates 120 random eco-brands
 
 url = "https://directory.goodonyou.eco/"
 html_file = URI.open(url).read
@@ -83,10 +88,7 @@ html_doc.search('h1 a').each do |category|
   end
 end
 
-# puts "Number eco-brand:#{Brand.count}" # Test can delete
-
-
-# CREATING SPECIFIC BRANDS (eco & naughty) BY SCRAPING FROM GOODONYOU => creates 9 eco-brands
+# CREATING SPECIFIC BRANDS (eco & naughty) BY SCRAPING GOODONYOU => creates 9 eco-brands
 # You can specify more brands by adding to the array below :) (just make sure it matches the url path from goodonyou.eco)
 
 specified_brands = ["zara", "h-and-m", "shein", "prettylittlething", "mango", "boohoo", "forever-21", "victorias-secret", "wawwa", "tala", "ecoalf"]
@@ -96,10 +98,34 @@ specified_brands.each do |path|
   seed_brand(url)
 end
 
-# puts "Number brands:#{Brand.count}" # Test can delete
+puts "Number brands created: #{Brand.count}" # Test
 
+# CREATING NEWS ARTICLES BY SCRAPING FASHIONUNITED.UK => creates  articles
 
+url = "https://fashionunited.uk/tags/sustainable-fashion"
+html_file = URI.open(url).read
+html_doc = Nokogiri::HTML(html_file)
 
-# IMPORTANT NOTES & TO DOS for BRANDS
-# Get product images
-# News articles seed
+def create_article(title, url_path, blurb, image_path, date)
+  NewsArticle.create(
+    title: title,
+    url: "https://fashionunited.uk/#{url_path}",
+    blurb: blurb,
+    image: "https://fashionunited.uk#{image_path}",
+    date: date
+  )
+end
+
+cards = html_doc.search('.MuiGrid-grid-lg-3')
+
+cards.take(2).each do |card|
+  title = card.search('h2').text.strip
+  url_path = card.search('a').attribute('href').value
+  blurb = card.search('p')[0].text.strip[0, 200]
+  date = card.search('p')[1].text.strip
+  image_path = card.search('progressive-img').attribute('src').value
+
+  article = create_article(title, url_path, blurb, image_path, date)
+end
+
+puts "Number articles created: #{NewsArticle.count}" # Test
