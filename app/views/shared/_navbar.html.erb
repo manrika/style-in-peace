@@ -11,23 +11,23 @@
   <% if user_signed_in? %>
     <div class="actions">
       <div class="home">
-        <i class="fas fa-home fa-sm"></i>
+        <p><a href="/"><i class="fas fa-home fa-sm"></i></a></p>
         <p><a href="/"><%= "Home" %></a></p>
       </div>
       <div class="explore">
-        <i class="fas fa-compass fa-sm"></i>
+        <p><a href="/brands/explore"><i class="fas fa-compass fa-sm"></i></a></p>
         <p><a href="/brands/explore"><%= "Explore" %></a></p>
       </div>
       <div class="locals">
-        <i class="fas fa-map-marker-alt fa-sm"></i>
+        <p><a href="/brands/local"><i class="fas fa-map-marker-alt fa-sm"></i></a></p>
         <p><a href="/brands/local"><%= "Locals" %></a></p>
       </div>
       <div class="saved">
-        <i class="fas fa-heart fa-sm"></i>
+        <p><a href="/brands/saved"><i class="fas fa-heart fa-sm"></i></a></p>
         <p><a href="/brands/saved"><%= "Saved" %></a></p>
       </div>
       <div class="my-impact">
-        <i class="fas fa-globe-americas fa-sm"></i>
+        <p><a href="/my_impact"><i class="fas fa-globe-americas fa-sm"></i></a></p>
         <p><a href="/my_impact"><%= "My Impact" %></a></p>
       </div>
       <div>
