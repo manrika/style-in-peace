@@ -8,26 +8,35 @@
     </div>
     <% end %>
   </div>
-  <div class="actions">
-    <div class="home">
-      <i class="fas fa-home fa-sm"></i>
-      <%= "Home" %>
-    </div>
-    <div class="explore">
-      <i class="fas fa-compass fa-sm"></i>
-      <%= "Explore" %>
-    </div>
-    <div class="locals">
-      <i class="fas fa-map-marker-alt fa-sm"></i>
-      <%= "Locals" %>
-    </div>
-    <div class="saved">
-      <i class="fas fa-heart fa-sm"></i>
-      <%= "Saved" %>
-    </div>
-    <div class="my-impact">
-      <i class="fas fa-globe-americas fa-sm"></i>
-      <%= "My Impact" %>
+  <% if user_signed_in? %>
+    <div class="actions">
+      <div class="home">
+        <i class="fas fa-home fa-sm"></i>
+        <p><a href="/"><%= "Home" %></a></p>
+      </div>
+      <div class="explore">
+        <i class="fas fa-compass fa-sm"></i>
+        <p><a href="/brands/explore"><%= "Explore" %></a></p>
+      </div>
+      <div class="locals">
+        <i class="fas fa-map-marker-alt fa-sm"></i>
+        <p><a href="/brands/local"><%= "Locals" %></a></p>
+      </div>
+      <div class="saved">
+        <i class="fas fa-heart fa-sm"></i>
+        <p><a href="/brands/saved"><%= "Saved" %></a></p>
+      </div>
+      <div class="my-impact">
+        <i class="fas fa-globe-americas fa-sm"></i>
+        <p><a href="/my_impact"><%= "My Impact" %></a></p>
+      </div>
+      <div>
+        <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+      </div>
+
+      <% else %>
+        <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+      <% end %>
     </div>
   </div>
 </div>
