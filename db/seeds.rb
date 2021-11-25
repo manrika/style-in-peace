@@ -1,6 +1,8 @@
 require 'open-uri'
 require 'nokogiri'
 
+puts "Seed is starting, time to relax for some minutes ☕️🍪"
+
 # Destroy all data
 NewsArticle.destroy_all
 Brand.destroy_all
