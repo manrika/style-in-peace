@@ -1,13 +1,12 @@
 <%= link_to 'Back', 'javascript:history.go(-1);', class: "mx-3" %>
 
 <div class="container">
+
   <div class="d-flex">
 
-    <div class="w-50 mt-3">
-    <%# TODO carousel for product images. %>
-    <%# **************placeholder ONLY********************* %>
-      <img class="img-thumbnail" src="<%= @brand.splash_image %>" alt="splash">
-    </div>
+  <div class= "w-75">
+    <%= render 'slideshow', locals: { brand: @brand } %>
+  </div>
 
     <div class="brand-content px-3 mt-3">
       <div >
@@ -43,10 +42,12 @@
       <div>
         <%# TODO : Save link %>
         <a class="btn" href="#">❤️ Save - button bellow works - need to connect them</a>
+        <% unless current_user.brands.include?(@brand)%>
         <%= simple_form_for @brand, url: save_path, method: :post do |f| %>
         <%= f.hidden_field :brand_id, value: @brand.id %>
         <%= f.submit "Save", class: "btn" %>
         <% end %>
+        <%end%>
 
         <%# TODO : Share link %>
         <a class="btn" href="#">❤️ Share</a>
