@@ -10,3 +10,25 @@
 .navbar-lewagon .navbar-brand img {
   width: 40px;
 }
+
+.logo {
+  white-space: nowrap;
+  height: 40px;
+}
+
+.style-in-peace {
+  display: inline-block;
+  .style {
+    font-size: 16px;
+    letter-spacing: .2rem ;
+  }
+  .peace {
+    font-size: 12px;
+    letter-spacing: 1px;
+  }
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+}

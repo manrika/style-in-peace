@@ -4,7 +4,9 @@
   </div>
   <div class="brands-list d-flex">
     <% @eco_local_brands.each do |brand| %>
-      <h3><%= brand.name %></h3>
+    <div class="mx-2">
+      <%= link_to "#{brand.name}", ecofriendly_brand_path(brand)  %>
+    </div>
     <% end %>
   </div>
 
