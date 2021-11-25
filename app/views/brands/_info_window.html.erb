@@ -1,0 +1,36 @@
+<div class="TODO-CARD">
+
+  <div>
+    <img class="img-thumbnail" src="<%= brand.splash_image %>" alt="">
+  </div>
+
+  <div class="d-flex mt-1">
+    <p class="mr-auto"><strong><%= brand.name %></strong><p>
+    <div>
+      <%= simple_form_for brand, url: save_path(brand), method: :post do |f| %>
+          <%= f.hidden_field :brand_id, value: brand.id %>
+          <%= button_tag(class: "bg-white border rounded-circle") do %>
+            <i class="far fa-heart"></i>
+          <% end %>
+        <% end %>
+    </div>
+    <div class= "mx-2">
+      <%= link_to ecofriendly_brand_path(brand) do %>
+        <i class="fas fa-chevron-right"></i>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="d-flex">
+    <div class="d-flex">
+      <% brand.average_rating.times do %>
+        <i class="fas fa-globe-americas"></i>
+      <% end %>
+    </div>
+    <div class="ml-auto">
+      <% brand.price_category.times do %>
+        <i class="fas fa-pound-sign"></i>
+      <% end %>
+    </div>
+  </div>
+</div>
