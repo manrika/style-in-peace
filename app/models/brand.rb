@@ -3,6 +3,7 @@ class Brand < ApplicationRecord
   after_validation :geocode, if: :will_save_change_to_address?
 
   has_many :saved_brands
+  has_many_attached :photos
 
   validates :name, presence: true, uniqueness: true
   validates :website_url, presence: true

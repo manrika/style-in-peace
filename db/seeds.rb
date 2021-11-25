@@ -81,7 +81,7 @@ html_doc.search('h1 a').each do |category|
 
   brands = doc.search('.evVEkx a')
 
-  brands.take(10).map do |brand|
+  brands.take(2).map do |brand| # Change to 10!
     path = brand.attribute('href').value
     url = "https://directory.goodonyou.eco#{path}"
     seed_brand(url)
@@ -129,3 +129,18 @@ cards.each do |card|
 end
 
 puts "Number articles created: #{NewsArticle.count}" # Test
+
+# ATTACH PHOTOS (fashion product images) TO EACH BRAND
+
+brands = Brand.all
+
+brands.each do |brand|
+  counter = 0
+  2.times do # Change to 3 or 4!
+    image_url = URI.open("https://source.unsplash.com/1600x900/?fashion")
+    brand.photos.attach(io: image_url, filename: "#{brand.name}#{counter}.jpg", content_type: 'image/jpeg')
+    counter += 1
+    brand.save!
+  end
+  puts "2 images attached to #{brand.name}: #{brand.photos.attached?} "
+end
