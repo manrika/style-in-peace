@@ -7,7 +7,16 @@
     <h2>New eco-brands on the block</h2>
     <div class='d-flex flex-wrap justify-content-center'>
       <% @new_brands.first(10).each do |brand| %>
-        <%= render 'brands/simple_card', brand: brand %>
+        <div data-controller="brand-card">
+          <div data-action="mouseenter->brand-card#changeCard mouseleave->brand-card#changeCardBack">
+            <div data-brand-card-target="card">
+              <%= render 'brands/simple_card', brand: brand %>
+            </div>
+            <div class='d-none' style="width: 300px; height: auto;" data-brand-card-target="info">
+              <%= render 'brands/info_card', brand: brand  %>
+            </div>
+          </div>
+        </div>
       <% end %>
   </div>
 
