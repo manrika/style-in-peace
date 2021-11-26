@@ -33,7 +33,12 @@
               <%= f.submit "Save", class: "btn" %>
             <% end %>
           <% end %>
-        <%end%>
+        <% else %>
+          <%= simple_form_for @brand, url: save_path, method: :post do |f| %>
+              <%= f.hidden_field :brand_id, value: @brand.id %>
+              <%= f.submit "Save", class: "btn" %>
+            <% end %>
+        <% end %>
 
         <%# TODO : Share link %>
         <a class="btn" href="#">Share</a>
