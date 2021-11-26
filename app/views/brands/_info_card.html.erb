@@ -28,7 +28,11 @@
       </div>
       <%# visit page btn %>
       <div>
-        <%= link_to ">", ecofriendly_brand_path(brand) %>
+        <% if brand.eco? %>
+          <%= link_to ">", ecofriendly_brand_path(brand) %>
+        <% else %>
+          <%= link_to ">", naughty_brand_path(brand) %>
+        <% end %>
       </div>
     </div>
 
