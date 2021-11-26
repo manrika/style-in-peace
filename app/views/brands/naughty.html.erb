@@ -1,9 +1,8 @@
+<%= link_to 'Back', 'javascript:history.go(-1);', class: "mx-3" %>
+
 <h1><%= @brand.name %></h1>
-<h2><%= @brand.price_category %></h2>
-<h2><%= @brand.rating_earth %></h2>
-<p><%= @brand.rating_people %></p>
-<p><%= @brand.rating_animals %></p>
-<p><%= @brand.rating_materials %></p>
+
+<%= render 'naughty_accordian', locals: { brand: @brand } %>
 
 <p><% @topnews.each do |story| %></p>
   <p><%= story.title %></p>
