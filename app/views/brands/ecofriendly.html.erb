@@ -2,7 +2,7 @@
 
 <div class="container">
 
-  <div class="d-flex">
+  <div class="d-flex justify-content-center">
 
     <div class= "slideshow">
       <%= render 'slideshow', locals: { brand: @brand } %>
@@ -22,13 +22,10 @@
         <%= render 'ecofriendly_accordian', locals: { brand: @brand } %>
       </div>
 
-
       <div>
-        <a class="btn" href="<%= @brand.website_url %>">Visit <%= @brand.name %></a>
+        <a target ="_blank" class="btn" href="<%= @brand.website_url %>">Visit <%= @brand.name %></a>
       </div>
       <div>
-        <%# TODO : Save link %>
-        <a class="btn" href="#">❤️ Save - button bellow works - need to connect them</a>
         <% if current_user %>
           <% unless current_user.brands.include?(@brand)%>
             <%= simple_form_for @brand, url: save_path, method: :post do |f| %>
@@ -36,10 +33,15 @@
               <%= f.submit "Save", class: "btn" %>
             <% end %>
           <% end %>
-        <%end%>
+        <% else %>
+          <%= simple_form_for @brand, url: save_path, method: :post do |f| %>
+              <%= f.hidden_field :brand_id, value: @brand.id %>
+              <%= f.submit "Save", class: "btn" %>
+            <% end %>
+        <% end %>
 
         <%# TODO : Share link %>
-        <a class="btn" href="#">❤️ Share</a>
+        <a class="btn" href="#">Share</a>
       </div>
     </div>
   </div>
