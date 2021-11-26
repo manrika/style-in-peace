@@ -47,15 +47,23 @@
   </div>
 
   <%# TODO: Card component scss %>
-  <div class="similar-brands mt-3">
-    <h3>Similar eco-brands brands for you</h3>
-    <div class="card-container d-flex flex-wrap justify-content-center">
-      <% @suggested_brands.first(10).each do |brand| %>
-        <div class="card w-25 m-2">
-          <img src="<%= brand.splash_image %>" alt="splash" class="img-thumbnail">
-          <%= link_to "#{brand.name}", ecofriendly_brand_path(brand)%>
-        </div>
-      <% end %>
+  <% if current_user %>
+    <div class="similar-brands mt-3">
+      <h3>Similar eco-brands brands for you</h3>
+      <div class="card-container d-flex flex-wrap justify-content-center">
+        <% @suggested_brands.first(10).each do |brand| %>
+          <div data-controller="brand-card">
+            <div data-action="mouseenter->brand-card#changeCard mouseleave->brand-card#changeCardBack">
+              <div data-brand-card-target="card">
+                <%= render 'brands/simple_card', brand: brand %>
+              </div>
+              <div class='d-none' style="width: 300px; height: auto;" data-brand-card-target="info">
+                <%= render 'brands/info_card', brand: brand  %>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
     </div>
-  </div>
+  <% end %>
 </div>
