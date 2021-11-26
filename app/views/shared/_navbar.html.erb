@@ -1,4 +1,4 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+<nav class= "navbar navbar-expand-lg navbar-light bg-light">
   <div class="logo">
     <%= link_to root_url, class: "navbar-brand" do %>
     <i class="fas fa-globe-americas fa-2x"></i>
@@ -8,34 +8,51 @@
     </div>
     <% end %>
   </div>
-  <div class="actions">
-    <div class="home">
-      <p><a href="/"><i class="fas fa-home fa-sm"></i></a></p>
-      <p><a href="/"><%= "Home" %></a></p>
-    </div>
-    <div class="explore">
-      <p><a href="/brands/explore"><i class="fas fa-compass fa-sm"></i></a></p>
-      <p><a href="/brands/explore"><%= "Explore" %></a></p>
-    </div>
 
-    <% if user_signed_in? %>
-      <div class="locals">
-        <p><a href="/brands/local"><i class="fas fa-map-marker-alt fa-sm"></i></a></p>
-        <p><a href="/brands/local"><%= "Locals" %></a></p>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item nav-link">
+        <%= link_to root_path do %>
+             <i class="fas fa-home"></i>
+             Home
+        <% end %>
+      </li>
+        <li class="nav-item nav-link">
+        <%= link_to explore_brands_path do %>
+             <i class="fas fa-compass"></i>
+             Explore
+        <% end %>
+      </li>
+      <% if user_signed_in? %>
+        <li class="nav-item nav-link">
+          <%= link_to local_brands_path do %>
+               <i class="fas fa-map-marker-alt"></i>
+               Local
+          <% end %>
+        </li>
+        <li class="nav-item nav-link">
+          <%= link_to saved_brands_path do %>
+               <i class="fas fa-heart"></i>
+               Saved
+          <% end %>
+        </li>
+         <li class="nav-item nav-link">
+          <%= link_to my_impact_path do %>
+               <i class="fas fa-globe-americas"></i>
+               My impact
+          <% end %>
+        </li>
+      <% end %>
+      <div class="login">
+        <li class="nav-item nav-link">
+        <%= link_to new_user_session_path do %>
+             <i class="fas fa-user-circle"></i>
+        <% end %>
+        </li>
       </div>
-      <div class="saved">
-        <p><a href="/brands/saved"><i class="fas fa-heart fa-sm"></i></a></p>
-        <p><a href="/brands/saved"><%= "Saved" %></a></p>
-      </div>
-      <div class="my-impact">
-        <p><a href="/my_impact"><i class="fas fa-globe-americas fa-sm"></i></a></p>
-        <p><a href="/my_impact"><%= "My Impact" %></a></p>
-      </div>
-      <div>
-        <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
-      </div>
-    <% else %>
-      <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-    <% end %>
+    </ul>
   </div>
-</div>
+</nav>

@@ -19,7 +19,11 @@
               <h2><%=brand.name%></h2>
               <p><%= '£' * brand.price_category%></p>
               <p> <%= '⭐️' * brand.average_rating %></p>
-              <%= link_to 'view', ecofriendly_brand_path(brand) %>
+              <% if brand.eco? %>
+                <%= link_to 'view', ecofriendly_brand_path(brand) %>
+              <% else %>
+                <%= link_to 'view', naughty_brand_path(brand) %>
+              <% end %>
             </div>
           <% end %>
       </div>
