@@ -8,16 +8,17 @@
     </div>
     <% end %>
   </div>
-  <% if user_signed_in? %>
-    <div class="actions">
-      <div class="home">
-        <p><a href="/"><i class="fas fa-home fa-sm"></i></a></p>
-        <p><a href="/"><%= "Home" %></a></p>
-      </div>
-      <div class="explore">
-        <p><a href="/brands/explore"><i class="fas fa-compass fa-sm"></i></a></p>
-        <p><a href="/brands/explore"><%= "Explore" %></a></p>
-      </div>
+  <div class="actions">
+    <div class="home">
+      <p><a href="/"><i class="fas fa-home fa-sm"></i></a></p>
+      <p><a href="/"><%= "Home" %></a></p>
+    </div>
+    <div class="explore">
+      <p><a href="/brands/explore"><i class="fas fa-compass fa-sm"></i></a></p>
+      <p><a href="/brands/explore"><%= "Explore" %></a></p>
+    </div>
+
+    <% if user_signed_in? %>
       <div class="locals">
         <p><a href="/brands/local"><i class="fas fa-map-marker-alt fa-sm"></i></a></p>
         <p><a href="/brands/local"><%= "Locals" %></a></p>
@@ -33,9 +34,8 @@
       <div>
         <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
       </div>
-      <% else %>
-        <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-      <% end %>
-    </div>
+    <% else %>
+      <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+    <% end %>
   </div>
 </div>
