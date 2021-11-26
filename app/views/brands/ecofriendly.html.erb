@@ -1,4 +1,9 @@
-<%= link_to 'Back', 'javascript:history.go(-1);', class: "mx-3" %>
+<%= link_to 'javascript:history.go(-1);' do %>
+  <button class="icon-btn">
+    <i class="fas fa-chevron-left"></i>
+  </button>
+<% end %>
+
 
 <div class="container">
 
@@ -23,25 +28,33 @@
       </div>
 
       <div>
-        <a target ="_blank" class="btn" href="<%= @brand.website_url %>">Visit <%= @brand.name %></a>
+        <a target ="_blank" class="primary-btn" href="<%= @brand.website_url %>">Visit <%= @brand.name %></a>
       </div>
       <div>
         <% if current_user %>
           <% unless current_user.brands.include?(@brand)%>
             <%= simple_form_for @brand, url: save_path, method: :post do |f| %>
               <%= f.hidden_field :brand_id, value: @brand.id %>
-              <%= f.submit "Save", class: "btn" %>
+              <%= button_tag type: 'submit', class: "icon-text-btn" do %>
+                <i class="fas fa-heart btn-item"></i>               Save
+              <% end %>
+              <%# = f.submit "Save", class: "icon-text-btn" REMOVE THIS LINE AFTER TESTING %>
             <% end %>
           <% end %>
         <% else %>
           <%= simple_form_for @brand, url: save_path, method: :post do |f| %>
               <%= f.hidden_field :brand_id, value: @brand.id %>
-              <%= f.submit "Save", class: "btn" %>
+              <%= button_tag type: 'submit', class: "icon-text-btn" do %>
+                <i class="fas fa-heart"></i>               Save
+              <% end %>
+              <%#= f.submit "Save", class: "icon-text-btn" REMOVE THIS LINE AFTER TESTING %>
             <% end %>
         <% end %>
 
         <%# TODO : Share link %>
-        <a class="btn" href="#">Share</a>
+        <button class="icon-text-btn">
+          <i class="fas fa-share"></i>               Share
+        </button>
       </div>
     </div>
   </div>

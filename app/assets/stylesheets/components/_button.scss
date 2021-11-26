@@ -1,0 +1,70 @@
+// Add style for all the different buttons and their children here
+
+// Style the back button
+.icon-btn {
+  color: #262626;
+  border: 1.5px solid #262626;
+  border-radius: 100%;
+  width: 32px;
+  height: 32px;
+}
+
+.icon-btn:hover {
+  text-decoration: none;
+  color:white;
+  background-color: #262626;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  transform: scale(1.04); // not working as expected needs fixing when have time
+  transition: all .2s ease-in-out; // not working as expected needs fixing when have time
+}
+
+// Style primary button
+.primary-btn {
+  color:white;
+  background: #262626;
+  border-radius: 32px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 16px;
+
+  position: static;
+  height: 50px;
+  left: 0px;
+  top: 296px;
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+  margin: 48px 0px;
+}
+
+.primary-btn:hover {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  letter-spacing: 0.4px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  transform: scale(1.04);
+  transition: all .2s ease-in-out;
+}
+
+// Style icon + text button
+.icon-text-btn {
+  color: #262626;
+  border: 1.5px solid #262626;
+  border-radius: 32px;
+  height: 50px;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.icon-text-btn:hover {
+  text-decoration: none;
+  color:white;
+  background-color: #262626;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  transform: scale(1.04); // not working as expected needs fixing when have time
+  transition: all .2s ease-in-out; // not working as expected needs fixing when have time
+}

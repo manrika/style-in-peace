@@ -1,3 +1,9 @@
+<%= link_to 'javascript:history.go(-1);' do %>
+  <button class="icon-btn">
+    <i class="fas fa-chevron-left"></i>
+  </button>
+<% end %>
+
 <h1>Saved brands:</h1>
 <% @saved_brands.each do |sb| %>
 <p><%= sb.brand.name%></p>
