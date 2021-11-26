@@ -1,0 +1,55 @@
+<div class="info-card">
+  <div class="card-slideshow">
+    <%= render 'brands/slideshow', brand: brand %>
+  </div>
+
+  <%# line for name and btns %>
+  <div class="p-2">
+    <div class="d-flex">
+      <%# brand name %>
+      <div class="mr-auto">
+        <p><strong><%= brand.name %></strong></p>
+      </div>
+      <%# logic for save btn %>
+      <div>
+        <% if current_user %>
+          <% unless current_user.brands.include?(brand)%>
+            <%= simple_form_for brand, url: save_path(brand), method: :post do |f| %>
+              <%= f.hidden_field :brand_id, value: brand.id %>
+              <%= f.submit "Save", class: "btn" %>
+            <% end %>
+          <% end %>
+        <% else %>
+          <%= simple_form_for brand, url: save_path(brand), method: :post do |f| %>
+              <%= f.hidden_field :brand_id, value: brand.id %>
+              <%= f.submit "Save", class: "btn" %>
+            <% end %>
+        <% end %>
+      </div>
+      <%# visit page btn %>
+      <div>
+        <%= link_to ">", ecofriendly_brand_path(brand) %>
+      </div>
+    </div>
+
+    <%# ratings %>
+    <div class="d-flex">
+      <div class="d-flex">
+        <% brand.average_rating.times do %>
+          <i class="fas fa-globe-americas mx-1 mt-2">  </i>
+        <% end %>
+        <% (5 - brand.average_rating).times do %>
+          <i style="color: grey" class="fas fa-globe-americas mx-1 mt-2">  </i>
+        <% end %>
+      </div>
+      <div class="ml-auto">
+        <% brand.price_category.times do %>
+          <i class="fas fa-pound-sign"></i>
+        <% end %>
+        <% (3 - brand.price_category).times do %>
+          <i style="color: grey" class="fas fa-pound-sign">  </i>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

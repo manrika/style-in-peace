@@ -17,3 +17,14 @@
     }
   }
 }
+
+.card-slideshow {
+  height: 400px;
+
+  .background-img {
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  height: 400px;
+  }
+}
