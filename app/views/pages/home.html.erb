@@ -26,30 +26,13 @@
         <p>Sorry, we don't have any brands that match your criteria.</p>
       <% else %>
         <div class="d-flex flex-wrap justify-content-center">
-          <% @recommended_brands.first(10).each do |brand| %>
-            <%= render 'brands/info_card', brand: brand  %>
-          <% end %>
+          <div style="width: 300px; height: auto;">
+            <% @recommended_brands.first(10).each do |brand| %>
+              <%= render 'brands/info_card', brand: brand  %>
+            <% end %>
+          </div>
         </div>
       <% end %>
-
-    </div>
-
-
-
-    <div>
-      <h2>Eco-brands for you</h2>
-      <div class="d-flex flex-wrap justify-content-center">
-        <% @recommended_brands.first(10).each do |brand| %>
-          <div class="TODO-CARD-scss w-25 m-2">
-            <img class = "img-thumbnail" src="<%= brand.splash_image %>" alt="">
-            <p><strong><%= brand.name %></strong></p>
-            <p><%= '🌎' * brand.average_rating %></p>
-            <p> <%= '£' * brand.price_category %></p>
-            <p> <em><%= brand.style %></em></p>
-            <%= link_to 'view', ecofriendly_brand_path(brand) %>
-          </div>
-        <% end %>
-      </div>
     </div>
   <% end %>
 </div>
