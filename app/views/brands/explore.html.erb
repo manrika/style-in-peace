@@ -14,16 +14,15 @@
       <h2>Brands</h2>
         <div class="d-flex flex-wrap justify-content-center">
           <% @brands.each do |brand| %>
-            <div class="w-25 mx-1 mt-2">
-              <img class= "img-thumbnail" src="<%=brand.splash_image%>" alt="">
-              <h2><%=brand.name%></h2>
-              <p><%= '£' * brand.price_category%></p>
-              <p> <%= '⭐️' * brand.average_rating %></p>
-              <% if brand.eco? %>
-                <%= link_to 'view', ecofriendly_brand_path(brand) %>
-              <% else %>
-                <%= link_to 'view', naughty_brand_path(brand) %>
-              <% end %>
+            <div data-controller="brand-card">
+              <div data-action="mouseenter->brand-card#changeCard mouseleave->brand-card#changeCardBack">
+                <div data-brand-card-target="card">
+                  <%= render 'brands/simple_card', brand: brand %>
+                </div>
+                <div class='d-none' style="width: 300px; height: auto;" data-brand-card-target="info">
+                  <%= render 'brands/info_card', brand: brand  %>
+                </div>
+              </div>
             </div>
           <% end %>
       </div>

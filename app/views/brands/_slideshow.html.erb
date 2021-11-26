@@ -1,8 +1,8 @@
 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel('cycle')">
   <div class="carousel-inner">
-    <div class="carousel-item active background-img" style="background-image: url('<%= @brand.splash_image %>')">
+    <div class="carousel-item active background-img" style="background-image: url('<%= brand.splash_image %>')">
     </div>
-    <% @brand.photos.each do |photo| %>
+    <% brand.photos.each do |photo| %>
       <div class="carousel-item background-img" style="background-image: url('<%= cl_image_path photo.key, crop: :fill, width: 200, height: 200 %>')">
       </div>
     <% end %>
