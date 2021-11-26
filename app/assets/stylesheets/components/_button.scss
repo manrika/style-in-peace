@@ -52,5 +52,19 @@
 
 // Style icon + text button
 .icon-text-btn {
+  color: #262626;
+  border: 1.5px solid #262626;
+  border-radius: 32px;
+  height: 50px;
+  padding-left: 16px;
+  padding-right: 16px;
+}
 
+.icon-text-btn:hover {
+  text-decoration: none;
+  color:white;
+  background-color: #262626;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  transform: scale(1.04); // not working as expected needs fixing when have time
+  transition: all .2s ease-in-out; // not working as expected needs fixing when have time
 }

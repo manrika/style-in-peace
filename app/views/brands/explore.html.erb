@@ -1,4 +1,9 @@
-<%= link_to 'Back', 'javascript:history.go(-1);', class: "mx-3" %>
+<%= link_to 'javascript:history.go(-1);' do %>
+  <button class="icon-btn">
+    <i class="fas fa-chevron-left"></i>
+  </button>
+<% end %>
+
 <div class="container">
   <h1>Explore eco-brands</h1>
 
