@@ -1,0 +1,19 @@
+.slideshow {
+  height: 500px;
+  width: 400px;
+
+  .background-img {
+    background-position: center;
+    background-size: cover;
+    height: 500px;
+    position: relative;
+
+    .content {
+      position: absolute;
+      top: 100px;
+      left: 50px;
+      right: 50px;
+      color: white;
+    }
+  }
+}

@@ -4,11 +4,11 @@
 
   <div class="d-flex">
 
-  <div class= "w-75">
-    <%= render 'slideshow', locals: { brand: @brand } %>
-  </div>
+    <div class= "slideshow">
+      <%= render 'slideshow', locals: { brand: @brand } %>
+    </div>
 
-    <div class="brand-content px-3 mt-3">
+    <div class="px-3 mt-3 w-50">
       <div >
         <h2><%= @brand.name %></h2>
       </div>
