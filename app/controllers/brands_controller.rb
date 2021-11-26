@@ -17,7 +17,7 @@ class BrandsController < ApplicationController
     @news = @newsarticles.order(created_at: :desc)
     @topnews = @news.first(3)
     @allbrands = Brand.eco
-    @similarbrands = @allbrands.select do |newbrand|
+    @suggested_brands = @allbrands.select do |newbrand|
       newbrand.price_category == @brand.price_category && newbrand.style == @brand.style
     end
     # price and style overlap
