@@ -15,38 +15,25 @@
       <div class="rating">
         <p><%= '🌎' * @brand.average_rating %></p>
       </div>
-      <div class="impact">
-        <h3>Impact</h3>
-        <%# emojis are placeholders for now%>
-        <p><strong>Earth:</strong> <%= '🌎' * @brand.rating_earth %></p>
-        <p><strong>People:</strong> <%= '💁‍♀️' * @brand.rating_earth %></p>
-        <p><strong>Animals:</strong> <%= '🐼' * @brand.rating_earth %></p>
-        <p><strong>Materials:</strong> <%= '♺' * @brand.rating_earth %></p>
+
+      <div>
+        <%= render 'ecofriendly_accordian', locals: { brand: @brand } %>
       </div>
-      <div class="why-we-love-them">
-        <h3>Why we love them</h3>
-        <p><%= @brand.why_we_love_them %></p>
-      </div>
-      <div class="about">
-        <h3>About</h3>
-        <p><%= @brand.about %></p>
-      </div>
-      <div class="location">
-        <h3>Location</h3>
-        <p><%= @brand.address %></p>
-        <%# TODO : Map %>
-      </div>
+
+
       <div>
         <a class="btn" href="<%= @brand.website_url %>">Visit <%= @brand.name %></a>
       </div>
       <div>
         <%# TODO : Save link %>
         <a class="btn" href="#">❤️ Save - button bellow works - need to connect them</a>
-        <% unless current_user.brands.include?(@brand)%>
-        <%= simple_form_for @brand, url: save_path, method: :post do |f| %>
-        <%= f.hidden_field :brand_id, value: @brand.id %>
-        <%= f.submit "Save", class: "btn" %>
-        <% end %>
+        <% if current_user %>
+          <% unless current_user.brands.include?(@brand)%>
+            <%= simple_form_for @brand, url: save_path, method: :post do |f| %>
+              <%= f.hidden_field :brand_id, value: @brand.id %>
+              <%= f.submit "Save", class: "btn" %>
+            <% end %>
+          <% end %>
         <%end%>
 
         <%# TODO : Share link %>

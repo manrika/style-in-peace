@@ -1,7 +1,15 @@
+
+<%= link_to 'Back', 'javascript:history.go(-1);', class: "mx-3" %>
+
+<h1><%= @brand.name %></h1>
+
+<%= render 'naughty_accordian', locals: { brand: @brand } %>
+
 <div class="container">
   <div class = "slideshow">
     <%= render 'news_slideshow', locals: { topnews: @topnews } %>
   </div>
+
 
   <h1><%= @brand.name %></h1>
   <h2><%= @brand.price_category %></h2>
