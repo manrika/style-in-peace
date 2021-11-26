@@ -1,0 +1,27 @@
+<div id="carouselExampleControls" class="carousel slide" data-ride="carousel('cycle')">
+  <div class="carousel-inner">
+    <div class="carousel-item active background-img" style="background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('<%= @topnews[0].image %>')">
+      <div class="content">
+        <p><strong><%= @topnews[0].title %></strong></p>
+        <p><%= @topnews[0].blurb %></p>
+      </div>
+    </div>
+    <% @topnews.each_with_index do |article, index| %>
+      <% next if index == 0 %>
+      <div class="carousel-item background-img" style="background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('<%= article.image %>')">
+        <div class="content">
+          <p><strong><%= article.title %></strong></p>
+          <p><%= article.blurb %></p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+ <button class="carousel-control-prev" type="button" data-target="#carouselExampleControls" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-target="#carouselExampleControls" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </button>
+</div>
