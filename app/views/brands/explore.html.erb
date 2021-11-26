@@ -1,31 +1,40 @@
+<%= link_to 'Back', 'javascript:history.go(-1);', class: "mx-3" %>
 <div class="container">
   <h1>Explore eco-brands</h1>
 
-  <h2>Brands</h2>
-
-  <div class="d-flex flex-wrap justify-content-center">
-    <% @brands.each do |brand| %>
-      <div class="w-25 mx-1 mt-2">
-        <img class= "img-thumbnail" src="<%=brand.splash_image%>" alt="">
-        <h2><%=brand.name%></h2>
-        <p><%= '£' * brand.price_category%></p>
-        <p> <%= '⭐️' * brand.average_rating %></p>
-        <%= link_to 'view', ecofriendly_brand_path(brand) %>
+  <div class="mytabs">
+    <input type="radio" id="tabfree" name="mytabs" checked="checked">
+    <label for="tabfree">Brands</label>
+    <div class="tab">
+      <h2>Brands</h2>
+        <div class="d-flex flex-wrap justify-content-center">
+          <% @brands.each do |brand| %>
+            <div class="w-25 mx-1 mt-2">
+              <img class= "img-thumbnail" src="<%=brand.splash_image%>" alt="">
+              <h2><%=brand.name%></h2>
+              <p><%= '£' * brand.price_category%></p>
+              <p> <%= '⭐️' * brand.average_rating %></p>
+              <%= link_to 'view', ecofriendly_brand_path(brand) %>
+            </div>
+          <% end %>
       </div>
+    </div>
+    <input type="radio" id="tabsilver" name="mytabs">
+    <label for="tabsilver">News</label>
+        <div class="tab">
+          <h2>News</h2>
+            <%@newsarticles.each do |news|%>
+              <%=news.image%>
+              <h2><%=news.title%></h2>
+              <p><%=news.blurb%></p>
+              <p><%=news.url%></p>
+              <p><%=news.date%></p>
+            <% end %>
+        </div>
+    <%= link_to brands_path do %>
+      <button class="btn btn-outline-secondary">
+        <i class="fas fa-plus"></i>  Add a brand
+      </button>
     <% end %>
   </div>
-
-  <h2>News</h2>
-
-  <%@newsarticles.each do |news|%>
-    <%=news.image%>
-    <h2><%=news.title%></h2>
-    <p><%=news.blurb%></p>
-    <p><%=news.url%></p>
-    <p><%=news.date%></p>
-  <% end %>
-
-  <h2>(+ Add a brand that is not listed)</h2>
-  <%= link_to "Back", root_path%>
-  <%= link_to "Add", brands_path%>
 </div>

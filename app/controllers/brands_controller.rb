@@ -17,7 +17,7 @@ class BrandsController < ApplicationController
     @news = @newsarticles.order(created_at: :desc)
     @topnews = @news.first(3)
     @allbrands = Brand.eco
-    @similarbrands = @allbrands.select do |newbrand|
+    @suggested_brands = @allbrands.select do |newbrand|
       newbrand.price_category == @brand.price_category && newbrand.style == @brand.style
     end
     # price and style overlap
@@ -67,12 +67,16 @@ class BrandsController < ApplicationController
 
   def save
     @saved_brand = SavedBrand.new(saved_brand_params)
-    @saved_brand.user = current_user
-    if @saved_brand.save!
-      redirect_to saved_brands_path
-      flash[:notice] = 'Brand saved successfully'
+    if current_user
+      @saved_brand.user = current_user
+      if @saved_brand.save!
+        redirect_to saved_brands_path
+        flash[:notice] = 'Brand saved successfully'
+      else
+        flash[:alert] = 'Brand was not saved.'
+      end
     else
-      flash[:alert] = 'Brand was not saved.'
+      redirect_to new_user_session_path
     end
   end
 
