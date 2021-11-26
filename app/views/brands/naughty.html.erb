@@ -1,35 +1,37 @@
 
 <%= link_to 'Back', 'javascript:history.go(-1);', class: "mx-3" %>
 
-<h1><%= @brand.name %></h1>
-
-<%= render 'naughty_accordian', locals: { brand: @brand } %>
-
 <div class="container">
-  <div class = "slideshow">
-    <%= render 'news_slideshow', locals: { topnews: @topnews } %>
+
+  <div class="d-flex">
+    <div class = "slideshow">
+      <%= render 'news_slideshow', locals: { topnews: @topnews } %>
+    </div>
+
+    <div class="px-3 mt-3 w-50 mx-3">
+      <div >
+        <h2><%= @brand.name %></h2>
+      </div>
+      <div class="d-flex">
+          <% @brand.average_rating.times do %>
+            <i class="fas fa-globe-americas mx-1 mt-2">  </i>
+          <% end %>
+      </div>
+      <div class="mt-3">
+        <%= render 'naughty_accordian', locals: { brand: @brand } %>
+      </div>
+    </div>
   </div>
 
-
-  <h1><%= @brand.name %></h1>
-  <h2><%= @brand.price_category %></h2>
-  <h2><%= @brand.rating_earth %></h2>
-  <p><%= @brand.rating_people %></p>
-  <p><%= @brand.rating_animals %></p>
-  <p><%= @brand.rating_materials %></p>
-
-  <p><% @topnews.each do |story| %></p>
-    <p><%= story.title %></p>
-    <p><%= story.url %></p>
-    <p><%= story.blurb %></p>
-    <p><%= story.image %></p>
-    <p><%= story.date %></p>
-  <p><% end %></p>
-
-  <h1><%= 'Similar eco-brands to you' %></h1>
-  <p><% @similarbrands.each do |newbrand| %></p>
-    <p><%= newbrand.name %></p>
-    <p><%= newbrand.splash_image %></p>
-    <%= link_to 'view', ecofriendly_brand_path(newbrand) %>
-  <p><% end %></p>
+  <div class="similar-brands mt-3">
+    <h3>Similar eco-brands brands for you</h3>
+    <div class="card-container d-flex flex-wrap justify-content-center">
+      <% @suggested_brands.first(10).each do |brand| %>
+        <div class="card w-25 m-2">
+          <img src="<%= brand.splash_image %>" alt="splash" class="img-thumbnail">
+          <%= link_to "#{brand.name}", ecofriendly_brand_path(brand)%>
+        </div>
+      <% end %>
+    </div>
+  </div>
 </div>
