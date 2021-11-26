@@ -45,14 +45,21 @@
                My impact
           <% end %>
         </li>
+        <div class="login">
+          <li class="nav-item nav-link">
+            <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item ml-auto" %>
+          </li>
+        </div>
+      <% else %>
+        <div class="login">
+          <li class="nav-item nav-link">
+          <%= link_to new_user_session_path do %>
+              <i class="fas fa-user-circle"></i>
+          <% end %>
+          </li>
+        </div>
       <% end %>
-      <div class="login">
-        <li class="nav-item nav-link">
-        <%= link_to new_user_session_path do %>
-             <i class="fas fa-user-circle"></i>
-        <% end %>
-        </li>
-      </div>
+
     </ul>
   </div>
 </nav>
