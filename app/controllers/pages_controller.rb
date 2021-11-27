@@ -8,6 +8,6 @@ class PagesController < ApplicationController
         brand.price_category == current_user.preference_price && brand.style == current_user.preference_style
       end
     end
-    @brands = Brand.all.sort
+    @brands = Brand.all.order(:name)
   end
 end
