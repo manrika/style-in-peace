@@ -1,11 +1,17 @@
+.search {
+  width: auto;
+  margin: auto;
+  width: 600px;
+}
+
 .search-bar {
   border-radius: 32px;
   border: none;
   padding-left: 24px;
   background: rgba(255, 255, 255, 0.5);
-  // border: 1.5px solid rgba(255, 255, 255, 0.5);
   font-family: 'Quicksand', sans-serif;
   color: #262626;
+  width: 100%;
 
   i {
     color: rgba(38, 38, 38, 0.4);
@@ -16,18 +22,12 @@
     border: none;
     background: none;
     padding: 16px 24px 16px 0px;
+    width: 520px;
   }
 
   &:hover i {
-    // border: 1.5px solid rgba(38, 38, 38, 0.3);
     letter-spacing: 0.4px;
     color: rgba(38, 38, 38, 1);
-  }
-
-  &:active {
-    // border: 1.5px solid rgba(38, 38, 38, 0.3);
-    // border-radius: 32px 32px 0px 0px;
-    border: none;
   }
 }
 
@@ -38,6 +38,7 @@ input:focus, textarea {
 .dropdownmenu {
   max-height: 200px;
   overflow: auto;
+  width: 100%;
 
   background: rgba(255, 255, 255, 0.5);
   border-radius: 0 0 8px 8px;
@@ -50,6 +51,11 @@ input:focus, textarea {
 
     &:hover {
       font-weight: 600;
+    }
+
+    &:focus {
+      background-color: rgba(38, 38, 38, 1);
+      color: white;
     }
   }
 }

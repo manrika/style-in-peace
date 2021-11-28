@@ -3,7 +3,7 @@
     class: "form-inline",
     data: {search_brands_list_target: "form"}
   ) do %>
-  <div class="search-bar">
+  <div class="search-bar" data-search-brands-list-target="search">
     <i class="fas fa-search d-inline"></i>
     <%= text_field_tag :query,
       params[:query],
