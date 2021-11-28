@@ -6,6 +6,7 @@ export default class extends Controller {
 
   connect() {
     this.listTarget.classList.add('d-none');
+    this.searchTarget.style.borderRadius = "32px";
   }
 
   displayBrands() {
