@@ -1,7 +1,10 @@
 <div class='container'>
   <h2>How eco-friendly are the brands you shop with?</h2>
 
-<%= render 'search' %>
+  <div data-controller="search-brands-list">
+    <%= render 'search' %>
+    <%= render 'list' %>
+  </div>
 
   <div>
     <h2>New eco-brands on the block</h2>
