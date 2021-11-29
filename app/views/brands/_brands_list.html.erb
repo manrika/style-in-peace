@@ -1,6 +1,6 @@
 <div class="d-flex flex-wrap" data-search-brand-cards-target="cards">
   <% brands.each do |brand| %>
-    <div data-controller="brand-card">
+    <div data-controller="brand-card col-3">
       <div data-action="mouseenter->brand-card#changeCard mouseleave->brand-card#changeCardBack">
         <div data-brand-card-target="card">
           <%= render 'brands/simple_card', brand: brand %>
