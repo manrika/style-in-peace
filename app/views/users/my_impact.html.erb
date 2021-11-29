@@ -1,16 +1,23 @@
-<%= link_to 'javascript:history.go(-1);' do %>
-  <button class="icon-btn">
-    <i class="fas fa-chevron-left"></i>
-  </button>
-<% end %>
+<div class="mt-5">
+  <div class="page-layout-with-back-btn">
+    <div class="back-btn-container">
+      <%= link_to 'javascript:history.go(-1);' do %>
+        <button class="icon-btn">
+          <i class="fas fa-chevron-left"></i>
+        </button>
+      <% end %>
+    </div>
 
-<h1>My impact:</h1>
-
-<p>Brands shared:</p>
-<p><%=@brands_shared%></p>
-<p>Brands referred:</p>
-<p><%=@brands_referred%></p>
-<p>Friends referred</p>
-<p><%=@friends_referred%></p>
-<p>Total points:</p>
-<p><%=@total_points %></p>
+    <div class="container">
+      <h1>My impact</h1>
+      <p>Brands shared:</p>
+      <p><%=@brands_shared%></p>
+      <p>Brands referred:</p>
+      <p><%=@brands_referred%></p>
+      <p>Friends referred</p>
+      <p><%=@friends_referred%></p>
+      <p>Total points:</p>
+      <p><%=@total_points %></p>
+    </div>
+  </div>
+</div>
