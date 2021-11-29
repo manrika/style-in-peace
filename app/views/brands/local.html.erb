@@ -18,27 +18,37 @@
 </div>
 
 <div class="map-container">
-  <div class="map">
-    <div style="width: 100%; height: 600px;"
+  <div class="map" data-controller="local-modal">
+    <div class="map-body" style="width: 100%; height: 600px;"
       data-controller="mapbox"
       data-mapbox-markers-value="<%= @markers.to_json %>"
-      data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+      data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
+      data-action="click->mapbox#openModal">
     </div>
     <%# -----------SEARCH---------- %>
     <div class="map-search">
-    <%= form_tag(
-      local_brands_path, method: 'get',
-      class: "form-inline",
-      ) do %>
-      <div class="map-search-bar">
-        <i class="fas fa-search d-inline"></i>
-        <%= text_field_tag :address,
-          params[:address],
-          class: "d-inline search-input",
-          placeholder: "#{@address}"
-        %>
+      <%= form_tag(
+        local_brands_path, method: 'get',
+        class: "form-inline",
+        ) do %>
+        <div class="map-search-bar">
+          <i class="fas fa-search d-inline"></i>
+          <%= text_field_tag :address,
+            params[:address],
+            class: "d-inline search-input",
+            placeholder: "#{@address}"
+          %>
+        </div>
+      <% end %>
+    </div>
+    <%# -----------Brand Modal--------- %>
+    <div>
+      <div id="myModal" class="modal">
+
+          <!-- Modal content -->
+          <%# <%= render 'info_card' brand: brand %>
+
       </div>
-    <% end %>
-  </div>
+    </div>
   </div>
 </div>

@@ -46,6 +46,7 @@ class BrandsController < ApplicationController
   end
 
   def local
+
     if params[:address].present?
       @address = params[:address]
     else

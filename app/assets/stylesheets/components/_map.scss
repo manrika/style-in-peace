@@ -62,3 +62,22 @@ max-width: 200px;
 input:focus, textarea {
     outline: none !important;
 }
+
+.map-body {
+  position: relative !important;
+}
+
+.mapboxgl-popup {
+  transform: none !important;
+  // position: absolute !important;
+  margin-top: 20px !important;
+  margin-left: 75vw;
+}
+
+.mapboxgl-popup-content {
+  padding: 0;
+}
+
+.mapboxgl-popup-tip {
+  display: none !important;
+}
