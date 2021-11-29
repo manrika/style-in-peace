@@ -16,17 +16,36 @@
     <% end %>
   </div>
 
-  <div class="map-container">
-    <div class="address">
-      <p><%= current_user.address %></p>
-    </div>
-    <div class="map">
-      <div style="width: 100%; height: 600px;"
-        data-controller="mapbox"
-        data-mapbox-markers-value="<%= @markers.to_json %>"
-        data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
-    </div>
+
+</div>
+
+
+
+<div class="map-container">
+  <div class="address">
+    <p><%= current_user.address %></p>
   </div>
+  <div class="map" style="position: relative;">
+    <div style="width: 100%; height: 600px;"
+      data-controller="mapbox"
+      data-mapbox-markers-value="<%= @markers.to_json %>"
+      data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
 
-
+    <div style="width: 200px; position: absolute; top: 20px; left: 20px">
+    <%= form_tag(
+      local_brands_path, method: 'get',
+      class: "form-inline",
+      ) do %>
+      <div class="search-bar">
+        <i class="fas fa-search d-inline"></i>
+        <%= text_field_tag :address,
+          params[:address],
+          class: "d-inline search-input",
+          placeholder: "#{@address}"
+        %>
+      </div>
+    <% end %>
+  </div>
+  </div>
 </div>

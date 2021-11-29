@@ -1,5 +1,6 @@
 import { Controller } from "@hotwired/stimulus";
 import mapboxgl from 'mapbox-gl';
+import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
 
 export default class extends Controller {
   static values = {
@@ -34,3 +35,8 @@ export default class extends Controller {
     this.map.fitBounds(bounds, { padding: 70, maxZoom: 15, duration: 0 });
   }
 }
+
+// select the information from the search
+// make a request to backend controller (new controller or new action)
+// AJAX respond with json from the backend controller
+// use the response to update markers
