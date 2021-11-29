@@ -1,0 +1,41 @@
+<div class="prev-wrapper">
+
+  <section id="section1">
+      <% brands.first(4).each do |brand| %>
+        <div class="item">
+          <div data-controller="brand-card">
+            <div data-action="mouseenter->brand-card#changeCard mouseleave->brand-card#changeCardBack">
+              <div data-brand-card-target="card">
+                <%= render 'brands/simple_card', brand: brand %>
+              </div>
+              <div class='d-none' style="width: 300px; height: auto;" data-brand-card-target="info">
+                <%= render 'brands/info_card', brand: brand  %>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+  </section>
+
+  <section id="section2">
+      <% brands.each_with_index do |brand, index| %>
+        <% if index >= 5 && index <= 8 %>
+          <div class="item">
+            <div data-controller="brand-card">
+              <div data-action="mouseenter->brand-card#changeCard mouseleave->brand-card#changeCardBack">
+                <div data-brand-card-target="card">
+                  <%= render 'brands/simple_card', brand: brand %>
+                </div>
+                <div class='d-none' style="width: 300px; height: auto;" data-brand-card-target="info">
+                  <%= render 'brands/info_card', brand: brand  %>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% else %>
+          <% next %>
+        <% end %>
+      <% end %>
+    </div>
+  </section>
+</div>
