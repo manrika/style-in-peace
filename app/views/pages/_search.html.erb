@@ -1,7 +1,8 @@
 <%= form_tag(
     root_path, method: 'get',
     class: "form-inline",
-    data: {search_brands_list_target: "form"}
+    data: {search_brands_list_target: "form"},
+    autocomplete: "off"
   ) do %>
   <div class="search-bar" data-search-brands-list-target="search">
     <i class="fas fa-search d-inline"></i>

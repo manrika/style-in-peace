@@ -27,6 +27,10 @@
     font-size: 18px;
   }
 
+  ::-webkit-input-placeholder {
+    color: rgba(180, 180, 180, 1);
+  }
+
   &:hover i {
     letter-spacing: 0.4px;
     color: white;
