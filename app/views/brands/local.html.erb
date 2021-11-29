@@ -11,21 +11,36 @@
   </div>
   <div class="brands-list d-flex">
     <% @eco_local_brands.each do |brand| %>
-    <div class="mx-2">
+    <div class="local-card">
       <%= link_to "#{brand.name}", ecofriendly_brand_path(brand)  %>
     </div>
     <% end %>
   </div>
+</div>
 
-  <div class="map-container">
-    <div class="address">
-      <p><%= current_user.address %></p>
+<div class="map-container">
+  <div class="map" data-controller="local-modal">
+    <div class="map-body" style="width: 100%; height: 600px;"
+      data-controller="mapbox"
+      data-mapbox-markers-value="<%= @markers.to_json %>"
+      data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
+      data-action="click->mapbox#openModal">
     </div>
-    <div class="map">
-      <div style="width: 100%; height: 600px;"
-        data-controller="mapbox"
-        data-mapbox-markers-value="<%= @markers.to_json %>"
-        data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+    <%# -----------SEARCH---------- %>
+    <div class="map-search">
+      <%= form_tag(
+        local_brands_path, method: 'get',
+        class: "form-inline",
+        ) do %>
+        <div class="map-search-bar">
+          <i class="fas fa-search d-inline"></i>
+          <%= text_field_tag :address,
+            params[:address],
+            class: "d-inline search-input",
+            placeholder: "#{@address}"
+          %>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>

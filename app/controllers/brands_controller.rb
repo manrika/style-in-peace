@@ -46,8 +46,13 @@ class BrandsController < ApplicationController
   end
 
   def local
-    # all brands within 10 miles of user, change number to change distance
-    @local_brands = Brand.near(current_user.address, 100)
+
+    if params[:address].present?
+      @address = params[:address]
+    else
+      @address = current_user.address
+    end
+    @local_brands = Brand.near(@address, 10)
     @eco_local_brands = @local_brands.select do |brand|
       brand.eco? && brand.geocoded?
     end
@@ -56,7 +61,7 @@ class BrandsController < ApplicationController
       {
         lat: brand.latitude,
         lng: brand.longitude,
-        info_window: render_to_string(partial: "info_window", locals: { brand: brand })
+        info_window: render_to_string(partial: "info_window", locals: { brand: brand }),
       }
     end
   end
