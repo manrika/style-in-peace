@@ -38,10 +38,16 @@ class BrandsController < ApplicationController
 
   def explore
     if params[:query].present?
-      @brands = Brand.where("name ILIKE ?", "%#{params[:query]}%")
+      @brands = Brand.where("name ILIKE ?", "%#{params[:query]}%").eco
     else
       @brands = Brand.eco
     end
+
+    respond_to do |format|
+      format.html
+      format.text { render partial: 'brands/brands_list', locals: { brands: @brands }, formats: [:html] }
+    end
+
     @newsarticles = NewsArticle.all
   end
 

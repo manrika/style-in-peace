@@ -41,6 +41,18 @@ input:focus, textarea {
     outline: none !important;
 }
 
+#outlined-search {
+  background: rgba(120, 120, 120, 0.1);
+  margin: 24px 32px 18px 6px;
+
+  .search-input {
+    color: #262626;
+  }
+
+  i {
+    color: rgba(120, 120, 120, 0.4);
+  }
+}
 .dropdownmenu {
   max-height: 200px;
   overflow: auto;
