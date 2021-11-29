@@ -9,6 +9,9 @@
 @import "font-awesome";
 // mapbox style
 @import 'mapbox-gl/dist/mapbox-gl';
+// social share buttons
+@import "social-share-button";
+// require social-share-button;
 
 // Your CSS partials
 @import "components/index";
@@ -28,4 +31,27 @@ a {
     color: black;
     font-size: 117%;
   }
+}
+
+.page-layout-with-back-btn {
+  display: flex;
+  margin: auto;
+  width: 75%;
+
+  h1 {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    font-size: 32px;
+    margin-bottom: 24px;
+  }
+}
+
+.container {
+  margin: 0px 0px 0px 32px;
+  max-width: 1400px;
+  padding: 0px;
+}
+
+.back-btn-container {
+  padding: 6px 0px;
 }
