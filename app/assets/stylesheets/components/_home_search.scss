@@ -1,0 +1,32 @@
+.home-search {
+  width: 650px;
+  height: 60px;
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid #C4C4C4;
+  border-radius: 32px;
+  color: white ;
+  display: flex;
+
+
+  .text-input {
+    border: none !important;
+    background: none !important;
+    color: white !important;
+    margin-left: 25px;
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .fa-search {
+    color: white;
+    font-size: 25px;
+    margin-top: 15px;
+    margin-right: 10px;
+  }
+
+  ::placeholder {
+    color: white;
+  }
+
+}

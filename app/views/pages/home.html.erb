@@ -1,56 +1,27 @@
 <div class="banner">
   <h1>How eco-friendly are the brands you shop with?</h1>
-  <div>
-    <%= render 'search' %>
+  <div class="mt-3">
+    <%= render 'search_two' %>
   </div>
 </div>
 
-<div class='container'>
+<div class="container mt-3">
+  <%= render 'search' %>
+  <h2>New eco-brands on the block</h2>
+</div>
+<div>
+  <%= render 'brands/preview', brands: @new_brands %>
+</div>
 
-  <div>
-    <h2>New eco-brands on the block</h2>
-    <div class='d-flex flex-wrap justify-content-center'>
-      <% @new_brands.first(10).each do |brand| %>
-        <div data-controller="brand-card">
-          <div data-action="mouseenter->brand-card#changeCard mouseleave->brand-card#changeCardBack">
-            <div data-brand-card-target="card">
-              <%= render 'brands/simple_card', brand: brand %>
-            </div>
-            <div class='d-none' style="width: 300px; height: auto;" data-brand-card-target="info">
-              <%= render 'brands/info_card', brand: brand  %>
-            </div>
-          </div>
-        </div>
-      <% end %>
+<% if current_user %>
+  <div class="container mt-3">
+    <h2>Eco-brands for you</h2>
   </div>
-
-  <% if current_user %>
-    <div>
-      <h2>Eco-brands for you</h2>
-      <% if @recommended_brands.empty? %>
+    <% if @recommended_brands.empty? %>
+      <div class="contain">
         <p>Sorry, we don't have any brands that match your criteria.</p>
-      <% else %>
-        <div class="d-flex flex-wrap justify-content-center">
-          <% @recommended_brands.first(10).each do |brand| %>
-            <div data-controller="brand-card">
-              <div data-action="mouseenter->brand-card#changeCard mouseleave->brand-card#changeCardBack">
-                <div data-brand-card-target="card">
-                  <%= render 'brands/simple_card', brand: brand %>
-                </div>
-                <div class='d-none' style="width: 300px; height: auto;" data-brand-card-target="info">
-                  <%= render 'brands/info_card', brand: brand  %>
-                </div>
-              </div>
-            </div>
-          <% end %>
-        </div>
-      <% end %>
-    </div>
-  <% end %>
-</div>
-
-
-
-
-
-<p>TODO: Footer</p>
+      </div>
+    <% else %>
+      <%= render 'brands/preview', brands: @recommended_brands %>
+    <% end %>
+<% end %>
