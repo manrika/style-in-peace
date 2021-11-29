@@ -1,0 +1,54 @@
+.footer {
+  display: table;
+  text-align: center;
+  margin-left: 3vw;
+  margin-right: 3vw;
+  border-top: solid 1px gray;
+  border-right: none;
+  border-left: none;
+  position: relative;
+  left: 0;
+  bottom: 0;
+  width: 94vw;
+  height: 140px;
+  background-color: transparent;
+  margin-top: 30px;
+}
+
+.yield {
+  min-height: calc(100vh - 140px);
+}
+
+.content {
+  height: 60px;
+  margin-top: 10px;
+
+  .purpose {
+    margin-top: 15px;
+    font-weight: bold;
+  }
+
+}
+
+.logo {
+  white-space: nowrap;
+  height: 40px;
+  margin-bottom: 10px;
+}
+
+.style-in-peace {
+  display: inline-block;
+  .style {
+    font-size: 16px;
+    letter-spacing: .2rem;
+  }
+  .peace {
+    font-size: 12px;
+    letter-spacing: 1px;
+  }
+}
+
+.copyright {
+    font-size: 13px;
+    margin-top: 10px;
+}
