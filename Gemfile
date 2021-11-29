@@ -69,3 +69,6 @@ gem "geocoder"
 
 # cloudinary gem for product images
 gem 'cloudinary', '~> 1.16.0'
+
+# share btn gem
+gem 'social-share-button'
