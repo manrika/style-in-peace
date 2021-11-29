@@ -1,6 +1,13 @@
+
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
+  background: rgba(255, 255, 255, 0);
+  position:fixed;
+}
+
+.navbar{
+  background: rgba(255, 255, 255, 0);
+  width: 100%;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -38,7 +45,11 @@
 }
 
 .nav-item .nav-link{
-  color: black !important;
+  color: black;
+}
+
+.nav-item {
+  margin-right: 20px;
 }
 
 .fas {
@@ -49,4 +60,45 @@
 .login {
   margin-left: 467px;
   font-size: 25px;
+}
+
+.navbar-nav {
+  display: flex;
+  width: 100%;
+  align-items: center;
+}
+
+.navbar-brand{
+  align-items: center;
+  display: inline-block;
+  margin-right: 2rem;
+  font-size: 1.25rem;
+  white-space: nowrap;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.transparent{
+  position:fixed;
+}
+
+.white{
+  color:white !important;
+}
+
+.black{
+  color:black !important;
+}
+.transparent-btn{
+  background: transparent;
+  background-color: transparent;
+  box-shadow: none;
+  border: none;
+  font-size: 19px;
+    &:hover,&:active,&:focus{
+      background: transparent;
+      background-color: transparent !important;
+      box-shadow: none !important;
+      border: none;
+    }
 }

@@ -24,6 +24,13 @@
 a {
   color:black;
   text-decoration: none;
+  transition: 0.3s;
+  font-size: 18px;
+  &:hover{
+    text-decoration: none;
+    color: black;
+    font-size: 117%;
+  }
 }
 
 .page-layout-with-back-btn {
