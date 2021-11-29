@@ -8,7 +8,6 @@
     </div>
     <% end %>
   </div>
-
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -26,39 +25,32 @@
              Explore
         <% end %>
       </li>
-      <% if user_signed_in? %>
+      <li class="nav-item nav-link">
+        <%= link_to local_brands_path do %>
+             <i class="fas fa-map-marker-alt"></i>
+             Local
+        <% end %>
+      </li>
+      <li class="nav-item nav-link">
+        <%= link_to saved_brands_path do %>
+             <i class="fas fa-heart"></i>
+             Saved
+        <% end %>
+      </li>
+       <li class="nav-item nav-link">
+        <%= link_to my_impact_path do %>
+             <i class="fas fa-globe-americas"></i>
+             My impact
+        <% end %>
+      </li>
+      <div class="login">
         <li class="nav-item nav-link">
-          <%= link_to local_brands_path do %>
-               <i class="fas fa-map-marker-alt"></i>
-               Local
-          <% end %>
+        <%= link_to new_user_session_path do %>
+             <i class="fas fa-user-circle"></i>
+        <% end %>
         </li>
-        <li class="nav-item nav-link">
-          <%= link_to saved_brands_path do %>
-               <i class="fas fa-heart"></i>
-               Saved
-          <% end %>
-        </li>
-         <li class="nav-item nav-link">
-          <%= link_to my_impact_path do %>
-               <i class="fas fa-globe-americas"></i>
-               My impact
-          <% end %>
-        </li>
-        <div class="login">
-          <li class="nav-item nav-link">
-            <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item ml-auto" %>
-          </li>
-        </div>
-      <% else %>
-        <div class="login">
-          <li class="nav-item nav-link">
-          <%= link_to new_user_session_path do %>
-              <i class="fas fa-user-circle"></i>
-          <% end %>
-          </li>
-        </div>
-      <% end %>
+      </div>
+
 
     </ul>
   </div>
