@@ -1,8 +1,10 @@
-<%= link_to 'javascript:history.go(-1);' do %>
-  <button class="icon-btn">
-    <i class="fas fa-chevron-left"></i>
-  </button>
-<% end %>
+<div>
+  <%= link_to 'javascript:history.go(-1);' do %>
+    <button class="icon-btn">
+      <i class="fas fa-chevron-left"></i>
+    </button>
+  <% end %>
+</div>
 
 <div class="container">
   <div>
@@ -27,6 +29,4 @@
         data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
     </div>
   </div>
-
-
 </div>
