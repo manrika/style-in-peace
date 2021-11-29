@@ -1,5 +1,12 @@
+<div class="hero">
+    <h2>How eco-friendly are the brands you shop with?</h2>
+    <div class="search" data-controller="search-brands-list">
+      <%= render 'search' %>
+      <%= render 'list' %>
+    </div>
+</div>
+
 <div class="container mt-3">
-  <%= render 'search' %>
   <h2>New eco-brands on the block</h2>
 </div>
 <div>
@@ -9,6 +16,7 @@
 <% if current_user %>
   <div class="container mt-3">
     <h2>Eco-brands for you</h2>
+
   </div>
     <% if @recommended_brands.empty? %>
       <div class="contain">

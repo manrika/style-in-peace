@@ -1,0 +1,20 @@
+.hero {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("nature-hero.jpeg");
+  height: 100vh;
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 40vh;
+
+  h2 {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 32px;
+    letter-spacing: 1px;
+    color: #FAFDFF;
+    margin-bottom: 32px;
+    text-align: center;
+    font-family: 'Quicksand', sans-serif;
+  }
+}
