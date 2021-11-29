@@ -1,10 +1,18 @@
-<%= link_to 'javascript:history.go(-1);' do %>
-  <button class="icon-btn">
-    <i class="fas fa-chevron-left"></i>
-  </button>
-<% end %>
+<div class="mt-5">
+  <div class="page-layout-with-back-btn">
+    <div class="back-btn-container">
+      <%= link_to 'javascript:history.go(-1);' do %>
+        <button class="icon-btn">
+          <i class="fas fa-chevron-left"></i>
+        </button>
+      <% end %>
+    </div>
 
-<h1>Saved brands:</h1>
-<% @saved_brands.each do |sb| %>
-<p><%= sb.brand.name%></p>
-<%end%>
+    <div class="container">
+      <h1>Saved brands</h1>
+      <% @saved_brands.each do |sb| %>
+        <p><%= sb.brand.name%></p>
+      <%end%>
+    </div>
+  </div>
+</div>
