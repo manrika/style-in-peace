@@ -22,7 +22,7 @@ export default class extends Controller {
   _addMarkersToMap() {
     this.markersValue.forEach((marker) => {
       const popup = new mapboxgl.Popup().setHTML(marker.info_window);
-      console.log(popup)
+
       new mapboxgl.Marker()
         .setLngLat([marker.lng, marker.lat])
         .setPopup(popup)
@@ -34,9 +34,5 @@ export default class extends Controller {
     const bounds = new mapboxgl.LngLatBounds();
     this.markersValue.forEach(marker => bounds.extend([marker.lng, marker.lat]));
     this.map.fitBounds(bounds, { padding: 70, maxZoom: 15, duration: 0 });
-  }
-
-  openModal() {
-    console.log("clicked")
   }
 }

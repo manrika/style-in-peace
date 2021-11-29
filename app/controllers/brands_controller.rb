@@ -61,7 +61,7 @@ class BrandsController < ApplicationController
       {
         lat: brand.latitude,
         lng: brand.longitude,
-        info_window: render_to_string(partial: "info_window", locals: { brand: brand })
+        info_window: render_to_string(partial: "info_window", locals: { brand: brand }),
       }
     end
   end

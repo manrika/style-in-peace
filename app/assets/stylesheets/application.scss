@@ -26,4 +26,34 @@
 a {
   color:black;
   text-decoration: none;
+  transition: 0.3s;
+  font-size: 18px;
+  &:hover{
+    text-decoration: none;
+    color: black;
+    font-size: 117%;
+  }
+}
+
+.page-layout-with-back-btn {
+  display: flex;
+  margin: auto;
+  width: 75%;
+
+  h1 {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    font-size: 32px;
+    margin-bottom: 24px;
+  }
+}
+
+.container {
+  margin: 0px 0px 0px 32px;
+  max-width: 1400px;
+  padding: 0px;
+}
+
+.back-btn-container {
+  padding: 6px 0px;
 }
