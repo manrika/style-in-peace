@@ -1,3 +1,4 @@
+<%= render 'shared/navbar' %>
 <%= link_to 'javascript:history.go(-1);' do %>
   <button class="icon-btn">
     <i class="fas fa-chevron-left"></i>
@@ -26,6 +27,7 @@
       <div class="mt-3">
         <%= render 'ecofriendly_accordian', locals: { brand: @brand } %>
       </div>
+
 
       <div>
         <a target ="_blank" class="primary-btn" href="<%= @brand.website_url %>">Visit <%= @brand.name %></a>

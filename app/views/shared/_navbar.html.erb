@@ -1,4 +1,4 @@
-<nav class= "navbar navbar-expand-lg navbar-light bg-light">
+<nav class= "navbar navbar-expand-lg navbar-light">
   <div class="logo">
     <%= link_to root_url, class: "navbar-brand" do %>
     <i class="fas fa-globe-americas fa-2x"></i>
@@ -45,21 +45,23 @@
                My impact
           <% end %>
         </li>
-        <div class="login">
-          <li class="nav-item nav-link">
-            <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item ml-auto" %>
-          </li>
-        </div>
-      <% else %>
-        <div class="login">
-          <li class="nav-item nav-link">
-          <%= link_to new_user_session_path do %>
-              <i class="fas fa-user-circle"></i>
-          <% end %>
-          </li>
-        </div>
-      <% end %>
-
+        <% end %>
     </ul>
+      <div class="nav-item nav-link black">
+        <div class="btn-group">
+          <button type="button" class="btn btn-secondary dropdown-toggle transparent-btn black" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="fas fa-globe-americas black"></i>
+          </button>
+          <div class="dropdown-menu dropdown-menu-right">
+            <% if user_signed_in? %>
+              <%= link_to "Log out", destroy_user_session_path, class: "dropdown-item", method: :delete %>
+            <% else %>
+              <%= link_to "Login", new_user_session_path, class: "dropdown-item" %>
+            <% end %>
+            <button class="dropdown-item" type="button">Account</button>
+            <button class="dropdown-item" type="button">Help</button>
+          </div>
+        </div>
+      </div>
   </div>
 </nav>

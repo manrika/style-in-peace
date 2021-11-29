@@ -1,0 +1,66 @@
+<nav class= "navbar navbar-expand-lg navbar-light transparent">
+  <div class="logo">
+    <%= link_to root_url, class: "navbar-brand white" do %>
+    <i class="fas fa-globe-americas fa-2x white"></i>
+    <div class="style-in-peace">
+      <div class="style"><%= "STYLE" %></div>
+      <div class="peace"><%= "IN PEACE" %></div>
+    </div>
+    <% end %>
+  </div>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item nav-link">
+        <%= link_to root_path, class:"white" do %>
+             <i class="fas fa-home white"></i>
+             Home
+        <% end %>
+      </li>
+        <li class="nav-item nav-link">
+        <%= link_to explore_brands_path, class:"white" do %>
+             <i class="fas fa-compass white"></i>
+             Explore
+        <% end %>
+      </li>
+      <% if user_signed_in? %>
+        <li class="nav-item nav-link">
+          <%= link_to local_brands_path, class:"white" do %>
+               <i class="fas fa-map-marker-alt white"></i>
+               Local
+          <% end %>
+        </li>
+        <li class="nav-item nav-link">
+          <%= link_to saved_brands_path, class:"white" do %>
+               <i class="fas fa-heart white"></i>
+               Saved
+          <% end %>
+        </li>
+        <li class="nav-item nav-link">
+          <%= link_to my_impact_path, class:"white" do %>
+               <i class="fas fa-globe-americas white"></i>
+               My impact
+          <% end %>
+        </li>
+      <% end %>
+    </ul>
+    <div class="nav-item nav-link">
+      <div class="btn-group">
+        <button type="button" class="btn btn-secondary dropdown-toggle transparent-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="fas fa-globe-americas white"></i>
+        </button>
+        <div class="dropdown-menu dropdown-menu-right">
+          <% if user_signed_in? %>
+            <%= link_to "Log out", destroy_user_session_path, class: "dropdown-item", method: :delete %>
+          <% else %>
+            <%= link_to "Login", new_user_session_path, class: "dropdown-item" %>
+          <% end %>
+          <button class="dropdown-item" type="button">Account</button>
+          <button class="dropdown-item" type="button">Help</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
