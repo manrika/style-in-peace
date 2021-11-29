@@ -11,3 +11,17 @@
   background-size: cover;
   background-position: center;
 }
+
+.local-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+  margin-left: 10px;
+  width: 150px;
+  height: 50px;
+  border-radius: 5px;
+  text-align: center;
+  background-color: #ACE8D9;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
