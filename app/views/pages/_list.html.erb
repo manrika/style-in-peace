@@ -1,0 +1,16 @@
+<div class="dropdownmenu" data-search-brands-list-target="list"> <%# Add d-none class back  %>
+  <% @brands.each do |brand| %>
+    <% if brand.eco? %>
+      <%= link_to "#{brand.name}",
+      ecofriendly_brand_path(brand),
+      class: "dropdown-item",
+      style: {
+        padding: "32px"
+      } %>
+    <% else %>
+      <%= link_to "#{brand.name}",
+      naughty_brand_path(brand),
+      class: "dropdown-item" %>
+    <% end %>
+  <% end %>
+</div>

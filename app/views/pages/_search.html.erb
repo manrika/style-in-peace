@@ -1,17 +1,21 @@
-<div class="dropdown">
-  <%= form_tag(explore_brands_path, method: 'get', class: "form-inline") do %>
+<%= form_tag(
+    root_path, method: 'get',
+    class: "form-inline",
+    data: {search_brands_list_target: "form"},
+    autocomplete: "off"
+  ) do %>
+  <div class="search-bar" data-search-brands-list-target="search">
+    <i class="fas fa-search d-inline"></i>
     <%= text_field_tag :query,
       params[:query],
-      class: "form-control",
-      placeholder: "Search brand"
+      class: "d-inline search-input",
+      placeholder: "Search brand",
+      data: {
+        action: "click->search-brands-list#displayBrands
+        keyup->search-brands-list#updateBrandsList",
+        search_brands_list_target: "input"
+      }
     %>
-    <%= submit_tag "Search", class: "btn btn-primary" %>
-  <% end %>
-
-<%# BELOW IS WORK IN PROGRESS FOR ENHANCED SEARCH FUNCTIONALITY %>
-  <%# <div class="d"> %>
-  <%# @brands.each do |brand| %>
-    <%#= link_to "#{brand.name}", ecofriendly_brand_path(brand), class: "dropdown-item" %>
-  <%# end %>
-  <%# </div>
-</div> %>
+  </div>
+  <%#= submit_tag "Search", class: "btn btn-primary" %>
+<% end %>
