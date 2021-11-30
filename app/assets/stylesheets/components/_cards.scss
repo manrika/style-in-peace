@@ -17,6 +17,36 @@
 
 }
 
+.date{
+  color: rgba(0, 0, 0, 0.278);
+}
+
+.more{
+  margin-right: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.news-card{
+  width: 300px;
+  height: 350px;
+  margin-top: 8px;
+  margin-left: 8px;
+  box-sizing: border-box;
+}
+
+.news-font{
+  font-family: "Work Sans", "Helvetica", "sans-serif";
+  font-size: 14px ;
+  font-weight: 400;
+  margin-bottom: 8px;
+}
+
+.margin{
+  margin-bottom: 8px;
+}
+
 .local-card {
   display: flex;
   align-items: center;
