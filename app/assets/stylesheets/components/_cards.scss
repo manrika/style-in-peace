@@ -1,5 +1,8 @@
 .info-card {
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  background-color: white;
+  width: 300px;
+  height: auto;
 }
 
 .simple-card {
@@ -40,4 +43,18 @@
 
 .margin{
   margin-bottom: 8px;
+}
+
+.local-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+  margin-left: 10px;
+  width: 150px;
+  height: 50px;
+  border-radius: 5px;
+  text-align: center;
+  background-color: #ACE8D9;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }

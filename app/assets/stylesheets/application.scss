@@ -9,6 +9,8 @@
 @import "font-awesome";
 // mapbox style
 @import 'mapbox-gl/dist/mapbox-gl';
+// searching map
+@import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder';
 // social share buttons
 @import "social-share-button";
 // require social-share-button;
@@ -36,15 +38,15 @@ a {
 .page-layout-with-back-btn {
   display: flex;
   margin: auto;
-  width: 75%;
+  width: 85%;
+}
 
-  h1 {
+h1 {
     font-family: 'Open Sans', sans-serif;
     font-weight: 600;
     font-size: 32px;
     margin-bottom: 24px;
   }
-}
 
 .container {
   margin: 0px 0px 0px 32px;
@@ -54,4 +56,8 @@ a {
 
 .back-btn-container {
   padding: 6px 0px;
+}
+
+.brand-show-header {
+  border-bottom: 2px solid rgba(38, 38, 38, 0.85);
 }

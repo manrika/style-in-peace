@@ -1,0 +1,19 @@
+<%= form_tag(
+    explore_brands_path, method: 'get',
+    class: "form-inline col-12",
+    data: {search_brand_cards_target: "form"},
+    autocomplete: "off"
+  ) do %>
+  <div class="search-bar" id="outlined-search" data-search-brand-cards-target="search">
+    <i class="fas fa-search d-inline"></i>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "d-inline search-input",
+      placeholder: "Search brand",
+      data: {
+        action: "keyup->search-brand-cards#updateBrandsIndex",
+        search_brand_cards_target: "input"
+      }
+    %>
+  </div>
+<% end %>

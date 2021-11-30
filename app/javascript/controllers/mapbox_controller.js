@@ -1,5 +1,6 @@
 import { Controller } from "@hotwired/stimulus";
 import mapboxgl from 'mapbox-gl';
+import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
 
 export default class extends Controller {
   static values = {
@@ -12,7 +13,7 @@ export default class extends Controller {
 
     this.map = new mapboxgl.Map({
       container: this.element,
-      style: 'mapbox://styles/mapbox/streets-v10'
+      style: 'mapbox://styles/emilyunderhill/ckwkuji8d72m815p7t0ogoim0'
     });
     this._addMarkersToMap();
     this._fitMapToMarkers();
@@ -21,6 +22,7 @@ export default class extends Controller {
   _addMarkersToMap() {
     this.markersValue.forEach((marker) => {
       const popup = new mapboxgl.Popup().setHTML(marker.info_window);
+
       new mapboxgl.Marker()
         .setLngLat([marker.lng, marker.lat])
         .setPopup(popup)

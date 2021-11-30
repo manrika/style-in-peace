@@ -1,4 +1,4 @@
-<div class="dropdownmenu" data-search-brands-list-target="list"> <%# Add d-none class back  %>
+<div class="dropdownmenu" data-search-brands-list-target="list">
   <% @brands.each do |brand| %>
     <% if brand.eco? %>
       <%= link_to "#{brand.name}",
