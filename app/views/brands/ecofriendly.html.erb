@@ -47,8 +47,6 @@
             <%= render 'ecofriendly_accordian', locals: { brand: @brand } %>
           </div>
 
-
-
           <a target ="_blank" class="primary-btn" href="<%= @brand.website_url %>">Visit <%= @brand.name %></a>
 
           <div>
@@ -72,10 +70,16 @@
                 <% end %>
             <% end %>
 
-            <%# TODO : Share link %>
             <button class="icon-text-btn" data-toggle="modal" data-target="#shareModal">
               <i class="fas fa-share"></i>               Share
             </button>
+
+            <%= link_to @brand.insta_url, id: "a-diff", target: "_blank" do %>
+            <button class="icon-text-btn">
+              <i class="fab fa-instagram"></i>
+            </button>
+            <% end %>
+
           </div>
         </div>
       </div>

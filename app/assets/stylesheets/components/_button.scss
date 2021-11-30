@@ -1,5 +1,3 @@
-// Add style for all the different buttons and their children here
-
 // Style the back button
 .icon-btn {
   color: #262626;
@@ -14,8 +12,6 @@
   color:white;
   background-color: #262626;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-  transform: scale(1.04); // not working as expected needs fixing when have time
-  transition: all .2s ease-in-out; // not working as expected needs fixing when have time
 
   i {
     color: white;
@@ -27,6 +23,8 @@
   color:white;
   background: #262626;
   border-radius: 32px;
+  transition: 0s;
+  font-size: 16px;
 
   display: flex;
   flex-direction: row;
@@ -48,16 +46,16 @@
   text-decoration: none;
   color: white;
   font-weight: 500;
-  letter-spacing: 0.4px;
+  letter-spacing: 0.2px;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-  transform: scale(1.04);
-  transition: all .2s ease-in-out;
+  background: rgba(38, 38, 38, 0.9);
+  font-size: 100%;
 }
 
 // Style icon + text button
 .icon-text-btn {
   color: #262626;
-  border: 1.5px solid #262626;
+  border: 2px solid #262626;
   border-radius: 32px;
   height: 50px;
   padding-left: 16px;
@@ -70,10 +68,12 @@
   color:white;
   background-color: #262626;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-  transform: scale(1.04); // not working as expected needs fixing when have time
-  transition: all .2s ease-in-out; // not working as expected needs fixing when have time
 
   i {
     color: white;
   }
+}
+
+.fa-instagram {
+  font-size: 28px;
 }
