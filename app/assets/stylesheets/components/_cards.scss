@@ -55,27 +55,22 @@
   height: 84px;
   border-radius: 4px;
   text-align: center;
-  background-color: #C9E5E7;
+  background-color: #B7D9DC;
   filter: drop-shadow(2px 2px 8px rgba(0, 0, 0, 0.1));
 
   &:hover {
     transform: scale(1.04);
     transition: all .2s ease-in-out;
-
-    #local-card-text {
-      letter-spacing: 1px;
-    }
   }
 }
 
 #local-card-text {
   font-size: 16px;
-  letter-spacing: 0.6px;
   max-width: 100px;
   font-family: 'Open Sans', sans-serif;
   font-style: normal;
-  font-weight: 600;
+  font-weight: 650;
   font-size: 16px;
-  letter-spacing: 0.6px;
-  color: #333838;
+  letter-spacing: 1.5px;
+  color: #ffffff;
 }
