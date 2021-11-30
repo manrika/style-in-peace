@@ -51,10 +51,31 @@
   justify-content: center;
   margin-top: 10px;
   margin-left: 10px;
-  width: 150px;
-  height: 50px;
-  border-radius: 5px;
+  width: 185px;
+  height: 84px;
+  border-radius: 4px;
   text-align: center;
-  background-color: #ACE8D9;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  background-color: #C9E5E7;
+  filter: drop-shadow(2px 2px 8px rgba(0, 0, 0, 0.1));
+
+  &:hover {
+    transform: scale(1.04);
+    transition: all .2s ease-in-out;
+
+    #local-card-text {
+      letter-spacing: 1px;
+    }
+  }
+}
+
+#local-card-text {
+  font-size: 16px;
+  letter-spacing: 0.6px;
+  max-width: 100px;
+  font-family: 'Open Sans', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  letter-spacing: 0.6px;
+  color: #333838;
 }
