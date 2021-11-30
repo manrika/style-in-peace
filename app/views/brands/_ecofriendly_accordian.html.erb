@@ -9,56 +9,53 @@
         </button>
       </h2>
     </div>
-
     <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
-      <div id="all-measures" class="card-body">
-        <div id="measure-descriptions" class="d-flex">
-          <p><%= "Earth" %></p>
-          <p><%= "People" %></p>
-          <p><%= "Animals" %></p>
-          <p><%= "Materials" %></p>
+      <div id="measure-descriptions" class="d-flex">
+        <p><%= "Earth" %></p>
+        <p><%= "People" %></p>
+        <p><%= "Animals" %></p>
+        <p><%= "Materials" %></p>
+      </div>
+      <div id="measures" class="d-flex">
+        <p>
+          <div class="earth-rating">
+            <% @brand.rating_earth.times do %>
+              <i class="fas fa-globe-americas mx-1 mt-2">  </i>
+            <% end %>
+            <% (5 - @brand.rating_earth).times do %>
+              <i style="color: #3E6680" class="fas fa-globe-americas mx-1 mt-2">  </i>
+            <% end %>
+          </p>
         </div>
-        <div id="measures" class="d-flex">
+        <div class="people-rating">
           <p>
-            <div class="earth-rating">
-              <% @brand.rating_earth.times do %>
-                <i class="fas fa-globe-americas mx-1 mt-2">  </i>
-              <% end %>
-              <% (5 - @brand.rating_earth).times do %>
-                <i style="color: grey" class="fas fa-globe-americas mx-1 mt-2">  </i>
-              <% end %>
-            </p>
-          </div>
-          <div class="people-rating">
-            <p>
-              <% @brand.rating_people.times do %>
-                <i class="fas fa-user mx-1 mt-2">  </i>
-              <% end %>
-              <% (5 - @brand.rating_people).times do %>
-                <i style="color: grey" class="fas fa-user mx-1 mt-2">  </i>
-              <% end %>
-            </p>
-          </div>
-          <div class="animals-rating">
-            <p>
-              <% @brand.rating_animals.times do %>
-                <i class="fas fa-paw mx-1 mt-2">  </i>
-              <% end %>
-              <% (5 - @brand.rating_animals).times do %>
-                <i style="color: grey" class="fas fa-paw mx-1 mt-2">  </i>
-              <% end %>
-            </p>
-          </div>
-          <div class="materials-rating">
-            <p>
-              <% @brand.rating_materials.times do %>
-                <i class="fas fa-recycle mx-1 mt-2">  </i>
-              <% end %>
-              <% (5 - @brand.rating_materials).times do %>
-                <i style="color: grey" class="fas recycle mx-1 mt-2">  </i>
-              <% end %>
-            </p>
-          </div>
+            <% @brand.rating_people.times do %>
+              <i class="fas fa-user mx-1 mt-2">  </i>
+            <% end %>
+            <% (5 - @brand.rating_people).times do %>
+              <i style="color: #DBCF96;#bd8379;" class="fas fa-user mx-1 mt-2">  </i>
+            <% end %>
+          </p>
+        </div>
+        <div class="animals-rating">
+          <p>
+            <% @brand.rating_animals.times do %>
+              <i class="fas fa-paw mx-1 mt-2">  </i>
+            <% end %>
+            <% (5 - @brand.rating_animals).times do %>
+              <i style="color: #bd8379" class="fas fa-paw mx-1 mt-2">  </i>
+            <% end %>
+          </p>
+        </div>
+        <div class="materials-rating">
+          <p>
+            <% @brand.rating_materials.times do %>
+              <i class="fas fa-recycle mx-1 mt-2">  </i>
+            <% end %>
+            <% (5 - @brand.rating_materials).times do %>
+              <i style="color: #ACBEA3" class="fas fa-recycle mx-1 mt-2">  </i>
+            <% end %>
+          </p>
         </div>
       </div>
     </div>
