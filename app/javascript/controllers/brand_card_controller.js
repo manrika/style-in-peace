@@ -5,13 +5,13 @@ export default class extends Controller {
   static targets = ["card", "info"]
 
   changeCard() {
-    this.cardTarget.classList.add('d-none')
-    this.infoTarget.classList.remove('d-none')
+    this.cardTarget.classList.add('hidden')
+    this.infoTarget.classList.remove('hidden')
   }
 
   changeCardBack() {
-    this.cardTarget.classList.remove('d-none')
-    this.infoTarget.classList.add('d-none')
+    this.cardTarget.classList.remove('hidden')
+    this.infoTarget.classList.add('hidden')
   }
 
 }
