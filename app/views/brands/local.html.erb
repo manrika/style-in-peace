@@ -1,20 +1,27 @@
 <%= render 'shared/navbar' %>
-<%= link_to 'javascript:history.go(-1);' do %>
-  <button class="icon-btn">
-    <i class="fas fa-chevron-left"></i>
-  </button>
-<% end %>
 
-<div class="container">
-  <div>
-    <h1>Eco-brands near you</h1>
-  </div>
-  <div class="brands-list d-flex">
-    <% @eco_local_brands.each do |brand| %>
-    <div class="local-card">
-      <%= link_to "#{brand.name}", ecofriendly_brand_path(brand)  %>
+<div class="mt-5 mb-4">
+  <div class="page-layout-with-back-btn">
+    <div class="back-btn-container">
+      <%= link_to 'javascript:history.go(-1);' do %>
+        <button class="icon-btn">
+          <i class="fas fa-chevron-left"></i>
+        </button>
+      <% end %>
     </div>
-    <% end %>
+
+    <div class="container">
+      <div>
+        <h1>Eco-brands near you</h1>
+      </div>
+      <div class="brands-list d-flex">
+        <% @eco_local_brands.each do |brand| %>
+        <div class="local-card">
+          <%= link_to "#{brand.name}", ecofriendly_brand_path(brand)  %>
+        </div>
+        <% end %>
+      </div>
+    </div>
   </div>
 </div>
 
