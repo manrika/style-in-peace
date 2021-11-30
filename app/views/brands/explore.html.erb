@@ -28,7 +28,7 @@
         </div>
         <input type="radio" id="tabsilver" name="mytabs">
         <label for="tabsilver">News</label>
-        <div class="tab p-0">
+        <div class="tab p-0 search" data-controller="search-news">
             <%= render 'search_news' %>
             <%= render 'news_list', newsarticles: @newsarticles %>
       </div>

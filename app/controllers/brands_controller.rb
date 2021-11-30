@@ -51,9 +51,9 @@ class BrandsController < ApplicationController
     if params[:news_query].present?
       @newsarticles = NewsArticle.where("title ILIKE ?", "%#{params[:news_query]}%")
       respond_to do |format|
-        format.html
-        format.text { render partial: 'brands/news_list', locals: { newsarticles: @newsarticles }, formats: [:html] }
-      end
+      format.html
+      format.text { render partial: 'brands/news_list', locals: { newsarticles: @newsarticles }, formats: [:html] }
+    end
     else
       @newsarticles = NewsArticle.all
     end
