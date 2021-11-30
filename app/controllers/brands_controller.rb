@@ -48,12 +48,15 @@ class BrandsController < ApplicationController
       format.text { render partial: 'brands/brands_list', locals: { brands: @brands }, formats: [:html] }
     end
 
-    @newsarticles = NewsArticle.all
-
-    # respond_to do |format|
-    #   format.html
-    #   format.text { render partial: 'brands/news_list', locals: { newsarticles: @newsarticles }, formats: [:html] }
-    # end
+    if params[:news_query].present?
+      @newsarticles = NewsArticle.where("title ILIKE ?", "%#{params[:news_query]}%")
+      respond_to do |format|
+        format.html
+        format.text { render partial: 'brands/news_list', locals: { newsarticles: @newsarticles }, formats: [:html] }
+      end
+    else
+      @newsarticles = NewsArticle.all
+    end
   end
 
   def local

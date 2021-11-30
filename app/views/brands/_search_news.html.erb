@@ -6,8 +6,8 @@
   ) do %>
   <div class="search-bar" id="outlined-search" data-search-news-target="search">
     <i class="fas fa-search d-inline"></i>
-    <%= text_field_tag :query,
-      params[:query],
+    <%= text_field_tag :news_query,
+      params[:news_query],
       class: "d-inline search-input",
       placeholder: "Search news",
       data: {
