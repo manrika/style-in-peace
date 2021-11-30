@@ -1,0 +1,16 @@
+
+<%# <link rel="stylesheet" href=<%news.url%>
+<%= link_to news.url do%>
+  <div class="info-card news-card">
+    <%= image_tag news.image, class: "card-img-top"  %>
+    <div class = "p-3">
+      <div class = "d-flex">
+        <div class = "mr-auto max">
+          <p class = "margin"><strong><%= truncate(news.title, length: 24, separator: ' ') %></strong></p>
+          <p class = "news-font"><%= truncate(news.blurb, length: 100, separator: ' ')%></p>
+          <p class= "date news-font"><%= news.date  %></p>
+        </div>
+      </div>
+    </div>
+  </div>
+<%end%>
