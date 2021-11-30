@@ -3,27 +3,28 @@
   color: black;
 }
 
-// #all-measures {
-
-// }
+#collapseOne {
+  display: flex;
+  align-items: flex-start;
+}
 
 #measure-descriptions {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  align-items: baseline;
-  float: left;
   width: 50%;
+  margin-top: 10px;
+  padding-left: 1.25rem;
+
+  p {
+    line-height: 30px;
+  }
 }
 
 #measures {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  align-items: baseline;
-  float: right;
   width: 50%;
+  margin-top: 10px;
 
+  p {
+    line-height: 30px;
+  }
 }
 
 p {
@@ -35,18 +36,17 @@ p {
 }
 
 .earth-rating .fas {
-  color: #40476D;
-}
-
-.animals-rating .fas {
-  color: #AD5D4E;
+  color: #00487C;
 }
 
 .people-rating .fas {
-  color: #400406;
+  color: #DAA520;
 }
 
+.animals-rating .fas {
+  color: #b35949;
+}
 
 .materials-rating .fas {
-  color: #ACBEA3;
+  color: #474A2C;
 }
