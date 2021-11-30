@@ -1,7 +1,10 @@
 <%= form_tag(
     root_path, method: 'get',
     class: "form-inline",
-    data: {search_brands_list_target: "form"},
+    data: {
+      search_brands_list_target: "form",
+      action: "submit->search-brands-list#updateBrandsList"
+      },
     autocomplete: "off"
   ) do %>
   <div class="search-bar" data-search-brands-list-target="search">
