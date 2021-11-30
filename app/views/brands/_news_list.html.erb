@@ -1,0 +1,9 @@
+<div class="d-flex flex-wrap" data-search-news-target="cards">
+  <% newsarticles.each do |news| %>
+    <div>
+        <div style="width: 300px; height: auto;">
+          <%= render 'brands/news_card', news: news %>
+        </div>
+    </div>
+  <% end %>
+</div>

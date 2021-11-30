@@ -49,6 +49,11 @@ class BrandsController < ApplicationController
     end
 
     @newsarticles = NewsArticle.all
+
+    # respond_to do |format|
+    #   format.html
+    #   format.text { render partial: 'brands/news_list', locals: { newsarticles: @newsarticles }, formats: [:html] }
+    # end
   end
 
   def local
