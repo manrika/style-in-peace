@@ -1,0 +1,45 @@
+.original-size {
+  width: 100%;
+  padding-top: 130%;
+  position: relative;
+  margin-top: 5%;
+  background: white;
+
+  &:hover {
+    transform: scale(1.25);
+    transition: all .3s ease-in-out;
+    z-index: 1;
+  }
+
+  .centered-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .card-slideshow {
+    position: absolute;
+    width: 100%;
+    top: 0;
+  }
+
+  .background-img {
+    background-position: center;
+    background-size: cover;
+    padding-top: 100%;
+  }
+
+  .card-info {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }
+}

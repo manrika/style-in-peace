@@ -26,3 +26,17 @@
       <% end %>
     </div>
 <% end %>
+
+<p>---------------------TESTING SPACE-----------------</p>
+
+
+<div class="home-container">
+  <h2>New eco-brands on the block</h2>
+  <div class='d-flex justify-content-between'>
+    <% @brands.first(4).each do |brand| %>
+      <div style="width: 300px;">
+        <%= render 'brands/card_improved', brand: brand %>
+      </div>
+    <% end %>
+  </div>
+</div>
