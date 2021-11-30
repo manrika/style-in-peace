@@ -2,11 +2,11 @@
   width: 100%;
   padding-top: 130%;
   position: relative;
-  margin-top: 5%;
+  margin-right: 5%;
   background: white;
 
   &:hover {
-    transform: scale(1.25);
+    transform: scale(1.10);
     transition: all .3s ease-in-out;
     z-index: 1;
   }
@@ -42,4 +42,13 @@
     bottom: 0;
     width: 100%;
   }
+}
+
+.scroll {
+  display: grid;
+  align-items: center;
+  gap: 5%;
+  overflow: scroll;
+  overflow-y: hidden;
+  grid-auto-flow: column;
 }
