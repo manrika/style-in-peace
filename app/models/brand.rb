@@ -23,8 +23,7 @@ class Brand < ApplicationRecord
   end
 
   def self.eco
-    brands = Brand.all
-    brands.select do |brand|
+    all.select do |brand|
       brand.average_rating >= 3 && brand.approved == true
     end
   end

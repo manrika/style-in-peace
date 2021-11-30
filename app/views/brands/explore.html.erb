@@ -12,37 +12,24 @@
 
     <div class="container">
       <h1>Explore eco-brands</h1>
-
       <div class="mytabs">
         <input type="radio" id="tabfree" name="mytabs" checked="checked">
         <label for="tabfree">Brands</label>
-        <div class="tab p-0">
-            <div class="d-flex flex-wrap">
-              <% @brands.each do |brand| %>
-                <div data-controller="brand-card">
-                  <div data-action="mouseenter->brand-card#changeCard mouseleave->brand-card#changeCardBack">
-                    <div data-brand-card-target="card">
-                      <%= render 'brands/simple_card', brand: brand %>
-                    </div>
-                    <div class='d-none' style="width: 300px; height: auto;" data-brand-card-target="info">
-                      <%= render 'brands/info_card', brand: brand  %>
-                    </div>
-                  </div>
-                </div>
-              <% end %>
-          </div>
+        <div class="tab p-0 search row" data-controller="search-brand-cards">
+          <%= render 'search' %>
+          <%= render 'brands_list', brands: @brands %>
         </div>
         <input type="radio" id="tabsilver" name="mytabs">
         <label for="tabsilver">News</label>
-            <div class="tab p-0">
-                <%@newsarticles.each do |news|%>
-                  <%=news.image%>
-                  <h2><%=news.title%></h2>
-                  <p><%=news.blurb%></p>
-                  <p><%=news.url%></p>
-                  <p><%=news.date%></p>
-                <% end %>
-            </div>
+          <div class="tab p-0">
+            <%@newsarticles.each do |news|%>
+              <%=news.image%>
+              <h2><%=news.title%></h2>
+              <p><%=news.blurb%></p>
+              <p><%=news.url%></p>
+              <p><%=news.date%></p>
+            <% end %>
+          </div>
         <%= link_to brands_path do %>
           <button class="btn btn-outline-secondary">
             <i class="fas fa-plus"></i>  Add a brand
