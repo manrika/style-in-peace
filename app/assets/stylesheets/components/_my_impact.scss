@@ -10,7 +10,7 @@
 }
 
 .impact {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("forest.jpeg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("wind.jpeg");
   height: 100vh;
   width: 100%;
   background-position: center;
@@ -72,7 +72,7 @@
 
 .card-points{
   font-style: bold;
-  font-weight: 600;
+  // font-weight: 600;
   font-family: 'Quicksand', sans-serif;
   font-size: 36px;
 }
@@ -98,7 +98,7 @@
   background-color: rgb(100, 100, 100);
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   transform: scale(1.04); // not working as expected needs fixing when have time
-  transition: all .2s ease-in-out; // not working as expected needs fixing when have time
+  transition: all .01s ease-in-out; // not working as expected needs fixing when have time
 
   i {
     color: white;
@@ -114,4 +114,19 @@
 
 .text{
   height: 15px;
+}
+
+.card-title {
+  color: #a9a9a9;
+  font-weight: lighter;
+  text-transform: uppercase;
+  font-size: 22px;
+}
+
+.fas {
+  color: grey;
+}
+
+.card-text{
+  font-size: 15px;
 }
