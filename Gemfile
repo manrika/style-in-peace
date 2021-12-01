@@ -71,4 +71,4 @@ gem "geocoder"
 gem 'cloudinary', '~> 1.16.0'
 
 # share btn gem
-gem 'social-share-button'
+gem 'social-share-button', '~> 0.1.6'
