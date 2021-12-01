@@ -72,7 +72,7 @@
   }
 }
 
-form {
+.modal-body form {
   width: 100%;
   padding: 0px 18px 18px 18px;
 
@@ -97,4 +97,8 @@ form {
     font-weight: bold;
     letter-spacing: 0.4px;
   }
+}
+
+.tab form {
+  padding: 0px;
 }
