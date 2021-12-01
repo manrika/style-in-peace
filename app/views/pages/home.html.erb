@@ -9,7 +9,7 @@
 
 <div class="home-container">
   <div class='scroll'>
-    <h2>New eco-brands on the block</h2>
+    <h3 class="mb-2">New eco-brands on the block</h3>
     <div class='row'>
       <% @new_brands.first(10).each do |brand| %>
         <div style="width: 300px;">
@@ -21,7 +21,7 @@
 
   <% if current_user %>
     <div class='scroll'>
-      <h2 class="mt-0">Eco-brands for you</h2>
+      <h3 class="mt-5 mb-2">Eco-brands for you</h3>
       <% if @recommended_brands.empty? %>
         <p>Sorry, we don't have any brands that match your criteria.</p>
       <% else %>
