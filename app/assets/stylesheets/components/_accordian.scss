@@ -1,0 +1,52 @@
+#measure-button {
+  text-transform: uppercase;
+  color: black;
+}
+
+#collapseOne {
+  display: flex;
+  align-items: flex-start;
+}
+
+#measure-descriptions {
+  width: 50%;
+  margin-top: 10px;
+  padding-left: 1.25rem;
+
+  p {
+    line-height: 30px;
+  }
+}
+
+#measures {
+  width: 50%;
+  margin-top: 10px;
+
+  p {
+    line-height: 30px;
+  }
+}
+
+p {
+  color: gray;
+}
+
+#all-measures {
+  display: inline;
+}
+
+.earth-rating .fas {
+  color: #00487C;
+}
+
+.people-rating .fas {
+  color: #DAA520;
+}
+
+.animals-rating .fas {
+  color: #b35949;
+}
+
+.materials-rating .fas {
+  color: #474A2C;
+}
