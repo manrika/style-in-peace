@@ -39,6 +39,7 @@ class BrandsController < ApplicationController
   def explore
     @newsarticles = NewsArticle.all
     @brands = Brand.eco
+    @brand = Brand.new
 
     @brands = Brand.where("name ILIKE ?", "%#{params[:query]}%").eco if params[:query].present?
 
