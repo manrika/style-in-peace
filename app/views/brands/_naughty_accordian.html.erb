@@ -5,26 +5,26 @@
     <div class="card-header" id="headingOne">
       <h2 class="mb-0">
         <button id="measure-button" class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-          Impact
+          <p id="expand-words">Impact</p>
+          <p id="expand"><i style="color: gray" class="fas fa-plus"></i></p>
         </button>
       </h2>
     </div>
-
     <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
-      <div id="measure-descriptions">
+      <div class="measure-descriptions">
         <p><%= "Earth" %></p>
         <p><%= "People" %></p>
         <p><%= "Animals" %></p>
         <p><%= "Materials" %></p>
       </div>
-      <div id="measures">
+      <div class="measures">
         <div class="earth-rating">
           <p>
             <% @brand.rating_earth.times do %>
               <i class="fas fa-globe-americas mx-1">  </i>
             <% end %>
             <% (5 - @brand.rating_earth).times do %>
-              <i style="color: #3E6680" class="fas fa-globe-americas mx-1">  </i>
+              <i style="color: #4f748d" class="fas fa-globe-americas mx-1">  </i>
             <% end %>
           </p>
         </div>
@@ -67,12 +67,12 @@
     <div class="card-header" id="headingTwo">
       <h2 class="mb-0">
         <button id="measure-button" class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-          About
+          About <i style="color: gray" id="expand" class="fas fa-plus"></i>
         </button>
       </h2>
     </div>
     <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
-      <div class="card-body">
+      <div class="card-body1">
         <p> <%= @brand.about %></p>
       </div>
     </div>
