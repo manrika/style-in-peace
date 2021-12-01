@@ -28,12 +28,12 @@
 }
 
 .my-impact{
-  background: rgba(155, 155, 155, 0.932);
-  color: white;
+  background: rgba(231, 231, 231, 0.836);
+  color: black;
   height: 400px;
   width:250px;
   margin: 16px;
-  box-shadow:3px 5px #888888a9;
+  box-shadow: 2px 2px 0 0 rgb(185, 185, 185);
 }
 
 .layout {
@@ -80,7 +80,7 @@
 
 .add {
   color: #262626;
-  border: 1px solid grey;
+  border: 1px solid rgba(175, 175, 175, 0.63);
   border-radius: 32px;
   height: 36px;
   padding-left: 16px;
@@ -89,7 +89,7 @@
   font-size: 14px;
   font-family: 'Quicksand', sans-serif;
   font-weight: 700;
-  background: grey;
+  background: #a9a9a9;
 }
 
 .add:hover {
@@ -103,4 +103,15 @@
   i {
     color: white;
   }
+}
+
+.my-impact-btn{
+  display: flex;
+  flex-direction: column;
+  margin-top: 152px;
+  margin-left: 5px;
+}
+
+.text{
+  height: 15px;
 }

@@ -2,18 +2,18 @@ import { Controller } from "stimulus"
 
 export default class extends Controller {
 
-  static targets = ["card", "info"]
+  static targets = ["shadow", "card", "info"]
 
   changeCard() {
-    // this.cardTarget.insertAdjacentHTML("afterbegin", "<div style='width: 300px; height: auto; '><%= render 'brands/info_card', brand: brand %></div >");
-    this.cardTarget.classList.add('d-none')
-    this.infoTarget.classList.remove('d-none')
+    this.cardTarget.classList.add('hidden')
+    this.infoTarget.classList.remove('hidden')
+    this.shadowTarget.classList.add('shadowed')
   }
 
   changeCardBack() {
-    // this.cardTarget.insertAdjacentHTML("afterbegin", "<div style='width: 300px; height: auto; '><%= render 'brands/info_card', brand: brand %></div >");
-    this.cardTarget.classList.remove('d-none')
-    this.infoTarget.classList.add('d-none')
+    this.cardTarget.classList.remove('hidden')
+    this.infoTarget.classList.add('hidden')
+    this.shadowTarget.classList.remove('shadowed')
   }
 
 }

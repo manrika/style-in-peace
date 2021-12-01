@@ -1,0 +1,104 @@
+.original-size {
+  width: 100%;
+  padding-top: 130%;
+  position: relative;
+  margin-right: 5%;
+  background: white;
+
+  &:hover {
+    transform: scale(1.05);
+    transition: all .3s ease-in-out;
+    z-index: 1;
+  }
+
+  .centered-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-size: cover;
+    background-position: center;
+
+    p {
+      color: white;
+      letter-spacing: 0.4px;
+    }
+  }
+
+  .card-slideshow {
+    position: absolute;
+    width: 100%;
+    top: 0;
+  }
+
+  .background-img {
+    background-position: center;
+    background-size: cover;
+    padding-top: 100%;
+  }
+
+  .card-info {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }
+}
+
+.scroll {
+  overflow: auto;
+  padding-left: 2%;
+
+  .row {
+  padding-left: 1.5%;
+  left: 0;
+  display: grid;
+  align-items: center;
+  gap: 1%;
+  white-space: nowrap;
+  overflow-y: hidden;
+  grid-auto-flow: column;
+  height: 450px;
+  }
+}
+
+.hidden {
+  height: 0;
+  opacity: 0;
+  transition-timing-function: ease-in-out;
+}
+
+.card-link {
+  width: 100% !important;
+  padding-top: 130% !important;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.save-btn {
+  background: white !important;
+  border-radius: 100% !important;
+  // border: 1px solid !important;
+  // padding: 3px 5px 2px 5px !important;
+  z-index: 999;
+}
+
+.saved-btn {
+  background: white !important;
+  border-radius: 50% !important;
+  // border: 1px solid !important;
+  // padding: 5px !important;
+  &:hover {
+    transform: scale(1.2) !important;
+    transition: all .3s ease-in-out !important;
+  }
+}
+
+.shadowed {
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}

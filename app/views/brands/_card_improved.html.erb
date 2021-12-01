@@ -1,0 +1,65 @@
+
+<div class="original-size" data-controller="brand-card" data-action="mouseenter->brand-card#changeCard mouseleave->brand-card#changeCardBack" data-brand-card-target="shadow">
+  <%# Non-expanded %>
+  <div>
+    <div data-brand-card-target="card" class="centered-text" style="background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('<%= brand.splash_image %>')">
+      <p><strong><%= brand.name %></strong></p>
+    </div>
+  </div>
+
+  <%# Expanded %>
+  <div data-brand-card-target="info" class="hidden">
+    <div class="card-slideshow">
+      <%= render 'brands/slideshow', brand: brand %>
+    </div>
+
+    <div class="card-info">
+      <div class="p-3">
+        <div class="d-flex">
+          <%# brand name %>
+          <div class="mr-auto">
+            <p><strong><%= brand.name %></strong></p>
+          </div>
+
+          <%# logic for save btn %>
+          <div style="z-index: 1">
+            <% if current_user %>
+              <% if current_user.brands.include?(brand)%>
+                <i class="fas fa-heart saved-btn"></i>
+              <% else %>
+                <%= link_to save_path(brand.id), method: :post, class: "save-btn" do %>
+                  <i class="far fa-heart" aria-hidden="true"></i>
+                <% end %>
+              <% end %>
+            <% else %>
+              <%= link_to save_path(brand.id), method: :post, class: "save-btn" do %>
+                <i class="far fa-heart" aria-hidden="true"></i>
+              <% end %>
+            <% end %>
+          </div>
+        </div>
+
+        <%# ratings %>
+        <div class="d-flex">
+          <div class="d-flex">
+            <% brand.average_rating.times do %>
+              <i class="fas fa-globe-americas mx-1 mt-2">  </i>
+            <% end %>
+            <% (5 - brand.average_rating).times do %>
+              <i style="color: grey" class="fas fa-globe-americas mx-1 mt-2">  </i>
+            <% end %>
+          </div>
+          <div class="ml-auto">
+            <% brand.price_category.times do %>
+              <i class="fas fa-pound-sign"></i>
+            <% end %>
+            <% (3 - brand.price_category).times do %>
+              <i style="color: grey" class="fas fa-pound-sign">  </i>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <%= link_to '', ecofriendly_brand_path(brand), class: "card-link" %>
+</div>
