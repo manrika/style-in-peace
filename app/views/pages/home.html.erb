@@ -8,21 +8,31 @@
 </div>
 
 <div class="home-container">
-  <h2>New eco-brands on the block</h2>
-  <div>
-    <%= render 'brands/preview', brands: @new_brands %>
-  </div>
-</div>
-
-<% if current_user %>
-    <div class="home-container">
-      <h2>Eco-brands for you</h2>
-      <% if @recommended_brands.empty? %>
-        <div class="container">
-          <p>Sorry, we don't have any brands that match your criteria.</p>
+  <div class='scroll'>
+    <h2>New eco-brands on the block</h2>
+    <div class='row'>
+      <% @new_brands.first(10).each do |brand| %>
+        <div style="width: 300px;">
+          <%= render 'brands/card_improved', brand: brand %>
         </div>
-      <% else %>
-        <%= render 'brands/preview', brands: @recommended_brands %>
       <% end %>
     </div>
-<% end %>
+  </div>
+
+  <% if current_user %>
+    <div class='scroll'>
+      <h2 class="mt-0">Eco-brands for you</h2>
+      <% if @recommended_brands.empty? %>
+        <p>Sorry, we don't have any brands that match your criteria.</p>
+      <% else %>
+        <div class='row'>
+          <% @recommended_brands.first(10).each do |brand| %>
+            <div style="width: 300px;">
+              <%= render 'brands/card_improved', brand: brand %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+</div>
