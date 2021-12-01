@@ -77,7 +77,7 @@ class BrandsController < ApplicationController
   end
 
   def save
-    @saved_brand = SavedBrand.new(saved_brand_params)
+    @saved_brand = SavedBrand.new(brand_id: params[:id])
     if current_user
       @saved_brand.user = current_user
       if @saved_brand.save!

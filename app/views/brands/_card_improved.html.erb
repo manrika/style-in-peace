@@ -22,25 +22,19 @@
           </div>
 
           <%# logic for save btn %>
-          <div>
+          <div style="z-index: 1">
             <% if current_user %>
               <% if current_user.brands.include?(brand)%>
                 <i class="fas fa-heart saved-btn"></i>
               <% else %>
-                <%= simple_form_for brand, url: save_path(brand), method: :post do |f| %>
-                  <%= f.hidden_field :brand_id, value: brand.id %>
-                  <%= button_tag type: 'submit', class: "save-btn" do %>
-                    <i class="far fa-heart" aria-hidden="true"></i>
-                  <% end %>
+                <%= link_to save_path(brand.id), method: :post, class: "save-btn" do %>
+                  <i class="far fa-heart" aria-hidden="true"></i>
                 <% end %>
               <% end %>
             <% else %>
-              <%= simple_form_for brand, url: save_path(brand), method: :post do |f| %>
-                  <%= f.hidden_field :brand_id, value: brand.id %>
-                  <%= button_tag type: 'submit', class: "save-btn" do %>
-                    <i class="far fa-heart" aria-hidden="true"></i>
-                  <% end %>
-                <% end %>
+              <%= link_to save_path(brand.id), method: :post, class: "save-btn" do %>
+                <i class="far fa-heart" aria-hidden="true"></i>
+              <% end %>
             <% end %>
           </div>
         </div>
@@ -67,4 +61,5 @@
       </div>
     </div>
   </div>
+  <%= link_to '', ecofriendly_brand_path(brand), class: "card-link" %>
 </div>

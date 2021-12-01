@@ -66,3 +66,26 @@
   opacity: 0;
   transition-timing-function: ease-in-out;
 }
+
+.card-link {
+  width: 100% !important;
+  padding-top: 130% !important;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.save-btn {
+  background: white !important;
+  border-radius: 100% !important;
+  border: 1px solid !important;
+  padding: 3px 5px 2px 5px !important;
+  z-index: 999;
+}
+
+.saved-btn {
+  background: white !important;
+  border-radius: 50% !important;
+  border: 1px solid !important;
+  padding: 5px !important;
+}
