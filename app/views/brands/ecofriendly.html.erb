@@ -21,6 +21,8 @@
             <div class="mb-2">
               <h1 class="d-inline align-middle"><%= @brand.name %></h1>
               <span class="pill d-inline align-middle"><%= @brand.style.capitalize %> style</span>
+              <span class="pill d-inline align-middle color"><i class="far fa-thumbs-up"></i></span>
+
             </div>
 
             <div class="d-flex mb-3">
@@ -70,9 +72,13 @@
                 <% end %>
             <% end %>
 
-            <button class="icon-text-btn" data-toggle="modal" data-target="#shareModal">
+            <%# <button class="icon-text-btn" data-toggle="modal" data-target="#shareModal">
               <i class="fas fa-share"></i>               Share
-            </button>
+            </button> %>
+
+            <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="icon-text-btn tweet" target="_blank">
+              <i class="fab fa-twitter"></i>              Tweet
+            </a>
 
             <%= link_to @brand.insta_url, id: "a-diff", target: "_blank" do %>
             <button class="icon-text-btn">
