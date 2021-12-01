@@ -2,12 +2,12 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
 
-  resources :brands, only: [] do
+  resources :brands, only: [:new, :create] do
     collection do
       get 'explore'
       get 'saved'
       get 'local'
-      get 'new'
+      # get 'new'
       post 'explore'
     end
   end

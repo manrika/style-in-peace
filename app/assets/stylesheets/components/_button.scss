@@ -106,7 +106,7 @@
   background: none;
   font-family: 'Quicksand', sans-serif;
   font-size: 18px;
-  font-weight: 500;
+  font-weight: 600;
   width: fit-content;
 
   i {
@@ -114,7 +114,10 @@
   }
 
   &:hover {
-    font-weight: 600;
+    color: rgba(38, 38, 38, 0.6);
+    i {
+      color: rgba(38, 38, 38, 0.8);
+    }
   }
 }
 
