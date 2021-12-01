@@ -11,7 +11,7 @@
     </div>
 
     <div class="container">
-      <div class="row">
+      <div class="row mb-5">
         <div class = "slideshow col-6 h-75">
           <%= render 'news_slideshow', locals: { topnews: @topnews } %>
         </div>
@@ -45,7 +45,7 @@
 
       <div class="similar-brands mt-3">
         <h3>Similar eco-brands brands for you</h3>
-        <div class="scroll">
+        <div class="scroll p-0">
           <div class="row">
             <% @suggested_brands.first(10).each do |brand| %>
               <div style="width: 300px;">
