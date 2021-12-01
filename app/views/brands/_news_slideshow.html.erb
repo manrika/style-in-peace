@@ -1,20 +1,11 @@
 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel('cycle')">
   <div class="carousel-inner">
-    <div class="carousel-item active background-img" style="background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('<%= @topnews[0].image %>')">
-      <div class="content">
-        <p><strong><%= @topnews[0].title %></strong></p>
-        <p><%= @topnews[0].blurb %></p>
-      </div>
+    <div class="carousel-item active background-img" style="background-image: linear-gradient( rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2) ), url('<%= image_path 'naughty1.png' %>')">
     </div>
-    <% @topnews.each_with_index do |article, index| %>
-      <% next if index == 0 %>
-      <div class="carousel-item background-img" style="background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('<%= article.image %>')">
-        <div class="content">
-          <p><strong><%= article.title %></strong></p>
-          <p><%= article.blurb %></p>
-        </div>
+      <div class="carousel-item background-img" style="background-image: linear-gradient( rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2) ), url('<%= image_path 'naughty2.png' %>')">
       </div>
-    <% end %>
+      <div class="carousel-item background-img" style="background-image: linear-gradient( rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2) ), url('<%= image_path 'naughty3.png' %>')">
+      </div>
   </div>
  <button class="carousel-control-prev" type="button" data-target="#carouselExampleControls" data-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
