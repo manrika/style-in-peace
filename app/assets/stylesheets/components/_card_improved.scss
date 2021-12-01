@@ -6,7 +6,7 @@
   background: white;
 
   &:hover {
-    transform: scale(1.10);
+    transform: scale(1.05);
     transition: all .3s ease-in-out;
     z-index: 1;
   }
@@ -45,10 +45,18 @@
 }
 
 .scroll {
+  overflow: auto;
+  padding-left: 2%;
+
+  .row {
+  padding-left: 1.5%;
+  left: 0;
   display: grid;
   align-items: center;
-  gap: 5%;
-  overflow: scroll;
+  gap: 1%;
+  white-space: nowrap;
   overflow-y: hidden;
   grid-auto-flow: column;
+  height: 450px;
+  }
 }
