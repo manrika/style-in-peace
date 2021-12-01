@@ -13,11 +13,19 @@
     <div class="container">
       <h1>Explore eco-brands</h1>
 
-      <%= link_to brands_path do %>
-        <button class="btn btn-outline-secondary">
-          <i class="fas fa-plus"></i>  Add a brand
-        </button>
-      <% end %>
+      <div class="explore-notif">
+        <div class="message">
+          <p>Hello <%= current_user.first_name.capitalize %> <br>We are always looking to list new eco-firendly brands. If you know any eco-friendly brands let us know and boost your impact!</p>
+        </div>
+        <div class="buttons">
+          <button class="exit-btn"><i class="fas fa-times"></i></button>
+          <%= link_to brands_path do %>
+            <button class="simple-text-btn">
+              Suggest brand <i class="fas fa-arrow-right"></i>
+            </button>
+          <% end %>
+        </div>
+      </div>
 
       <div class="mytabs">
         <input type="radio" id="tabfree" name="mytabs" checked="checked">

@@ -77,3 +77,32 @@
 .fa-instagram {
   font-size: 28px;
 }
+
+.exit-btn {
+  border: none;
+  background: none;
+  font-size: 16px;
+  padding: 0px 6px;
+  width: fit-content;
+
+  &:hover i {
+    color: rgba(38, 38, 38, 0.6);
+  }
+}
+
+.simple-text-btn {
+  border: none;
+  background: none;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  width: fit-content;
+
+  i {
+    padding-left: 4px;
+  }
+
+  &:hover {
+    font-weight: 600;
+  }
+}
