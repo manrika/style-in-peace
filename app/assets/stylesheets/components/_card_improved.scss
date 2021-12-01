@@ -83,16 +83,20 @@
 .save-btn {
   background: white !important;
   border-radius: 100% !important;
-  border: 1px solid !important;
-  padding: 3px 5px 2px 5px !important;
+  // border: 1px solid !important;
+  // padding: 3px 5px 2px 5px !important;
   z-index: 999;
 }
 
 .saved-btn {
   background: white !important;
   border-radius: 50% !important;
-  border: 1px solid !important;
-  padding: 5px !important;
+  // border: 1px solid !important;
+  // padding: 5px !important;
+  &:hover {
+    transform: scale(1.2) !important;
+    transition: all .3s ease-in-out !important;
+  }
 }
 
 .shadowed {
