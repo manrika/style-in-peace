@@ -132,6 +132,8 @@ end
 brands = Brand.all
 
 brands.each do |brand|
+  # next if [].includes?(brand.name) ADD chosen brands to skipp attachements in the array
+
   counter = 0
   2.times do # Change to 3 or 4!
     image_url = URI.open("https://source.unsplash.com/1600x900/?fashion")
@@ -141,4 +143,8 @@ brands.each do |brand|
   end
 end
 
+# Attach images etc to chosen brands for demo
+brand = brand.find_by_name("Zara")
+
+#
 puts "Finished creating #{Brand.count} brands (with images) and #{NewsArticle.count} articles 🥳🥳🥳"

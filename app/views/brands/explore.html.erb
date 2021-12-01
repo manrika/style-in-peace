@@ -12,32 +12,25 @@
 
     <div class="container">
       <h1>Explore eco-brands</h1>
-      
+
       <%= link_to brands_path do %>
         <button class="btn btn-outline-secondary">
           <i class="fas fa-plus"></i>  Add a brand
         </button>
       <% end %>
-    
+
       <div class="mytabs">
         <input type="radio" id="tabfree" name="mytabs" checked="checked">
         <label for="tabfree">Brands</label>
-        <div class="tab p-0 search row" data-controller="search-brand-cards">
-          <%= render 'search' %>
+        <div class="tab p-0 search" data-controller="search-brand-cards">
+          <%= render 'search_ecobrand' %>
           <%= render 'brands_list', brands: @brands %>
         </div>
         <input type="radio" id="tabsilver" name="mytabs">
         <label for="tabsilver">News</label>
-        <div class="tab p-0">
-            <div class="d-flex flex-wrap">
-              <% @newsarticles.each do |news| %>
-                <div>
-                    <div style="width: 300px; height: auto;">
-                      <%= render 'brands/news_card', news: news %>
-                    </div>
-                </div>
-              <% end %>
-          </div>
+        <div class="tab p-0 search" data-controller="search-news">
+            <%= render 'search_news' %>
+            <%= render 'news_list', newsarticles: @newsarticles %>
       </div>
     </div>
   </div>
