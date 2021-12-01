@@ -110,11 +110,14 @@
 .submit-btn {
   color: white;
   background-color: #262626;
+  border: none;
   border-radius: 32px;
   height: 50px;
   padding-left: 16px;
   padding-right: 16px;
   margin-right: 8px;
+  width: 100%;
+  margin-top: 12px;
 }
 
 .submit-btn:hover {
