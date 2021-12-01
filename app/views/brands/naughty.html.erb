@@ -1,48 +1,64 @@
 <%= render 'shared/navbar' %>
-<%= link_to 'javascript:history.go(-1);' do %>
-  <button class="icon-btn">
-    <i class="fas fa-chevron-left"></i>
-  </button>
-<% end %>
 
-<div class="container">
-
-  <div class="d-flex justify-content-center">
-    <div class = "slideshow">
-      <%= render 'news_slideshow', locals: { topnews: @topnews } %>
+<div class="mt-5">
+  <div class="page-layout-with-back-btn">
+    <div class="back-btn-container">
+      <%= link_to 'javascript:history.go(-1);' do %>
+        <button class="icon-btn">
+          <i class="fas fa-chevron-left"></i>
+        </button>
+      <% end %>
     </div>
 
-    <div class="px-3 mt-3 w-50 mx-3">
-      <div >
-        <h2><%= @brand.name %></h2>
-      </div>
-      <div class="d-flex">
-          <% @brand.average_rating.times do %>
-            <i class="fas fa-globe-americas mx-1 mt-2">  </i>
-          <% end %>
-      </div>
-      <div class="mt-3">
-        <%= render 'naughty_accordian', locals: { brand: @brand } %>
-      </div>
-    </div>
-  </div>
+    <div class="container">
+      <div class="row">
+        <div class = "slideshow col-6 h-75">
+          <%= render 'news_slideshow', locals: { topnews: @topnews } %>
+        </div>
 
-  <div class="similar-brands mt-3">
-    <h3>Similar eco-brands brands for you</h3>
-    <div class="card-container d-flex flex-wrap justify-content-center">
-      <% @suggested_brands.first(10).each do |brand| %>
-        <div data-action="mouseenter->brand-card#changeCard mouseleave->brand-card#changeCardBack">
-          <div data-controller="brand-card">
-            <div data-action="mouseenter->brand-card#changeCard mouseleave->brand-card#changeCardBack">
-              <div data-brand-card-target="card">
-                <%= render 'brands/simple_card', brand: brand %>
-              </div>
-              <div class='d-none' style="width: 300px; height: auto;" data-brand-card-target="info">
-                <%= render 'brands/info_card', brand: brand  %>
+        <div class="col-5">
+          <div class="brand-show-header">
+            <div class="mb-2">
+              <h1 class="d-inline align-middle"><%= @brand.name %></h1>
+              <span class="pill d-inline align-middle"><%= @brand.style.capitalize %> style</span>
+            </div>
+
+            <div class="d-flex mb-3">
+              <div class="d-flex">
+                <% @brand.average_rating.times do %>
+                  <i class="fas fa-globe-americas mx-1 mt-2">  </i>
+                <% end %>
+                <% (5 - @brand.average_rating).times do %>
+                  <i style="color: grey" class="fas fa-globe-americas mx-1 mt-2">  </i>
+                <% end %>
               </div>
             </div>
           </div>
-      <% end %>
+
+          <div class="mt-4">
+            <%= render 'naughty_accordian', locals: { brand: @brand } %>
+          </div>
+        </div>
+      </div>
+
+      <div class="similar-brands mt-5">
+        <h3>Similar eco-brands brands for you</h3>
+        <div class="card-container d-flex flex-wrap justify-content-center">
+          <% @suggested_brands.first(10).each do |brand| %>
+            <div data-action="mouseenter->brand-card#changeCard mouseleave->brand-card#changeCardBack">
+              <div data-controller="brand-card">
+                <div data-action="mouseenter->brand-card#changeCard mouseleave->brand-card#changeCardBack">
+                  <div data-brand-card-target="card">
+                    <%= render 'brands/simple_card', brand: brand %>
+                  </div>
+                  <div class='d-none' style="width: 300px; height: auto;" data-brand-card-target="info">
+                    <%= render 'brands/info_card', brand: brand  %>
+                  </div>
+                </div>
+              </div>
+          <% end %>
+        </div>
+      </div>
     </div>
   </div>
 </div>
