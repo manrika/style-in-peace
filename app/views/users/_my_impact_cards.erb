@@ -1,90 +1,87 @@
 
-  <div class="layout">
-    <div class="back-btn-container">
-      <%= link_to 'javascript:history.go(-1);' do %>
-        <button class="icon-btn">
-          <i class="fas fa-chevron-left"></i>
-        </button>
-      <% end %>
-    </div>
-
-
-      <div class = "container">
-        <h1 class="text-white">My Impact</h1>
-        <div class="card-deck">
-          <div class="my-impact">
-            <div class="card-body">
-              <h5 class="card-title">Brands shared</h5>
-              <div class= "text">
-              <% if @brands_shared.nil? %>
-                <p class="card-text">Share brands to get our unique discount code!</p>
-              <%else%>
-                <p class = "card-text">Your unique discount code: </p>
-                <p class = "discount-text">Style-in-peace-100</p>
-              <%end%>
-              </div>
-              <div class = "my-impact-btn">
-                <button class="add" data-toggle="modal" data-target="#shareModal">
-                  <i class="fas fa-share"></i>               Share
-                </button>
-              </div>
-            </div>
-            <div class="card-footer">
-              <% if @brands_shared.nil? %>
-                <h5 class = "card-points">0</h5>
-              <%else%>
-                <h5 class = "card-points"><%=@brands_shared%></h5>
-              <%end%>
-            </div>
+<div class="layout">
+  <div class="back-btn-container">
+    <%= link_to 'javascript:history.go(-1);' do %>
+      <button class="icon-btn">
+        <i class="fas fa-chevron-left"></i>
+      </button>
+    <% end %>
+  </div>
+  <div class = "container">
+    <h1 class="text-white">My Impact</h1>
+    <div class="card-deck">
+      <div class="my-impact">
+        <div class="card-body">
+          <h5 class="card-title">Brands shared</h5>
+          <div class= "text">
+          <% if @brands_shared.nil? %>
+            <p class="card-text">Share brands to get our unique discount code!</p>
+          <%else%>
+            <p class = "card-text">Your unique discount code: </p>
+            <p class = "discount-text">Style-in-peace-100</p>
+          <%end%>
           </div>
-          <div class="my-impact">
-            <div class="card-body">
-              <h5 class="card-title">Brands referred</h5>
-              <div class= "text">
-                <p class="card-text">Let us know of any sustainable brands to include!</p>
-              </div>
-                <%= link_to brands_path do %>
-                <div class = "my-impact-btn">
-                  <button class="add">
-                    <i class="fas fa-plus"></i>  Add a brand
-                  </button>
-                </div>
-              <% end %>
-            </div>
-            <div class="card-footer">
-              <h5 class="card-points">0</h5>
-            </div>
+          <div class = "my-impact-btn">
+            <button class="add" data-toggle="modal" data-target="#shareModal">
+              <i class="fas fa-share"></i>               Share
+            </button>
           </div>
-          <div class="my-impact">
-            <div class="card-body">
-              <h5 class="card-title">Friends referred</h5>
-                <div class= "text">
-                  <p class="card-text">Tell your friends about us!</p>
-                </div>
-                <div class = "my-impact-btn">
-                  <button class="add" data-toggle="modal" data-target="#shareModal">
-                    <i class="fas fa-share"></i>               Refer a friend
-                  </button>
-                </div>
-            </div>
-            <div class="card-footer">
-              <h5 class="card-points">0</h5>
-            </div>
-          </div>
-          <div class="my-impact">
-            <div class="card-body">
-              <h5 class="card-title">Total points</h5>
-              <% if current_user.brands_shared.nil?%>
-                <p class="card-text"> No points yet :( </p>
-              <%else%>
-                <p class = "card-text">Thank you for your support!</p>
-              <%end%>
-            </div>
-            <div class="card-footer">
-              <h5 class="card-points"><%=@brands_shared%></h5>
-            </div>
-          </div>
-
+        </div>
+        <div class="card-footer">
+          <% if @brands_shared.nil? %>
+            <h5 class = "card-points">0</h5>
+          <%else%>
+            <h5 class = "card-points"><%=@brands_shared%></h5>
+          <%end%>
         </div>
       </div>
+      <div class="my-impact">
+        <div class="card-body">
+          <h5 class="card-title">Brands referred</h5>
+          <div class= "text">
+            <p class="card-text">Let us know of any sustainable brands to include!</p>
+          </div>
+            <%= link_to brands_path do %>
+            <div class = "my-impact-btn">
+              <button class="add">
+                <i class="fas fa-plus"></i>  Add a brand
+              </button>
+            </div>
+          <% end %>
+        </div>
+        <div class="card-footer">
+          <h5 class="card-points">0</h5>
+        </div>
+      </div>
+      <div class="my-impact">
+        <div class="card-body">
+          <h5 class="card-title">Friends referred</h5>
+            <div class= "text">
+              <p class="card-text">Tell your friends about us!</p>
+            </div>
+            <div class = "my-impact-btn">
+              <button class="add" data-toggle="modal" data-target="#shareModal">
+                <i class="fas fa-share"></i>               Refer a friend
+              </button>
+            </div>
+        </div>
+        <div class="card-footer">
+          <h5 class="card-points">0</h5>
+        </div>
+      </div>
+      <div class="my-impact">
+        <div class="card-body">
+          <h5 class="card-title">Total points</h5>
+          <% if current_user.brands_shared.nil?%>
+            <p class="card-text"> No points yet :( </p>
+          <%else%>
+            <p class = "card-text">Thank you for your support!</p>
+          <%end%>
+        </div>
+        <div class="card-footer">
+          <h5 class="card-points"><%=@brands_shared%></h5>
+        </div>
+      </div>
+    </div>
   </div>
+</div>
