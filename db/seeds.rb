@@ -159,7 +159,7 @@ puts "Starting to run more custom seeding "
 # ADD CUSTOM IMAGES TO SPECIFIED BRANDS
 
 # Patagonia
-# patagonia = Brand.find_by_name("Patagonia")
+patagonia = Brand.find_by_name("Patagonia")
 # p_img_url_one = URI.open("https://www.patagonia.com/dw/image/v2/BDJB_PRD/on/demandware.static/-/Sites-patagonia-master/default/dw3781c6b1/images/hi-res/84212_FGE_OM1.jpg?sw=1600&sh=1600&sfrm=png&q=80&bgcolor=f6f6f6")
 # patagonia.photos.attach(io: p_img_url_one, filename: "#{patagonia.name}one.jpg", content_type: 'image/jpeg')
 # p_img_url_two = URI.open("https://www.patagonia.com/dw/image/v2/BDJB_PRD/on/demandware.static/-/Sites-patagonia-master/default/dw54ad2462/images/hi-res/23074_DNAT_BH1.jpg?sw=1600&sh=1600&sfrm=png&q=80&bgcolor=f6f6f6")
