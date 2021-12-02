@@ -74,13 +74,11 @@
               <% end %>
             </div>
 
-            <div data-controller="share" data-share-target="share" data-action="click->share#share">
+            <div data-controller="share" data-share-url-value="<%= request.url %>" data-share-target="share" data-action="click->share#share">
               <%= link_to share_brand_path(@brand), class: "tweet icon-text-btn" do %>
                 <i class="fab fa-twitter"></i>              Tweet
               <% end %>
             </div>
-
-
 
             <div>
               <%= link_to @brand.insta_url, id: "a-diff", target: "_blank" do %>
