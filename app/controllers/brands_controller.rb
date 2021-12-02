@@ -77,7 +77,7 @@ class BrandsController < ApplicationController
     else
       @address = current_user.address
     end
-    @local_brands = Brand.near(@address, 10)
+    @local_brands = Brand.near(@address, 2)
     @eco_local_brands = @local_brands.select do |brand|
       brand.eco? && brand.geocoded?
     end
