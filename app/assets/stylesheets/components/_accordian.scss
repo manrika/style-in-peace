@@ -1,9 +1,4 @@
-#measure-button {
-  text-transform: uppercase;
-  color: black;
-}
-
-#collapseOne {
+.measure-display {
   display: flex;
   align-items: flex-start;
 }
@@ -51,7 +46,9 @@ p {
   color: #474A2C;
 }
 
-#measure-button {
+.measure-button {
+  text-transform: uppercase;
+  color: black;
   display: inline-flex;
   flex-wrap: nowrap;
   justify-content: space-between;

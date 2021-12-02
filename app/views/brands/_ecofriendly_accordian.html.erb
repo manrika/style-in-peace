@@ -4,58 +4,61 @@
   <div class="card">
     <div class="card-header" id="headingOne">
       <h2 class="mb-0">
-        <button id="measure-button" class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-          Impact <i style="color: gray" class="fas fa-plus"></i>
+        <button class="measure-button btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+          Impact <i style="color: gray" id="expand" class="fas fa-plus"></i>
         </button>
       </h2>
     </div>
-    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
-      <div class="measure-descriptions">
-        <p><%= "Earth" %></p>
-        <p><%= "People" %></p>
-        <p><%= "Animals" %></p>
-        <p><%= "Materials" %></p>
-      </div>
-      <div class="measures">
-        <div class="earth-rating">
-          <p>
-            <% @brand.rating_earth.times do %>
-              <i class="fas fa-globe-americas mx-1">  </i>
-            <% end %>
-            <% (5 - @brand.rating_earth).times do %>
-              <i style="color: #4f748d" class="fas fa-globe-americas mx-1">  </i>
-            <% end %>
-          </p>
+    <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+      <div class="measure-display">
+        <div class="measure-descriptions">
+          <p><%= "Earth" %></p>
+          <p><%= "People" %></p>
+          <p><%= "Animals" %></p>
+          <p><%= "Materials" %></p>
         </div>
-        <div class="people-rating">
-          <p>
-            <% @brand.rating_people.times do %>
-              <i class="fas fa-user mx-1">  </i>
-            <% end %>
-            <% (5 - @brand.rating_people).times do %>
-              <i style="color: #DBCF96;#bd8379;" class="fas fa-user mx-1">  </i>
-            <% end %>
-          </p>
-        </div>
-        <div class="animals-rating">
-          <p>
-            <% @brand.rating_animals.times do %>
-              <i class="fas fa-paw mx-1">  </i>
-            <% end %>
-            <% (5 - @brand.rating_animals).times do %>
-              <i style="color: #bd8379" class="fas fa-paw mx-1">  </i>
-            <% end %>
-          </p>
-        </div>
-        <div class="materials-rating">
-          <p>
-            <% @brand.rating_materials.times do %>
-              <i class="fas fa-recycle mx-1">  </i>
-            <% end %>
-            <% (5 - @brand.rating_materials).times do %>
-              <i style="color: #ACBEA3" class="fas fa-recycle mx-1">  </i>
-            <% end %>
-          </p>
+
+        <div class="measures">
+          <div class="earth-rating">
+            <p>
+              <% @brand.rating_earth.times do %>
+                <i class="fas fa-globe-americas mx-1">  </i>
+              <% end %>
+              <% (5 - @brand.rating_earth).times do %>
+                <i style="color: #4f748d" class="fas fa-globe-americas mx-1">  </i>
+              <% end %>
+            </p>
+          </div>
+          <div class="people-rating">
+            <p>
+              <% @brand.rating_people.times do %>
+                <i class="fas fa-user mx-1">  </i>
+              <% end %>
+              <% (5 - @brand.rating_people).times do %>
+                <i style="color: #DBCF96;#bd8379;" class="fas fa-user mx-1">  </i>
+              <% end %>
+            </p>
+          </div>
+          <div class="animals-rating">
+            <p>
+              <% @brand.rating_animals.times do %>
+                <i class="fas fa-paw mx-1">  </i>
+              <% end %>
+              <% (5 - @brand.rating_animals).times do %>
+                <i style="color: #bd8379" class="fas fa-paw mx-1">  </i>
+              <% end %>
+            </p>
+          </div>
+          <div class="materials-rating">
+            <p>
+              <% @brand.rating_materials.times do %>
+                <i class="fas fa-recycle mx-1">  </i>
+              <% end %>
+              <% (5 - @brand.rating_materials).times do %>
+                <i style="color: #ACBEA3" class="fas fa-recycle mx-1">  </i>
+              <% end %>
+            </p>
+          </div>
         </div>
       </div>
     </div>
@@ -65,7 +68,7 @@
   <div class="card">
     <div class="card-header" id="headingTwo">
       <h2 class="mb-0">
-        <button id="measure-button" class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+        <button class="measure-button btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
           Why we love them <i style="color: gray" id="expand" class="fas fa-plus"></i>
         </button>
       </h2>
@@ -81,7 +84,7 @@
   <div class="card">
     <div class="card-header" id="headingThree">
       <h2 class="mb-0">
-        <button id="measure-button" class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+        <button class="measure-button btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
           About <i style="color: gray" id="expand" class="fas fa-plus"></i>
         </button>
       </h2>
@@ -97,7 +100,7 @@
   <div class="card">
     <div class="card-header" id="headingFour">
       <h2 class="mb-0">
-        <button id="measure-button" class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+        <button class="measure-button btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
           Location <i style="color: gray" id="expand" class="fas fa-plus"></i>
         </button>
       </h2>
