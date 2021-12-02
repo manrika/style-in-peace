@@ -28,9 +28,9 @@
                 <%= f.input :name, label: "Brand name" %>
                 <%= f.input :website_url, label: "Website"%>
                 <%= f.input :style, collection: %w[modern outdoor minimalist retro boujie arty scandinavian grunge formal lounge boho] %>
-                <button class="simple-text-btn" data-toggle="modal" data-target="#successModal">
+                <%# <button class="simple-text-btn" data-toggle="modal" data-target="#successModal"> %>
                   <%= f.submit "Send brand suggestion", class: "submit-btn" %>
-                </button>
+                <%# </button> %>
               <% end %>
             </div>
           </div>
@@ -79,7 +79,7 @@
 
 
 <!-- Modal -->
-      <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
+      <%# <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
@@ -93,4 +93,4 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> %>
