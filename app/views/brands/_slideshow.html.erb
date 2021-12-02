@@ -3,7 +3,7 @@
     <div class="carousel-item active background-img" style="background-image: url('<%= brand.splash_image %>')" data-interval="3000">
     </div>
     <% brand.photos.each do |photo| %>
-      <div class="carousel-item background-img" style="background-image: url('<%= cl_image_path photo.key, crop: :fill, width: 200, height: 200 %>')" data-interval="3000">
+      <div class="carousel-item background-img" style="background-image: url('<%= cl_image_path photo.key, crop: :fill, quality: "auto" %>')" data-interval="3000">
       </div>
     <% end %>
   </div>
