@@ -148,7 +148,7 @@ require 'nokogiri'
 puts "Starting to run more custom seeding, just a few more mins"
 
 # # REMOVE ATTACHED PHOTOS FROM SPECIFIED BRANDS
-# brands_to_edit_images = ["Patagonia", "TALA", "Ecoalf", "WAWWA", "Girlfriend Collective", "Organic Basics", "Adidas by Stella McCartney", "Outerknown", "Jyoti - Fair Works"]
+# brands_to_edit_images = ["Patagonia", "TALA", "Ecoalf", "WAWWA", "Girlfriend Collective", "Organic Basics", "Adidas by Stella McCartney", "Outerknown", "Jyoti - Fair Works", "Swedish Stockings", "Sandqvist"]
 
 # brands_to_edit_images.each do |name|
 #   brand = Brand.find_by_name(name)
@@ -242,22 +242,45 @@ puts "Starting to run more custom seeding, just a few more mins"
 # kcp = Brand.find_by_name("KnowledgeCotton Apparel")
 # kcp.destroy
 
-# Swedish Stockings
-swedish = Brand.find_by_name("Swedish Stockings")
-swedish_img_url_one = URI.open("https://cdn.shopify.com/s/files/1/0078/3128/9969/products/web_campaign_ines_gold_1000x.jpg?v=1628252615")
-swedish.photos.attach(io: swedish_img_url_one, filename: "#{swedish.name}one.jpg", content_type: 'image/jpeg')
-swedish_img_url_two = URI.open("https://cdn.shopify.com/s/files/1/0078/3128/9969/products/ines-shimmery-socks-wine-socks-swedish-stockings-254799_1000x.jpg?v=1607540352")
-swedish.photos.attach(io: swedish_img_url_two, filename: "#{swedish.name}one.jpg", content_type: 'image/jpeg')
-swedish.address = "57 Golborne Rd London W10 5NR"
-swedish.save!
+# # Swedish Stockings
+# swedish = Brand.find_by_name("Swedish Stockings")
+# swedish_img_url_one = URI.open("https://cdn.shopify.com/s/files/1/0078/3128/9969/products/web_campaign_ines_gold_1000x.jpg?v=1628252615")
+# swedish.photos.attach(io: swedish_img_url_one, filename: "#{swedish.name}one.jpg", content_type: 'image/jpeg')
+# swedish_img_url_two = URI.open("https://cdn.shopify.com/s/files/1/0078/3128/9969/products/ines-shimmery-socks-wine-socks-swedish-stockings-254799_1000x.jpg?v=1607540352")
+# swedish.photos.attach(io: swedish_img_url_two, filename: "#{swedish.name}one.jpg", content_type: 'image/jpeg')
+# swedish.address = "57 Golborne Rd London W10 5NR"
+# swedish.save!
 
-# Sandqvist
-sandqvist = Brand.find_by_name("Sandqvist")
-sandqvist_img_url_one = URI.open("https://products.sandqvist.com/images/879_03fe5a5914-hege-black-sqa674-01-original.jpg?q=70&fit=clip&w=1024&h=1024&fm=jpg&bg=FBFBFB&auto=format")
-sandqvist.photos.attach(io: sandqvist_img_url_one, filename: "#{sandqvist.name}one.jpg", content_type: 'image/jpeg')
-sandqvist_img_url_two = URI.open("https://products.sandqvist.com/images/2404_71f346eaf3-bernt-green-01-original.jpg?q=70&fit=clip&w=1024&h=1024&fm=jpg&bg=FBFBFB&auto=format")
-sandqvist.photos.attach(io: sandqvist_img_url_two, filename: "#{sandqvist.name}one.jpg", content_type: 'image/jpeg')
-sandqvist.address = "79 Berwick Street London"
-sandqvist.save!
+# # Sandqvist
+# sandqvist = Brand.find_by_name("Sandqvist")
+# sandqvist_img_url_one = URI.open("https://products.sandqvist.com/images/879_03fe5a5914-hege-black-sqa674-01-original.jpg?q=70&fit=clip&w=1024&h=1024&fm=jpg&bg=FBFBFB&auto=format")
+# sandqvist.photos.attach(io: sandqvist_img_url_one, filename: "#{sandqvist.name}one.jpg", content_type: 'image/jpeg')
+# sandqvist_img_url_two = URI.open("https://products.sandqvist.com/images/2404_71f346eaf3-bernt-green-01-original.jpg?q=70&fit=clip&w=1024&h=1024&fm=jpg&bg=FBFBFB&auto=format")
+# sandqvist.photos.attach(io: sandqvist_img_url_two, filename: "#{sandqvist.name}one.jpg", content_type: 'image/jpeg')
+# sandqvist.address = "79 Berwick Street London"
+# sandqvist.save!
+
+# Create brand Ifnotnow
+ifnotnow = Brand.create(
+    name: "Ifnotnow",
+    website_url: "https://ifnotnow.co/",
+    insta_url: "https://www.instagram.com/ifnotnow.co/?hl=en",
+    price_category: 2,
+    rating_earth: 4,
+    rating_people: 4,
+    rating_animals: 4,
+    rating_materials: 5,
+    about: "Ifnotnow are a mindful lifestyle brand all about spreading good energy.",
+    why_we_love_them: "They use recycled materials and maintain a high quality. The story behind their products spread such good vibes.",
+    splash_image: "https://cdn.shopify.com/s/files/1/0402/3592/5665/files/File_000-2_2200x.png?v=1631794487",
+    style: "minimalist",
+    approved: true,
+    address: "Kings Cross London"
+  )
+
+ifnotnow_img_url_one = URI.open("https://cdn.shopify.com/s/files/1/0402/3592/5665/products/IMG_0093_1200x.png?v=1633958767")
+ifnotnow.photos.attach(io: ifnotnow_img_url_one, filename: "#{ifnotnow.name}one.jpg", content_type: 'image/jpeg')
+ifnotnow_img_url_two = URI.open("https://cdn.shopify.com/s/files/1/0402/3592/5665/products/File_000-8_b5f789b0-66fa-441e-8e7b-1f66c4fc2dad_1200x.png?v=1633959346")
+ifnotnow.photos.attach(io: ifnotnow_img_url_two, filename: "#{ifnotnow.name}one.jpg", content_type: 'image/jpeg')
 
 puts "Finitoed 🥳🥳🥳"
