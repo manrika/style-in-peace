@@ -11,11 +11,11 @@
     </div>
     <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
       <div class="measure-display">
-        <div class="measure-descriptions">
-          <p><%= "Earth" %></p>
-          <p><%= "People" %></p>
-          <p><%= "Animals" %></p>
-          <p><%= "Materials" %></p>
+        <div class="measure-descriptions" data-controller="tooltip">
+          <p data-toggle="tooltip" data-placement="left" title="CO2 footprint"><%= "Earth" %></p>
+          <p data-toggle="tooltip" data-placement="left" title="Working conditions"><%= "People" %></p>
+          <p data-toggle="tooltip" data-placement="left" title="Animal welfare"><%= "Animals" %></p>
+          <p data-toggle="tooltip" data-placement="left" title="Eco-friendly materials"><%= "Materials" %></p>
         </div>
 
         <div class="measures">
