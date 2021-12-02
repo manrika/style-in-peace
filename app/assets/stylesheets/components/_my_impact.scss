@@ -2,12 +2,6 @@
   margin: auto;
  }
 
-.card-footer{
-  display: flex;
-  justify-content: center;
-  font-weight: 800px;
-  padding-top: 32px;
-}
 
 .impact {
   background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3)), url("wind.jpeg");
@@ -34,7 +28,7 @@
   width:250px;
   margin: 16px;
   box-shadow: none;
-  border: 1px solid gray;
+  border: 3px solid black;
   // border-color: #78787899;
 }
 
@@ -45,8 +39,11 @@
 
 .card-body{
   height: 300px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  justify-items: center;
 }
-
 
 .discount-text{
   margin-top: 10%;
@@ -128,14 +125,26 @@
     font-size: 60px;
     display: flex;
     justify-content: center;
-    padding-top: 110px;
+    padding-top: 100px;
     color: white;
   }
-}
-#total-points {
-  border: 7px solid gray;
 
-  #card-total-points {
-    font-size: 10px;
+  .card-footer {
+    display: flex;
+    justify-content: center;
+    font-weight: 800px;
+    padding-top: 32px;
   }
+}
+
+#total-points {
+  border: 3px solid black;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+#card-total-points {
+  font-size: 60;
+  padding-top: 20px;
+  color: white;
+  font-size: 100px;
 }
