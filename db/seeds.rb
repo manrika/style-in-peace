@@ -145,7 +145,7 @@ require 'nokogiri'
 
 # puts "Finished creating #{Brand.count} brands (with images) and #{NewsArticle.count} articles 🥳🥳🥳"
 
-puts "Starting to run more custom seeding, just few more mins"
+puts "Starting to run more custom seeding, just a few more mins"
 
 # # REMOVE ATTACHED PHOTOS FROM SPECIFIED BRANDS
 # brands_to_edit_images = ["Patagonia", "TALA", "Ecoalf", "WAWWA", "Girlfriend Collective", "Organic Basics", "Adidas by Stella McCartney", "Outerknown", "Jyoti - Fair Works"]
