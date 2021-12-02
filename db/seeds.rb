@@ -145,21 +145,35 @@ require 'nokogiri'
 
 # puts "Finished creating #{Brand.count} brands (with images) and #{NewsArticle.count} articles 🥳🥳🥳"
 
+puts "Starting to run more custom seeding "
 
-# image_url = URI.open("https://cdn.shopify.com/s/files/1/1290/6307/products/MamaNiela-Sotella-Fall-Collection-2021-web-275_1200x.jpg?v=1632964190")
-# brand.photos.attach(io: image_url, filename: "#{brand.name}.jpg", content_type: 'image/jpeg')
+# # REMOVE ATTACHED PHOTOS FROM SPECIFIED BRANDS
+# brands_to_edit_images = ["Patagonia", "TALA", "Ecoalf", "WAWWA", "Girlfriend Collective", "Organic Basics", "Adidas by Stella McCartney", "Outerknown", "Jyoti - Fair Works"]
 
+# brands_to_edit_images.each do |name|
+#   brand = Brand.find_by_name(name)
+#   brand.photos.last.destroy
+#   brand.photos.last.destroy
+# end
 
+# ADD CUSTOM IMAGES TO SPECIFIED BRANDS
 
-puts "Starting to run more custom seeding"
+# Patagonia
+patagonia = Brand.find_by_name("Patagonia")
+p_img_url_one = URI.open("https://www.patagonia.com/dw/image/v2/BDJB_PRD/on/demandware.static/-/Sites-patagonia-master/default/dw3781c6b1/images/hi-res/84212_FGE_OM1.jpg?sw=1600&sh=1600&sfrm=png&q=80&bgcolor=f6f6f6")
+patagonia.photos.attach(io: p_img_url_one, filename: "#{patagonia.name}one.jpg", content_type: 'image/jpeg')
+p_img_url_two = URI.open("https://www.patagonia.com/dw/image/v2/BDJB_PRD/on/demandware.static/-/Sites-patagonia-master/default/dw54ad2462/images/hi-res/23074_DNAT_BH1.jpg?sw=1600&sh=1600&sfrm=png&q=80&bgcolor=f6f6f6")
+patagonia.photos.attach(io: p_img_url_two, filename: "#{patagonia.name}one.jpg", content_type: 'image/jpeg')
+patagonia.website_url = "https://www.patagonia.com/home/"
+patagonia.insta_url = "https://www.instagram.com/patagonia/?hl=en"
+patagonia.save!
 
-# REMOVE ATTACHED PHOTOS FROM SPECIFIED BRANDS
-brands_to_edit_images = ["Patagonia", "TALA", "Ecoalf", "WAWWA", "Girlfriend Collective", "Organic Basics", "Adidas by Stella McCartney", "Outerknown", "Jyoti - Fair Works"]
-
-brands_to_edit_images.each do |name|
-  brand = Brand.find_by_name(name)
-  brand.photos.last.destroy
-  brand.photos.last.destroy
-end
+# # Patagonia
+# patagonia = Brand.find_by_name("Patagonia")
+# p_img_url_one = URI.open("")
+# patagonia.photos.attach(io: p_img_url_one, filename: "#{patagonia.name}one.jpg", content_type: 'image/jpeg')
+# p_img_url_two = URI.open("")
+# patagonia.photos.attach(io: p_img_url_two, filename: "#{patagonia.name}one.jpg", content_type: 'image/jpeg')
+# patagonia.save!
 
 puts "finitoed"
