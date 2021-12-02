@@ -62,13 +62,13 @@
 
       <div class="mytabs">
         <input type="radio" id="tabfree" name="mytabs" checked="checked">
-        <label for="tabfree">Brands</label>
+        <label class = "tabs" for="tabfree">Brands</label>
         <div class="tab p-0 search" data-controller="search-brand-cards">
           <%= render 'search_ecobrand' %>
           <%= render 'brands_list', brands: @brands %>
         </div>
         <input type="radio" id="tabsilver" name="mytabs">
-        <label for="tabsilver">News</label>
+        <label class = "tabs" for="tabsilver">News</label>
         <div class="tab p-0 search" data-controller="search-news">
           <%= render 'search_news' %>
           <%= render 'news_list', newsarticles: @newsarticles %>

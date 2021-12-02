@@ -25,12 +25,12 @@
 a {
   color:black;
   text-decoration: none;
-  transition: 0.3s;
+  transition: all 0.25s ease-in-out;
   font-size: 18px;
   &:hover{
     text-decoration: none;
     color: black;
-    font-size: 117%;
+    transform: scale(1.17);
   }
 }
 
