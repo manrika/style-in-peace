@@ -10,7 +10,7 @@
 <div class="home-container">
   <div class='scroll'>
     <h3 class="mb-2">New eco-brands on the block</h3>
-    <div class='row'>
+    <div class='row justify-content-start'>
       <% @new_brands.first(10).each do |brand| %>
         <div style="width: 300px;">
           <%= render 'brands/card_improved', brand: brand %>
@@ -25,7 +25,7 @@
       <% if @recommended_brands.empty? %>
         <p>Sorry, we don't have any brands that match your criteria.</p>
       <% else %>
-        <div class='row'>
+        <div class='row justify-content-start'>
           <% @recommended_brands.first(10).each do |brand| %>
             <div style="width: 300px;">
               <%= render 'brands/card_improved', brand: brand %>
