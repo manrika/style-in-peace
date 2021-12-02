@@ -51,39 +51,44 @@
 
           <a target ="_blank" class="primary-btn" href="<%= @brand.website_url %>">Visit <%= @brand.name %></a>
 
-          <div>
-            <% if current_user %>
-              <% unless current_user.brands.include?(@brand)%>
+          <div class="d-flex align-items-center">
+            <div>
+              <% if current_user %>
+                <% unless current_user.brands.include?(@brand)%>
+                  <%= simple_form_for @brand, url: save_path, method: :post do |f| %>
+                    <%= f.hidden_field :brand_id, value: @brand.id %>
+                    <%= button_tag type: 'submit', class: "icon-text-btn" do %>
+                      <i class="fas fa-heart btn-item"></i>               Save
+                    <% end %>
+                    <%# = f.submit "Save", class: "icon-text-btn" MM REMOVE THIS LINE AFTER TESTING %>
+                  <% end %>
+                <% end %>
+              <% else %>
                 <%= simple_form_for @brand, url: save_path, method: :post do |f| %>
-                  <%= f.hidden_field :brand_id, value: @brand.id %>
-                  <%= button_tag type: 'submit', class: "icon-text-btn" do %>
-                    <i class="fas fa-heart btn-item"></i>               Save
+                    <%= f.hidden_field :brand_id, value: @brand.id %>
+                    <%= button_tag type: 'submit', class: "icon-text-btn" do %>
+                      <i class="fas fa-heart"></i>               Save
+                    <% end %>
+                    <%#= f.submit "Save", class: "icon-text-btn" MM REMOVE THIS LINE AFTER TESTING %>
                   <% end %>
-                  <%# = f.submit "Save", class: "icon-text-btn" MM REMOVE THIS LINE AFTER TESTING %>
-                <% end %>
               <% end %>
-            <% else %>
-              <%= simple_form_for @brand, url: save_path, method: :post do |f| %>
-                  <%= f.hidden_field :brand_id, value: @brand.id %>
-                  <%= button_tag type: 'submit', class: "icon-text-btn" do %>
-                    <i class="fas fa-heart"></i>               Save
-                  <% end %>
-                  <%#= f.submit "Save", class: "icon-text-btn" MM REMOVE THIS LINE AFTER TESTING %>
-                <% end %>
-            <% end %>
+            </div>
 
+            <div data-controller="share" data-share-target="share" data-action="click->share#share">
               <%= link_to share_brand_path(@brand), class: "tweet icon-text-btn" do %>
-                <i class="fab fa-twitter" data-controller="share" data-share-target="share" data-action="click->share#share"></i>              Tweet
+                <i class="fab fa-twitter"></i>              Tweet
               <% end %>
+            </div>
 
 
 
-
-            <%= link_to @brand.insta_url, id: "a-diff", target: "_blank" do %>
-            <button class="icon-text-btn">
-              <i class="fab fa-instagram"></i>
-            </button>
-            <% end %>
+            <div>
+              <%= link_to @brand.insta_url, id: "a-diff", target: "_blank" do %>
+              <button class="icon-text-btn" style="padding-top: 5px;">
+                <i class="fab fa-instagram"></i>
+              </button>
+              <% end %>
+            </div>
 
           </div>
         </div>
