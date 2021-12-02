@@ -11,7 +11,7 @@
     </div>
 
     <div class="container">
-      <div class="row">
+      <div class="row mb-5">
         <div class= "slideshow col-6 h-75">
           <%= render 'slideshow', brand: @brand %>
         </div>
@@ -72,13 +72,12 @@
                 <% end %>
             <% end %>
 
-            <%# <button class="icon-text-btn" data-toggle="modal" data-target="#shareModal">
-              <i class="fas fa-share"></i>               Share
-            </button> %>
+              <%= link_to share_brand_path(@brand), class: "tweet icon-text-btn" do %>
+                <i class="fab fa-twitter" data-controller="share" data-share-target="share" data-action="click->share#share"></i>              Tweet
+              <% end %>
 
-            <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="icon-text-btn tweet" target="_blank">
-              <i class="fab fa-twitter"></i>              Tweet
-            </a>
+
+
 
             <%= link_to @brand.insta_url, id: "a-diff", target: "_blank" do %>
             <button class="icon-text-btn">
@@ -111,7 +110,7 @@
 
       <% if current_user %>
         <h3>Similar eco-brands brands for you</h3>
-        <div class="scroll">
+        <div class="scroll p-0">
           <div class="row">
             <% @suggested_brands.first(10).each do |brand| %>
               <div style="width: 300px;">

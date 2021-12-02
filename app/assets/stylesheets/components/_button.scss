@@ -88,3 +88,56 @@
 .fa-instagram {
   font-size: 28px;
 }
+
+.exit-btn {
+  border: none;
+  background: none;
+  font-size: 16px;
+  padding: 0px 6px;
+  width: fit-content;
+
+  &:hover i {
+    color: rgba(38, 38, 38, 0.6);
+  }
+}
+
+.simple-text-btn {
+  border: none;
+  background: none;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  width: fit-content;
+
+  i {
+    padding-left: 4px;
+  }
+
+  &:hover {
+    color: rgba(38, 38, 38, 0.6);
+    i {
+      color: rgba(38, 38, 38, 0.8);
+    }
+  }
+}
+
+.submit-btn {
+  color: white;
+  background-color: #262626;
+  border: none;
+  border-radius: 32px;
+  height: 50px;
+  padding-left: 16px;
+  padding-right: 16px;
+  margin-right: 8px;
+  width: 100%;
+  margin-top: 12px;
+}
+
+.submit-btn:hover {
+  text-decoration: none;
+  border: 2px solid #262626;
+  color:#262626;
+  background-color: white;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
