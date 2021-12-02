@@ -14,7 +14,7 @@
 <%# FIRST CARD %>
       <div class="my-impact">
         <div class="card-body">
-          <h5 class="card-title">Brands shared</h5>
+          <h5 class="card-title"></i> Brands shared</h5>
           <div class= "text">
           <% if @brands_shared.nil? %>
             <p class="card-text">Share brands to get our unique discount code!</p>
@@ -43,7 +43,7 @@
 <%# SECOND CARD %>
       <div class="my-impact">
         <div class="card-body">
-          <h5 class="card-title">Brands referred</h5>
+          <h5 class="card-title"> Brands referred</h5>
           <div class= "text">
             <p class="card-text">Let us know of any sustainable brands to include!</p>
           </div>
@@ -84,7 +84,7 @@
 
 <%# FOURTH CARD %>
 
-      <div class="my-impact">
+      <div id="total-points" class="my-impact">
         <div class="card-body">
           <h5 class="card-title">Total points</h5>
           <% if current_user.brands_shared.nil?%>
@@ -92,11 +92,9 @@
           <%else%>
             <p class = "card-text">Thank you for your support!</p>
           <%end%>
-          <div id="card-points">
+          <div id="card-total-points">
             <h5 class="card-points"><%=@brands_shared%></h5>
           </div>
-        </div>
-        <div class="card-footer">
         </div>
       </div>
     </div>

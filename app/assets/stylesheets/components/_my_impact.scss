@@ -28,20 +28,14 @@
 }
 
 .my-impact{
-  background: #78787899; //change this to darket
+  background: #78787842; //change this to darket
   color: black;
   height: 400px;
   width:250px;
   margin: 16px;
   box-shadow: none;
+  border: 1px solid gray;
   // border-color: #78787899;
-}
-
-.layout {
-  display: flex;
-  margin: 0 auto;
-  width: 85vw;
-  padding-top: 100px;
 }
 
 .card-deck{
@@ -50,38 +44,15 @@
 }
 
 .card-body{
- height: 300px;
+  height: 300px;
 }
 
-.card-title{
-  font-family: 'Quicksand', sans-serif;
-  color: white;
-  font-weight: 450;
-  text-transform: uppercase;
-  font-size: 22px;
-}
-
-.card-text{
-  margin-top: 10%;
-  font-size: 21px;
-  color: rgba(231, 231, 231, 0.836)
-}
 
 .discount-text{
   margin-top: 10%;
   font-size: 20px;
-  font-weight: normal;
+  font-weight: 500;
   color: white;
-}
-
-.card-points{
-  font-style: bold;
-  font-weight: 400;
-  font-family: 'Quicksand', sans-serif;
-  font-size: 36px;
-  display: flex;
-  margin-top: 152px;
-  justify-content: center;
 }
 
 
@@ -103,7 +74,6 @@
   text-decoration: none;
   color:white;
   background-color: rgb(100, 100, 100);
-  // box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   transform: scale(1.04); // not working as expected needs fixing when have time
   transition: all .01s ease-in-out; // not working as expected needs fixing when have time
 
@@ -112,24 +82,60 @@
   }
 }
 
-.layout {
-  .my-impact-btn {
-    display: flex;
-    flex-direction: column;
-  }
-}
-
 
 .text{
   height: 15px;
 }
 
-.layout {
+.add {
+
   .fas {
-    color: grey;
+    color: white;
   }
 }
 
-.card-text{
-  font-size: 15px;
+.layout {
+
+  display: flex;
+  margin: 0 auto;
+  width: 85vw;
+  padding-top: 100px;
+
+  .card-title {
+    font-family: 'Quicksand', sans-serif;
+    color: white;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .card-text {
+    font-size: 15px;
+    margin-top: 10%;
+    color: white;
+  }
+
+  .my-impact-btn {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .card-points {
+    font-weight: 500;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 60px;
+    display: flex;
+    justify-content: center;
+    padding-top: 110px;
+    color: white;
+  }
+}
+#total-points {
+  border: 7px solid gray;
+
+  #card-total-points {
+    font-size: 10px;
+  }
 }
