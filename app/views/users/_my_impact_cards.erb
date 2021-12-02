@@ -48,7 +48,11 @@
             <p class="card-text">Let us know of any sustainable brands to include!</p>
           </div>
           <div id="class-points">
-            <h5 class="card-points">0</h5>
+            <% if @brands_referred.nil? %>
+              <h5 class = "card-points">0</h5>
+            <%else%>
+              <h5 class = "card-points"><%=@brands_referred%></h5>
+            <%end%>
           </div>
         </div>
         <div class="card-footer">
