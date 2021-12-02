@@ -245,7 +245,7 @@ jy_img_url_one = URI.open("https://jyoti-fairworks.org/wp-content/uploads/2021/0
 jyoti.photos.attach(io: jy_img_url_one, filename: "#{jyoti.name}one.jpg", content_type: 'image/jpeg')
 jy_img_url_two = URI.open("https://jyoti-fairworks.org/wp-content/uploads/2021/09/Jyoti-Fair-Works-FW-21-36.jpg")
 jyoti.photos.attach(io: jy_img_url_two, filename: "#{jyoti.name}one.jpg", content_type: 'image/jpeg')
-jyoti.style = "arty"
+jyoti.style = "modern"
 jyoti.save!
 
 # Remove KnowledgeCotton Apparel
