@@ -10,14 +10,55 @@
       <% end %>
     </div>
 
-    <div class="container">
+    <div class="container" data-controller="notification">
       <h1>Explore eco-brands</h1>
 
-      <%= link_to brands_path do %>
-        <button class="btn btn-outline-secondary">
-          <i class="fas fa-plus"></i>  Add a brand
-        </button>
+      <!-- Modal -->
+      <div class="modal fade" id="suggestBrandModal" tabindex="-1" aria-labelledby="suggestBrandModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5>Suggest a brand</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <%= simple_form_for(@brand, data: {action: "submit->notification#displaySuccessNotif"}) do |f| %>
+                <%= f.input :name, label: "Brand name" %>
+                <%= f.input :website_url, label: "Website"%>
+                <%= f.input :style, collection: %w[modern outdoor minimalist retro boujie arty scandinavian grunge formal lounge boho] %>
+                <%# <button class="simple-text-btn" data-toggle="modal" data-target="#successModal"> %>
+                  <%= f.submit "Send brand suggestion", class: "submit-btn" %>
+                <%# </button> %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <% if current_user.brands_referred == nil || current_user.brands_referred == 0 %>
+        <div class="explore-notif">
+            <div class="message">
+              <p><strong>Heeey <%= current_user.first_name.capitalize %></strong><br>We are always looking to list new eco-firendly brands. If you know any eco-friendly brands let us know and boost your impact!</p>
+            </div>
+          <div class="buttons">
+            <button class="exit-btn"><i class="fas fa-times"></i></button>
+              <button class="simple-text-btn" data-toggle="modal" data-target="#suggestBrandModal">
+                Suggest brand <i class="fas fa-arrow-right"></i>
+              </button>
+          </div>
+        </div>
       <% end %>
+
+      <div class="explore-notif d-none" id="success-notif" data-notification-target="success">
+        <div class="message">
+          <p><strong>Thank you</strong><br>A member of the Style in Peace team will look into the impact of your brand suggestion soon!</p>
+        </div>
+        <div class="buttons">
+          <button class="exit-btn"><i class="fas fa-times"></i></button>
+        </div>
+      </div>
 
       <div class="mytabs">
         <input type="radio" id="tabfree" name="mytabs" checked="checked">
@@ -35,3 +76,21 @@
     </div>
   </div>
 </div>
+
+
+<!-- Modal -->
+      <%# <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5>Thanks for sending a brand!</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <p>A member of the Style in Peace team will check out the impact of this brand!</p>
+            </div>
+          </div>
+        </div>
+      </div> %>
