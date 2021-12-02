@@ -1,9 +1,4 @@
-#measure-button {
-  text-transform: uppercase;
-  color: black;
-}
-
-#collapseOne {
+.measure-display {
   display: flex;
   align-items: flex-start;
 }
@@ -51,7 +46,9 @@ p {
   color: #474A2C;
 }
 
-#measure-button {
+.measure-button {
+  text-transform: uppercase;
+  color: black;
   display: inline-flex;
   flex-wrap: nowrap;
   justify-content: space-between;
@@ -60,4 +57,32 @@ p {
 
 .card-body1 {
   padding: 1.25rem;
+}
+
+.btn-link {
+  &:hover {
+    text-decoration: none !important;
+    color: inherit !important;
+    box-shadow: none !important;
+  }
+
+  &:focus {
+    text-decoration: none !important;
+    color: inherit !important;
+    box-shadow: none !important;
+  }
+}
+
+.btn-block {
+  &:hover {
+    text-decoration: none !important;
+    color: inherit !important;
+    box-shadow: none !important;
+  }
+
+  &:focus {
+    text-decoration: none !important;
+    color: inherit !important;
+    box-shadow: none !important;
+  }
 }
