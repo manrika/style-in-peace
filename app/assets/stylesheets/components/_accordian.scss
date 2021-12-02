@@ -58,3 +58,15 @@ p {
 .card-body1 {
   padding: 1.25rem;
 }
+
+.btn-link {
+  &:hover {
+    text-decoration: none !important;
+    color: inherit !important;
+  }
+
+  &:focus {
+    text-decoration: none !important;
+    color: inherit !important;
+  }
+}
