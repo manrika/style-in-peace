@@ -10,7 +10,7 @@
 }
 
 .impact {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("wind.jpeg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3)), url("wind.jpeg");
   height: 100vh;
   width: 100%;
   background-position: center;
@@ -28,12 +28,13 @@
 }
 
 .my-impact{
-  background: rgba(231, 231, 231, 0.836);
+  background: #78787899; //change this to darket
   color: black;
   height: 400px;
   width:250px;
   margin: 16px;
-  box-shadow: 2px 2px 0 0 rgb(185, 185, 185);
+  box-shadow: none;
+  // border-color: #78787899;
 }
 
 .layout {
@@ -53,15 +54,17 @@
 }
 
 .card-title{
-  font-style: bold;
-  font-weight: 600;
-  font-size: 27px;
   font-family: 'Quicksand', sans-serif;
+  color: white;
+  font-weight: 450;
+  text-transform: uppercase;
+  font-size: 22px;
 }
 
 .card-text{
   margin-top: 10%;
   font-size: 21px;
+  color: rgba(231, 231, 231, 0.836)
 }
 
 .discount-text{
@@ -72,15 +75,14 @@
 
 .card-points{
   font-style: bold;
-  // font-weight: 600;
+  font-weight: 400;
   font-family: 'Quicksand', sans-serif;
   font-size: 36px;
 }
 
 
 .add {
-  color: #262626;
-  border: 1px solid rgba(175, 175, 175, 0.63);
+  color: white; //change this to lighter
   border-radius: 32px;
   height: 36px;
   padding-left: 16px;
@@ -89,14 +91,15 @@
   font-size: 14px;
   font-family: 'Quicksand', sans-serif;
   font-weight: 700;
-  background: #a9a9a9;
+  background: #262626;
+  border: 1px solid #262626;
 }
 
 .add:hover {
   text-decoration: none;
   color:white;
   background-color: rgb(100, 100, 100);
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  // box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   transform: scale(1.04); // not working as expected needs fixing when have time
   transition: all .01s ease-in-out; // not working as expected needs fixing when have time
 
@@ -116,19 +119,12 @@
   height: 15px;
 }
 
-.card-title {
-  color: #a9a9a9;
-  font-weight: lighter;
-  text-transform: uppercase;
-  font-size: 22px;
-}
-
-.layout .fas {
-  color: gray;
+.layout {
+  .fas {
+    color: grey;
+  }
 }
 
 .card-text{
   font-size: 15px;
 }
-
-// I have added this line to let me push my code - delete later!
