@@ -159,21 +159,84 @@ puts "Starting to run more custom seeding "
 # ADD CUSTOM IMAGES TO SPECIFIED BRANDS
 
 # Patagonia
-patagonia = Brand.find_by_name("Patagonia")
-p_img_url_one = URI.open("https://www.patagonia.com/dw/image/v2/BDJB_PRD/on/demandware.static/-/Sites-patagonia-master/default/dw3781c6b1/images/hi-res/84212_FGE_OM1.jpg?sw=1600&sh=1600&sfrm=png&q=80&bgcolor=f6f6f6")
-patagonia.photos.attach(io: p_img_url_one, filename: "#{patagonia.name}one.jpg", content_type: 'image/jpeg')
-p_img_url_two = URI.open("https://www.patagonia.com/dw/image/v2/BDJB_PRD/on/demandware.static/-/Sites-patagonia-master/default/dw54ad2462/images/hi-res/23074_DNAT_BH1.jpg?sw=1600&sh=1600&sfrm=png&q=80&bgcolor=f6f6f6")
-patagonia.photos.attach(io: p_img_url_two, filename: "#{patagonia.name}one.jpg", content_type: 'image/jpeg')
-patagonia.website_url = "https://www.patagonia.com/home/"
-patagonia.insta_url = "https://www.instagram.com/patagonia/?hl=en"
+# patagonia = Brand.find_by_name("Patagonia")
+# p_img_url_one = URI.open("https://www.patagonia.com/dw/image/v2/BDJB_PRD/on/demandware.static/-/Sites-patagonia-master/default/dw3781c6b1/images/hi-res/84212_FGE_OM1.jpg?sw=1600&sh=1600&sfrm=png&q=80&bgcolor=f6f6f6")
+# patagonia.photos.attach(io: p_img_url_one, filename: "#{patagonia.name}one.jpg", content_type: 'image/jpeg')
+# p_img_url_two = URI.open("https://www.patagonia.com/dw/image/v2/BDJB_PRD/on/demandware.static/-/Sites-patagonia-master/default/dw54ad2462/images/hi-res/23074_DNAT_BH1.jpg?sw=1600&sh=1600&sfrm=png&q=80&bgcolor=f6f6f6")
+# patagonia.photos.attach(io: p_img_url_two, filename: "#{patagonia.name}one.jpg", content_type: 'image/jpeg')
+# patagonia.website_url = "https://www.patagonia.com/home/"
+# patagonia.insta_url = "https://www.instagram.com/patagonia/?hl=en"
+patagonia.address = "Notting Hill London"
 patagonia.save!
 
-# # Patagonia
-# patagonia = Brand.find_by_name("Patagonia")
-# p_img_url_one = URI.open("")
-# patagonia.photos.attach(io: p_img_url_one, filename: "#{patagonia.name}one.jpg", content_type: 'image/jpeg')
-# p_img_url_two = URI.open("")
-# patagonia.photos.attach(io: p_img_url_two, filename: "#{patagonia.name}one.jpg", content_type: 'image/jpeg')
-# patagonia.save!
+# # TALA
+# tala = Brand.find_by_name("TALA")
+# t_img_url_one = URI.open("https://cdn.shopify.com/s/files/1/0081/8711/7664/products/Screenshot2021-11-22at21.22.08_1800x1800.png?v=1637616214")
+# tala.photos.attach(io: t_img_url_one, filename: "#{tala.name}one.jpg", content_type: 'image/jpeg')
+# t_img_url_two = URI.open("https://cdn.shopify.com/s/files/1/0081/8711/7664/products/Cosyjoggers_Cream_2_1800x1800.jpg?v=1623243921")
+# tala.photos.attach(io: t_img_url_two, filename: "#{tala.name}one.jpg", content_type: 'image/jpeg')
+# tala.save!
+
+# # Ecoalf
+# ecoalf = Brand.find_by_name("Ecoalf")
+# e_img_url_one = URI.open("https://ecoalf.com/27142-thickbox_default/livorno-jacket-man.jpg")
+# ecoalf.photos.attach(io: e_img_url_one, filename: "#{ecoalf.name}one.jpg", content_type: 'image/jpeg')
+# e_img_url_two = URI.open("https://ecoalf.com/27115-thickbox_default/katman-jacket-man.jpg")
+# ecoalf.photos.attach(io: e_img_url_two, filename: "#{ecoalf.name}one.jpg", content_type: 'image/jpeg')
+# ecoalf.save!
+
+# # WAWWA
+# wawwa = Brand.find_by_name("WAWWA")
+# w_img_url_one = URI.open("https://cdn.shopify.com/s/files/1/1377/2863/products/IMG_0955_1_750x_baaa56f5-5cd4-4494-a632-b9d89e4a8f1a_1080x.jpg?v=1638280967")
+# wawwa.photos.attach(io: w_img_url_one, filename: "#{wawwa.name}one.jpg", content_type: 'image/jpeg')
+# w_img_url_two = URI.open("https://cdn.shopify.com/s/files/1/1377/2863/products/SSXXIecom-28_a16a595b-b3fa-41c8-acde-d643030b34a3_1080x.jpg?v=1625836661")
+# wawwa.photos.attach(io: w_img_url_two, filename: "#{wawwa.name}one.jpg", content_type: 'image/jpeg')
+# wawwa.insta_url = "https://www.instagram.com/wawwaclothing/?hl=en"
+# wawwa.save!
+
+# # Girlfriend Collective
+# gc = Brand.find_by_name("Girlfriend Collective")
+# gc_img_url_one = URI.open("https://cdn.shopify.com/s/files/1/0019/2217/0943/products/20210312_Girlfriend_FloatHats_L12_073.jpg?v=1617306664")
+# gc.photos.attach(io: gc_img_url_one, filename: "#{gc.name}one.jpg", content_type: 'image/jpeg')
+# gc_img_url_two = URI.open("https://cdn.shopify.com/s/files/1/0019/2217/0943/products/LuxeLegging_Navy_PDP1.jpg?v=1605558259")
+# gc.photos.attach(io: gc_img_url_two, filename: "#{gc.name}one.jpg", content_type: 'image/jpeg')
+# gc.save!
+
+# # Organic Basics
+# ob = Brand.find_by_name("Organic Basics")
+# ob_img_url_one = URI.open("https://cdn.shopify.com/s/files/1/0013/3470/6276/products/h0ibcsgosd40bnjdoxyp_9bb5315b-b275-4de2-ac21-f7cf34b50887_x1400.jpg?v=1625735533")
+# ob.photos.attach(io: ob_img_url_one, filename: "#{ob.name}one.jpg", content_type: 'image/jpeg')
+# ob_img_url_two = URI.open("https://cdn.shopify.com/s/files/1/0013/3470/6276/products/idkfaqy0kjnfwj8iykho_x1400.jpg?v=1631604085")
+# ob.photos.attach(io: ob_img_url_two, filename: "#{ob.name}one.jpg", content_type: 'image/jpeg')
+# ob.save!
+
+
+# # Adidas by Stella McCartney
+# addidas = Brand.find_by_name("Adidas by Stella McCartney")
+# addi_img_url_one = URI.open("https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/f43bacf4e1694534a3d7ad25010cebd5_9366/adidas_by_Stella_McCartney_Ultraboost_3D_Knit_Shoes_Black_GY4916_01_standard.jpg")
+# addidas.photos.attach(io: addi_img_url_one, filename: "#{addidas.name}one.jpg", content_type: 'image/jpeg')
+# addi_img_url_two = URI.open("https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/c14edc93b96940e58939ad41011beaea_9366/adidas_by_Stella_McCartney_Shiny_Training_Leggings_Silver_GU1581_21_model.jpg")
+# addidas.photos.attach(io: addi_img_url_two, filename: "#{addidas.name}one.jpg", content_type: 'image/jpeg')
+# addidas.save!
+
+# # Outerknown
+# outerknown = Brand.find_by_name("Outerknown")
+# out_img_url_one = URI.open("https://cdn.shopify.com/s/files/1/2445/4975/products/030A7767_kelly_stars_HD_275138c5-3e37-4baa-a54f-3b6c1e52eb19_1400x1400.jpg?v=1626476079")
+# outerknown.photos.attach(io: out_img_url_one, filename: "#{outerknown.name}one.jpg", content_type: 'image/jpeg')
+# out_img_url_two = URI.open("https://cdn.shopify.com/s/files/1/2445/4975/products/2260011_Gemini_Hoodie_ULG_1_590x712.jpg?v=1638164515")
+# outerknown.photos.attach(io: out_img_url_two, filename: "#{outerknown.name}one.jpg", content_type: 'image/jpeg')
+# outerknown.save!
+
+# # Jyoti - Fair Works
+# jyoti = Brand.find_by_name("Jyoti - Fair Works")
+# jy_img_url_one = URI.open("https://jyoti-fairworks.org/wp-content/uploads/2021/08/Jyoti-Fair-Works-Kollektion-Herbst-Winter-2021-2022-Moodfotos-Industrial-55.jpg")
+# jyoti.photos.attach(io: jy_img_url_one, filename: "#{jyoti.name}one.jpg", content_type: 'image/jpeg')
+# jy_img_url_two = URI.open("https://jyoti-fairworks.org/wp-content/uploads/2021/09/Jyoti-Fair-Works-FW-21-36.jpg")
+# jyoti.photos.attach(io: jy_img_url_two, filename: "#{jyoti.name}one.jpg", content_type: 'image/jpeg')
+# jyoti.save!
+
+# # Remove KnowledgeCotton Apparel
+# kcp = Brand.find_by_name("KnowledgeCotton Apparel")
+# kcp.destroy
 
 puts "finitoed"
