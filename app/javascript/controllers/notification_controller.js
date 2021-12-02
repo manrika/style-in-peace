@@ -29,4 +29,5 @@ export default class extends Controller {
   hideSuccessPopup() {
     this.successPopupTarget.classList.add('d-none')
   }
+
 }

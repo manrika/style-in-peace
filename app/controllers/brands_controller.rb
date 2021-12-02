@@ -29,7 +29,17 @@ class BrandsController < ApplicationController
 
   def create
     @brand = Brand.new(brand_params)
-    @brand.save
+    if @brand.save
+      if current_user.brands_referred.nil?
+        current_user.brands_referred = 1
+      else
+        current_user.brands_referred += 1
+      end
+      current_user.save
+    else
+      flash[:alert] = 'Brand already exists.'
+      redirect_to explore_brands_path
+    end
   end
 
   def explore

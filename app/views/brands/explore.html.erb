@@ -14,7 +14,7 @@
       <h1>Explore eco-brands</h1>
 
       <!-- Modal -->
-      <div class="modal fade" id="suggestBrandModal" tabindex="-1" aria-labelledby="suggestBrandModalLabel" aria-hidden="true">
+      <div class="modal fade" id="suggestBrandModal" tabindex="-1" aria-labelledby="suggestBrandModalLabel" aria-hidden="true" >
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
@@ -28,9 +28,9 @@
                 <%= f.input :name, label: "Brand name" %>
                 <%= f.input :website_url, label: "Website"%>
                 <%= f.input :style, collection: %w[modern outdoor minimalist retro boujie arty scandinavian grunge formal lounge boho] %>
-                <button class="simple-text-btn" data-dismiss="modal" aria-label="Close" data-notification-target="submit" data-action="click->notification#showSuccessPopup">
-                  <%= f.submit "Send brand suggestion", class: "submit-btn" %>
-                </button>
+                <div class="simple-text-btn" style="width: 100%;" data-notification-target="submit" data-action="click->notification#showSuccessPopup">
+                  <%= f.submit "Send brand suggestion", class: "submit-btn", data: {dismiss: "modal"} %>
+                </div>
               <% end %>
             </div>
           </div>
@@ -55,7 +55,7 @@
       <%# success popup %>
       <div class="explore-notif d-none" id="success-notif" data-notification-target="successPopup">
         <div class="message">
-          <p><strong>Thank you</strong><br>A member of the Style in Peace team will look into the impact of your brand suggestion soon!</p>
+          <p>Our committee is reviewing your sustainable suggestion - thanks for contributing to the spread of slow fashion!</p>
         </div>
         <div class="buttons">
           <button class="exit-btn" data-action="click->notification#hideSuccessPopup"><i class="fas fa-times"></i></button>
