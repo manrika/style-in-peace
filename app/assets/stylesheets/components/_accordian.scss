@@ -63,10 +63,26 @@ p {
   &:hover {
     text-decoration: none !important;
     color: inherit !important;
+    box-shadow: none !important;
   }
 
   &:focus {
     text-decoration: none !important;
     color: inherit !important;
+    box-shadow: none !important;
+  }
+}
+
+.btn-block {
+  &:hover {
+    text-decoration: none !important;
+    color: inherit !important;
+    box-shadow: none !important;
+  }
+
+  &:focus {
+    text-decoration: none !important;
+    color: inherit !important;
+    box-shadow: none !important;
   }
 }
