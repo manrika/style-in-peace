@@ -20,3 +20,7 @@ require("channels")
 
 import "bootstrap"
 import "controllers"
+
+import $ from 'jquery'
+window.jQuery = $
+window.$ = $

@@ -19,10 +19,6 @@ export default class extends Controller {
   }
 
   showSuccessPopup() {
-    console.log('hello')
-    console.log(this.submitTarget)
-    // this.submitTarget.preventDefault()
-    console.log(this.successPopupTarget)
     this.successPopupTarget.classList.remove('d-none')
   }
 

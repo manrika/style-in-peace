@@ -24,7 +24,7 @@
               </button>
             </div>
             <div class="modal-body">
-              <%= simple_form_for(@brand) do |f| %>
+              <%= simple_form_for @brand, remote: true do |f| %>
                 <%= f.input :name, label: "Brand name" %>
                 <%= f.input :website_url, label: "Website"%>
                 <%= f.input :style, collection: %w[modern outdoor minimalist retro boujie arty scandinavian grunge formal lounge boho] %>
