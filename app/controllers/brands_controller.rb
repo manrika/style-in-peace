@@ -29,11 +29,7 @@ class BrandsController < ApplicationController
 
   def create
     @brand = Brand.new(brand_params)
-    if @brand.save
-      redirect_to  explore_brands_path
-    else
-      render :new
-    end
+    @brand.save
   end
 
   def explore
