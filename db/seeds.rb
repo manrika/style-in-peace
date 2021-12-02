@@ -227,6 +227,7 @@ addidas = Brand.find_by_name("Adidas by Stella McCartney")
 # addi_img_url_two = URI.open("https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/c14edc93b96940e58939ad41011beaea_9366/adidas_by_Stella_McCartney_Shiny_Training_Leggings_Silver_GU1581_21_model.jpg")
 # addidas.photos.attach(io: addi_img_url_two, filename: "#{addidas.name}one.jpg", content_type: 'image/jpeg')
 addidas.style = "outdoor"
+addidas.price_category = 3
 addidas.save!
 
 # # Outerknown
@@ -236,6 +237,7 @@ outerknown = Brand.find_by_name("Outerknown")
 # out_img_url_two = URI.open("https://cdn.shopify.com/s/files/1/2445/4975/products/2260011_Gemini_Hoodie_ULG_1_590x712.jpg?v=1638164515")
 # outerknown.photos.attach(io: out_img_url_two, filename: "#{outerknown.name}one.jpg", content_type: 'image/jpeg')
 outerknown.style = "outdoor"
+outerknown.price_category = 1
 outerknown.save!
 
 # # Jyoti - Fair Works
@@ -267,6 +269,7 @@ sandqvist = Brand.find_by_name("Sandqvist")
 # sandqvist_img_url_two = URI.open("https://products.sandqvist.com/images/2404_71f346eaf3-bernt-green-01-original.jpg?q=70&fit=clip&w=1024&h=1024&fm=jpg&bg=FBFBFB&auto=format")
 # sandqvist.photos.attach(io: sandqvist_img_url_two, filename: "#{sandqvist.name}one.jpg", content_type: 'image/jpeg')
 # sandqvist.address = "79 Berwick Street London"
+sandqvist.price_category = 3
 sandqvist.style = "scandinavian"
 sandqvist.save!
 
