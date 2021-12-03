@@ -3,8 +3,8 @@ require 'nokogiri'
 
 puts "Seed is starting, time to relax for some minutes ☕️🍪"
 
-# # Destroy all data
-# NewsArticle.destroy_all
+# Destroy all data
+NewsArticle.destroy_all
 # Brand.destroy_all
 
 # def rating_material_calc(materials_desc)
