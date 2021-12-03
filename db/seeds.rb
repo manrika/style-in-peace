@@ -296,4 +296,4 @@ end
 # ifnotnow_img_url_two = URI.open("https://cdn.shopify.com/s/files/1/0402/3592/5665/products/File_000-8_b5f789b0-66fa-441e-8e7b-1f66c4fc2dad_1200x.png?v=1633959346")
 # ifnotnow.photos.attach(io: ifnotnow_img_url_two, filename: "#{ifnotnow.name}one.jpg", content_type: 'image/jpeg')
 
-# puts "Finitoed 🥳🥳🥳"
+puts "Finitoed 🥳🥳🥳"
