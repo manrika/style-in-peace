@@ -38,7 +38,8 @@
       </div>
 
       <%# hello popup %>
-      <% if current_user.brands_referred == nil || current_user.brands_referred == 0 %>
+      <% if current_user == nil %>
+      <% elsif current_user.brands_referred == nil || current_user.brands_referred == 0 %>
         <div class="explore-notif"  data-notification-target="helloPopup">
             <div class="message">
               <p><strong>Hey <%= current_user.first_name.capitalize %> 👋🏻</strong><br>Did you know that you can boost your impact by suggesting some world-saving brands?</p>
