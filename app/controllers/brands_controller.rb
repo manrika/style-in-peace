@@ -111,12 +111,15 @@ class BrandsController < ApplicationController
   end
 
   def share
-    if current_user.brands_shared.nil?
-      current_user.brands_shared = 1
+    if current_user == nil
     else
-      current_user.brands_shared += 1
+      if current_user.brands_shared.nil?
+        current_user.brands_shared = 1
+      else
+        current_user.brands_shared += 1
+      end
+      current_user.save!
     end
-    current_user.save!
     flash[:notice] = 'Thank you for sharing!'
     redirect_to ecofriendly_brand_path(params[:id])
   end
