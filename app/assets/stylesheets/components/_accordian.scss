@@ -92,5 +92,17 @@ p {
   background-color: rgba(250, 250, 250, 0);
   .card-header {
     background-color: rgba(250, 250, 250, 0);
+    border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+    padding: 16px 20px 16px 0px;
   }
+}
+
+.card:last-child {
+  .card-header {
+    border-bottom: none;
+  }
+  .card-body1 {
+    border-top: 2px solid rgba(0, 0, 0, 0.2);
+  }
+
 }
